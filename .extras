@@ -8,3 +8,17 @@ GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
 
 # Additional Git shortcuts
+
+
+
+# Install Powerline fonts
+mkdir -p ~/Projects/other
+cd ~/Projects/other
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
