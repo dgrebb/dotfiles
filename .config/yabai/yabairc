@@ -14,7 +14,7 @@ source "$HOME/.config/yabai/_displays.sh"
 
 # Set up Home Configuration
 home=$(yabai -m config \
-  external_bar all:33:0 \
+  external_bar all:44:0 \
   mouse_follows_focus off \
   focus_follows_mouse autoraise \
   window_origin_display focused \
@@ -31,7 +31,7 @@ home=$(yabai -m config \
   split_ratio 0.50 \
   split_type auto \
   auto_balance off \
-  top_padding 33 \
+  top_padding 22 \
   bottom_padding 33 \
   left_padding 33 \
   right_padding 33 \
