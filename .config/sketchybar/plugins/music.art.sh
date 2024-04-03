@@ -12,6 +12,7 @@ fi
 # Specify the temporary directory and file name with a .png extension
 temp_dir="$HOME/.config/.sketchyrw"
 temp_file="$HOME/Pictures/album_art.png"
+dboard_file="$HOME/Projects/dboard/static/album_art.png"
 
 # Ensure the temporary directory exists
 mkdir -p "$temp_dir"
@@ -44,3 +45,6 @@ tell application "Music"
     end try
 end tell
 ')
+
+# Also copy the image to dboard
+cp $temp_file $dboard_file
