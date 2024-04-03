@@ -24,7 +24,7 @@ home=$(yabai -m config \
   window_animation_duration 0.00 \
   window_animation_frame_rate 120 \
   window_opacity_duration 0.2 \
-  active_window_opacity 0.95 \
+  active_window_opacity 0.97 \
   normal_window_opacity 0.65 \
   window_opacity on \
   insert_feedback_color 0xffd75f5f \
