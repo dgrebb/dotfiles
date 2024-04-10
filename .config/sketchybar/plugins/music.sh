@@ -71,3 +71,9 @@ sketchybar -m --set music.artist \
 sketchybar -m --set music.album \
   label="« ${ALBUM}" \
   drawing=on
+
+echo "export const musicInfo = {artist: \"${ARTIST}\", album: \"${ALBUM}\", title: \"${TITLE}\"}" >$HOME/Projects/dboard/src/lib/music.js
+
+# sed -i '' "s/^PUBLIC_MUSIC_TITLE=.*/PUBLIC_MUSIC_TITLE=${TITLE}/" $HOME/Projects/dboard/.env
+# sed -i '' "s/^PUBLIC_MUSIC_ARTIST=.*/PUBLIC_MUSIC_ARTIST=${ARTIST}/" $HOME/Projects/dboard/.env
+# sed -i '' "s/^PUBLIC_MUSIC_ALBUM=.*/PUBLIC_MUSIC_ALBUM=${ALBUM}/" $HOME/Projects/dboard/.env

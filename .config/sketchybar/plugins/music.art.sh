@@ -13,6 +13,7 @@ fi
 temp_dir="$HOME/.config/.sketchyrw"
 temp_file="$HOME/Pictures/album_art.png"
 dboard_file="$HOME/Projects/dboard/static/album_art.png"
+new_dboard_file="$HOME/Projects/dboard/static/album_art_new.png"
 
 # Ensure the temporary directory exists
 mkdir -p "$temp_dir"
@@ -47,4 +48,6 @@ end tell
 ')
 
 # Also copy the image to dboard
+cp $temp_file $new_dboard_file
+sleep 10
 cp $temp_file $dboard_file
