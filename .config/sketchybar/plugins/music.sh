@@ -2,6 +2,8 @@
 
 source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 source "$HOME/.config/machine.sh"
+dboard_music_json="$HOME/Projects/dboard/build/client/music.json"
+dev_dboard_music_json="$HOME/Projects/dboard/static/music.json"
 
 # FIXME: Running an osascript on an application target opens that app
 # This sleep is needed to try and ensure that theres enough time to
@@ -72,8 +74,5 @@ sketchybar -m --set music.album \
   label="« ${ALBUM}" \
   drawing=on
 
-echo "export const musicInfo = {artist: \"${ARTIST}\", album: \"${ALBUM}\", title: \"${TITLE}\"}" >$HOME/Projects/dboard/src/lib/music.js
-
-# sed -i '' "s/^PUBLIC_MUSIC_TITLE=.*/PUBLIC_MUSIC_TITLE=${TITLE}/" $HOME/Projects/dboard/.env
-# sed -i '' "s/^PUBLIC_MUSIC_ARTIST=.*/PUBLIC_MUSIC_ARTIST=${ARTIST}/" $HOME/Projects/dboard/.env
-# sed -i '' "s/^PUBLIC_MUSIC_ALBUM=.*/PUBLIC_MUSIC_ALBUM=${ALBUM}/" $HOME/Projects/dboard/.env
+echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\"}" >$dboard_music_json
+echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\"}" >$dev_dboard_music_json
