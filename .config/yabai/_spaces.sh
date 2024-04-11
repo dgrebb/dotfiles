@@ -48,16 +48,30 @@ main_display_padding=(
   right_padding 233
 )
 
-# Set space padding
-yabai -m config --space 1 "${main_display_padding[@]}"
-yabai -m config --space 2 "${main_display_padding[@]}"
-yabai -m config --space 3 "${main_display_padding[@]}"
+# If Home Clamshell Open
+main_display=$(getMainDisplayUUID)
+if [ "$main_display" == "$HOME_MACBOOK_UUID" ] || [ "$MACHINE" == 'office' ]; then
+  yabai -m config layout float
+else
+  # Set space padding
+  yabai -m config --space 1 "${main_display_padding[@]}"
+  yabai -m config --space 2 "${main_display_padding[@]}"
+  yabai -m config --space 3 "${main_display_padding[@]}"
 
-# Set floating spaces
-yabai -m config --space 1 layout float
-yabai -m config --space 3 layout float
+  # Set floating spaces
+  yabai -m config --space 1 layout float
+  yabai -m config --space 2 layout bsp
+  yabai -m config --space 3 layout float
+  yabai -m config --space 4 layout bsp
+  yabai -m config --space 5 layout bsp
+  yabai -m config --space 6 layout bsp
+  yabai -m config --space 7 layout bsp
+  yabai -m config --space 8 layout bsp
+  yabai -m config --space 9 layout bsp
+fi
 
-# Assign apps to spaces
+#####################################################################################
+# Assign apps to spaces -------------------------------------------------------------
 
 # Set Apps to Spaces for Office and Home
 main_display=$(getMainDisplayUUID)

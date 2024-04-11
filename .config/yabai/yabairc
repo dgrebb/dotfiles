@@ -18,16 +18,17 @@ home=$(yabai -m config \
   mouse_follows_focus off \
   focus_follows_mouse autoraise \
   window_origin_display focused \
-  window_placement second_child \
+  window_placement first_child \
   window_zoom_persist on \
   window_shadow on \
   window_animation_duration 0.00 \
+  window_animation_easing ease_out_circ \
   window_animation_frame_rate 120 \
   window_opacity_duration 0.2 \
   active_window_opacity 0.97 \
   normal_window_opacity 0.65 \
   window_opacity on \
-  insert_feedback_color 0xffd75f5f \
+  insert_feedback_color 0xb00ab704 \
   split_ratio 0.50 \
   split_type auto \
   auto_balance off \
@@ -36,7 +37,6 @@ home=$(yabai -m config \
   left_padding 33 \
   right_padding 33 \
   window_gap 33 \
-  layout bsp \
   mouse_modifier ctrl \
   mouse_action1 move \
   mouse_action2 resize \
@@ -44,7 +44,6 @@ home=$(yabai -m config \
 
 # Set up Office Configuration
 office=$home
-LAYOUT=bsp
 
 # Load Yabai
 if [[ "$MACHINE" == 'home' ]]; then
@@ -63,17 +62,8 @@ else
   # load office-adjusted config
   $office
   # yabai -m config focus_follows_mouse off
-  LAYOUT=bsp
 
 fi
-
-# If Home Clamshell Open
-main_display=$(getMainDisplayUUID)
-if [ "$main_display" == "$HOME_MACBOOK_UUID" ] || [ "$MACHINE" == 'office' ]; then
-  LAYOUT=float
-fi
-
-yabai -m config layout $LAYOUT
 
 # set up spaces after applying all configuration
 source $HOME/.config/yabai/_spaces.sh
