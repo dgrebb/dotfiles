@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Get list of displays
+# yabai -m query --displays
+
 # A list of displays and their properties
 HOME_EX_MAIN_UUID="B63E3652-FEA6-43EE-8D06-66978CE762DC"
 HOME_EX_LEFT_UUID="202E0F9C-C03B-4D59-A355-0FFFA8D84CF6"

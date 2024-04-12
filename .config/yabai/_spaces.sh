@@ -50,46 +50,51 @@ main_display_padding=(
 
 # If Home Clamshell Open
 main_display=$(getMainDisplayUUID)
-if [ "$main_display" == "$HOME_MACBOOK_UUID" ] || [ "$MACHINE" == 'office' ]; then
+if [ "$main_display" == "$HOME_MACBOOK_UUID" ] || [ "$main_display" == "$WORK_MACBOOK_UUID" ]; then
+
   yabai -m config layout float
+  yabai -m config focus_follows_mouse off
+
 else
+
   # Set space padding
   yabai -m config --space 1 "${main_display_padding[@]}"
   yabai -m config --space 2 "${main_display_padding[@]}"
   yabai -m config --space 3 "${main_display_padding[@]}"
 
-  # Set floating spaces
-  yabai -m config --space 1 layout float
-  yabai -m config --space 2 layout bsp
-  yabai -m config --space 3 layout float
-  yabai -m config --space 4 layout bsp
-  yabai -m config --space 5 layout bsp
-  yabai -m config --space 6 layout bsp
-  yabai -m config --space 7 layout bsp
-  yabai -m config --space 8 layout bsp
-  yabai -m config --space 9 layout bsp
+  if [[ "$MACHINE" == 'home' ]]; then
+
+    # Set floating spaces
+    yabai -m config --space 1 layout float
+    yabai -m config --space 2 layout bsp
+    yabai -m config --space 3 layout float
+    yabai -m config --space 4 layout bsp
+    yabai -m config --space 5 layout bsp
+    yabai -m config --space 6 layout bsp
+    yabai -m config --space 7 layout bsp
+    yabai -m config --space 8 layout bsp
+    yabai -m config --space 9 layout bsp
+
+  else
+
+    yabai -m config --space 1 layout float
+    yabai -m config --space 2 layout bsp
+    yabai -m config --space 3 layout float
+    yabai -m config --space 4 layout bsp
+    yabai -m config --space 5 layout bsp
+    yabai -m config --space 6 layout bsp
+    yabai -m config --space 7 layout bsp
+    yabai -m config --space 8 layout bsp
+    yabai -m config --space 9 layout bsp
+
+  fi
+
 fi
 
 #####################################################################################
 # Assign apps to spaces -------------------------------------------------------------
 
-# Set Apps to Spaces for Office and Home
-main_display=$(getMainDisplayUUID)
-
-if [ "$main_display" == "$HOME_EX_MAIN_UUID" ]; then
-
-  yabai -m rule --add app="^Music$" space=1
-  yabai -m rule --add app="^(Firefox)$" space=^2
-  yabai -m rule --add app="^Obsidian$" space=^9
-  yabai -m rule --add app="^(Notion|Photoshop|Lightroom|Pym|Slack|Discord)$" space=3
-  yabai -m rule --add app="^(iTerm2)$" space=^6
-  yabai -m rule --add app="^(OmniFocus|Mail|eM Client|Calendar)$" space=5
-  yabai -m rule --add app="^Code$" space=7
-  yabai -m rule --add app="^dg project$" space=9
-
-elif [[ "$MACHINE" == 'office' ]]; then
-
-  echo "Work Stuff happens here."
+if [[ "$MACHINE" == 'office' ]]; then
 
   # TODO: When yabai can manage windows without script-addition and SIP disabled
 
@@ -101,21 +106,16 @@ elif [[ "$MACHINE" == 'office' ]]; then
   yabai -m rule --add app="^(OmniFocus|Calendar)$" space=8
   yabai -m rule --add app="^iTerm2$" space=^9
 
-  if [ "$main_display" == "$WORK_MACBOOK_UUID" ]; then
+else
 
-    yabai -m config layout float
-    yabai -m config focus_follows_mouse off
-
-  else
-
-    yabai -m config --space 2 layout bsp
-    yabai -m config --space 4 layout bsp
-    yabai -m config --space 5 layout bsp
-    yabai -m config --space 6 layout bsp
-    yabai -m config --space 7 layout bsp
-    yabai -m config --space 8 layout bsp
-
-  fi
+  yabai -m rule --add app="^Music$" space=1
+  yabai -m rule --add app="^(Firefox)$" space=^2
+  yabai -m rule --add app="^Obsidian$" space=^9
+  yabai -m rule --add app="^(Notion|Photoshop|Lightroom|Pym|Slack|Discord)$" space=3
+  yabai -m rule --add app="^(iTerm2)$" space=^6
+  yabai -m rule --add app="^(OmniFocus|Mail|eM Client|Calendar)$" space=5
+  yabai -m rule --add app="^Code$" space=7
+  yabai -m rule --add app="^dg project$" space=9
 
 fi
 

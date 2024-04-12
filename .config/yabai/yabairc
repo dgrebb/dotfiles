@@ -57,11 +57,10 @@ else
 
   printf "\033[0;32mSkipping yabai scripting addition for work.\033[0m\n\n" # global settings
   yabai -m signal --add event=dock_did_restart action="sudo yabai"
-  yabai
+  sudo yabai
 
   # load office-adjusted config
   $office
-  # yabai -m config focus_follows_mouse off
 
 fi
 
