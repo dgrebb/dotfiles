@@ -47,7 +47,9 @@ sketchybar --add item calendar right \
   --set calendar "${calendar[@]}" \
   --subscribe calendar system_woke
 
+source "$ITEM_DIR/focus.sh"
+
 source "$ITEM_DIR/nightscout.sh"
 
-sketchybar --add bracket calendarb battery "WorkingHours,Item-0" calendar "Glucose Graph,Item-0" "iStat Menus Status,com.bjango.istatmenus.weather" \
+sketchybar --add bracket calendarb battery focus "WorkingHours,Item-0" calendar "Glucose Graph,Item-0" "iStat Menus Status,com.bjango.istatmenus.weather" \
   --set calendarb "${calendar_bracket[@]}"
