@@ -83,7 +83,7 @@ if [[ "$main_display" != "$HOME_MACBOOK_UUID" ]] && [[ "$MACHINE" != 'office' ]]
   source "$ITEM_DIR/yabai.sh"
 fi
 
-if [ "$main_display" != "$HOME_MACBOOK_UUID" ] || [ "$main_display" == "$WORK_MACBOOK_UUID" ]; then
+if [[ "$main_display" != "$HOME_MACBOOK_UUID" ]] && [[ "$main_display" != "$WORK_MACBOOK_UUID" ]]; then
   # Center
   source "$ITEM_DIR/music.sh"
 fi
