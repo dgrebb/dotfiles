@@ -4,6 +4,7 @@ source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 source "$HOME/.config/machine.sh"
 dboard_music_json="$HOME/Projects/dboard/build/client/music.json"
 dev_dboard_music_json="$HOME/Projects/dboard/static/music.json"
+prev_dboard_music_json="$HOME/Projects/dboard/.svelte-kit/output/client/music.json"
 
 # FIXME: Running an osascript on an application target opens that app
 # This sleep is needed to try and ensure that theres enough time to
@@ -76,3 +77,4 @@ sketchybar -m --set music.album \
 
 echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\"}" >$dboard_music_json
 echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\"}" >$dev_dboard_music_json
+echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\"}" >$prev_dboard_music_json

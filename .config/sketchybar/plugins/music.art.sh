@@ -14,6 +14,7 @@ temp_dir="$HOME/.config/.sketchyrw"
 temp_file="$HOME/Pictures/album_art.png"
 dboard_file="$HOME/Projects/dboard/build/client/album_art.png"
 dev_dboard_file="$HOME/Projects/dboard/static/album_art.png"
+prev_dboard_file="$HOME/Projects/dboard/.svelte-kit/output/client/album_art.png"
 
 # Ensure the temporary directory exists
 mkdir -p "$temp_dir"
@@ -49,4 +50,5 @@ end tell
 
 # Also copy the image to dboard
 cp $temp_file $dev_dboard_file
+cp $temp_file $prev_dboard_file
 cp $temp_file $dboard_file
