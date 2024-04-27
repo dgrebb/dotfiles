@@ -61,19 +61,25 @@ if [[ ${#ALBUM} -gt 25 ]]; then
   ALBUM=$(printf "$(echo $ALBUM | cut -c 1-12)…")
 fi
 
+if [[ "$main_display" != "$HOME_MACBOOK_UUID" ]] && [[ "$main_display" != "$WORK_MACBOOK_UUID" ]]; then
+  DRAWING=on
+else
+  DRAWING=on
+fi
+
 sketchybar -m --set music.title icon="$icon" \
   icon.color="${COLOR}" \
   label="${TITLE}" \
-  drawing=on
+  drawing=$DRAWING
 
 sketchybar -m --set music.artist \
   label.color="${WHITE}" \
   label="${ARTIST} »" \
-  drawing=on
+  drawing=$DRAWING
 
 sketchybar -m --set music.album \
   label="« ${ALBUM}" \
-  drawing=on
+  drawing=$DRAWING
 
 echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\"}" >$dboard_music_json
 echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\"}" >$dev_dboard_music_json

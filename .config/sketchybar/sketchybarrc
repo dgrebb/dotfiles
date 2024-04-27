@@ -66,6 +66,7 @@ defaults=(
   popup.background.color=$POPUP_BACKGROUND_COLOR
   popup.blur_radius=20
   popup.background.shadow.drawing=on
+  notch_width=200
 )
 
 sketchybar --default "${defaults[@]}"
@@ -83,10 +84,8 @@ if [[ "$main_display" != "$HOME_MACBOOK_UUID" ]] && [[ "$MACHINE" != 'office' ]]
   source "$ITEM_DIR/yabai.sh"
 fi
 
-if [[ "$main_display" != "$HOME_MACBOOK_UUID" ]] && [[ "$main_display" != "$WORK_MACBOOK_UUID" ]]; then
-  # Center
-  source "$ITEM_DIR/music.sh"
-fi
+# Center
+source "$ITEM_DIR/music.sh"
 
 # Right
 source "$ITEM_DIR/battery.sh"
