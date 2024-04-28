@@ -19,6 +19,7 @@ else
   ARTIST_POS=center
   ALBUM_DRAWING=on
   TITLE_POS=center
+  ARTIST_PAD=9
   TITLE_PAD=0
   TITLE_FONT="SF Compact Display:Bold:14"
 fi
@@ -36,7 +37,8 @@ sketchybar -m --add item music.artist $ARTIST_POS \
   label.padding_right=$ARTIST_PAD \
   label.padding_left=0 \
   icon.padding_left=0 \
-  icon.padding_right=$ARTIST_PAD
+  icon.padding_right=$ARTIST_PAD \
+  --subscribe music.artist song_update
 
 # Add Music Item
 sketchybar -m --add item music.title $TITLE_POS \
