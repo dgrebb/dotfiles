@@ -39,6 +39,7 @@ bar=(
   y_offset=1
   margin=6
   topmost=off
+  notch_width=200
 )
 
 sketchybar --bar "${bar[@]}"
@@ -66,7 +67,6 @@ defaults=(
   popup.background.color=$POPUP_BACKGROUND_COLOR
   popup.blur_radius=20
   popup.background.shadow.drawing=on
-  notch_width=200
 )
 
 sketchybar --default "${defaults[@]}"
