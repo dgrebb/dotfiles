@@ -1,17 +1,11 @@
 #!/bin/bash
 
-sketchybar --add item network_r_spacer right \
-  --set network_r_spacer background.drawing=off \
-  associated_display=1 \
-  width=5
-
 sketchybar --add item ip_address right \
   --set ip_address script="~/.config/sketchybar/plugins/ip_address.sh" \
   click_script="$PLUGIN_DIR/network_click.sh" \
   update_freq=30 \
   padding_left=1 \
   padding_right=1 \
-  width=25 \
   background.height=24 \
   icon.highlight=off \
   label.highlight=off \
