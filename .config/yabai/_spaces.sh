@@ -57,12 +57,12 @@ if [ "$main_display" == "$HOME_MACBOOK_UUID" ] || [ "$main_display" == "$WORK_MA
 
 else
 
-  if [[ "$MACHINE" == 'home' ]]; then
+  # Set space padding
+  yabai -m config --space 1 "${main_display_padding[@]}"
+  yabai -m config --space 2 "${main_display_padding[@]}"
+  yabai -m config --space 3 "${main_display_padding[@]}"
 
-    # Set space padding
-    yabai -m config --space 1 "${main_display_padding[@]}"
-    yabai -m config --space 2 "${main_display_padding[@]}"
-    yabai -m config --space 3 "${main_display_padding[@]}"
+  if [[ "$MACHINE" == 'home' ]]; then
 
     # Set floating spaces
     yabai -m config --space 1 layout float
