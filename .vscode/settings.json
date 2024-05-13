@@ -27,8 +27,12 @@
     ".title-actions": "display: none", // Remove primary side bar action icons
   },
   "workbench.colorCustomizations": {
+    "editorGroupHeader.tabsBackground": "#000000",
+    "editorGroupHeader.tabsBorder": "#0a0a0a",
+    "editorGroupHeader.border": "#171717",
+    "tab.inactiveBackground": "#131313",
     "activityBar.background": "#000000",
-    "activityBar.border": "#d9ff0017",
+    "activityBar.border": "#0c0c0c44",
     "diffEditorGutter.insertedLineBackground": "#1ade0069",
     "diffEditorGutter.removedLineBackground": "#ff000083",
     "editor.background": "#000000",
@@ -100,8 +104,8 @@
   "animations.Install-Method": "Apc Customize UI++",
   "animations.Enabled": true,
   "apc.imports": [
-    "file:///Users/dgrebb/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.1/dist/updateHandler.js",
-    "file:///Users/dgrebb/.vscode/styles/vscode-opmono-ligatures.css"
+    "file:///Users/dgrebb/.vscode/styles/vscode-opmono-ligatures.css",
+    "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.2/dist/updateHandler.js"
   ],
   "workbench.productIconTheme": "developer-icons",
   "diffEditor.ignoreTrimWhitespace": false,
@@ -126,7 +130,7 @@
   "terminal.integrated.defaultProfile.osx": "zsh",
   "cSpell.enabled": false,
   "diffEditor.codeLens": true,
-  "workbench.colorTheme": "Ayu Mirage",
+  "workbench.colorTheme": "NightFallGlow - Ayu Dark",
   "settingsSync.ignoredExtensions": [
     "alexowl.transparent-color-theme",
     "github.copilot"
@@ -368,4 +372,5 @@
   },
   "versionlens.suggestions.showOnStartup": true,
   "workbench.activityBar.location": "hidden",
+  "editor.guides.indentation": false,
 }
