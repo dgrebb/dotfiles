@@ -164,5 +164,9 @@
   {
     "key": "shift+cmd+t",
     "command": "-workbench.view.extension.bazel-explorer"
+  },
+  {
+    "key": "cmd+k cmd+f",
+    "command": "workbench.action.quickTextSearch"
   }
 ]
