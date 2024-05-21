@@ -105,7 +105,7 @@
   "animations.Enabled": true,
   "apc.imports": [
     "file:///Users/dgrebb/.vscode/styles/vscode-opmono-ligatures.css",
-    "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.2/dist/updateHandler.js"
+    "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
   ],
   "workbench.productIconTheme": "developer-icons",
   "diffEditor.ignoreTrimWhitespace": false,
@@ -142,6 +142,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "workbench.layoutControl.enabled": false,
   "workbench.startupEditor": "none",
+  "scm.defaultViewMode": "tree",
   "terminal.external.osxExec": "iterm 2.app",
   "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
   "terminal.integrated.fontSize": 12,
