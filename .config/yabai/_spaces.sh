@@ -15,6 +15,7 @@ setup_space() {
     yabai -m space --create
   fi
 
+  # NOTE: Home Workspace Configuration
   yabai -m space "$idx" --label "$name"
   if [[ "$idx" -gt "3" && "$idx" -lt "7" ]]; then
     yabai -m space "$idx" --display 2
@@ -23,7 +24,19 @@ setup_space() {
   else
     yabai -m space "$idx" --display 3
   fi
+
+  # NOTE: Alternative configurations -------------------------------------
+
+  # Two Displays; external above laptop
+  # yabai -m space "$idx" --label "$name"
+  # if [[ "$idx" -lt "4" ]]; then
+  #   yabai -m space "$idx" --display 1
+  # else
+  #   yabai -m space "$idx" --display 2
+  # fi
 }
+
+# -------------------------------------------------------------------------
 
 # Setup or destroy spaces as needed to match 9
 for _ in $(yabai -m query --spaces | jq '.[].index | select(. > 9)'); do
