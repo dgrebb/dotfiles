@@ -3,7 +3,9 @@
 source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 
 IP_ADDRESS=$(scutil --nwi | grep address | sed 's/.*://' | tr -d ' ' | head -1)
-IS_VPN=$(scutil --nwi | grep -m1 'utun' | awk '{ print $1 }')
+IS_VPN=$(scutil --nc list | grep Connected)
+
+echo "VNP: $IS_VPN"
 
 if [[ $IS_VPN != "" ]]; then
   COLOR=$CYAN
