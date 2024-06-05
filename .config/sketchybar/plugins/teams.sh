@@ -2,7 +2,7 @@
 
 source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 
-STATUS_LABEL=$(lsappinfo info -only StatusLabel "Microsoft Teams (work or school)")
+STATUS_LABEL=$(lsappinfo info -only StatusLabel "Microsoft Teams")
 ICON="󰊻"
 ICON_COLOR="$WHITE"
 DRAWING=on
