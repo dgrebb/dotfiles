@@ -1,6 +1,13 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
   {
+    "key": "cmd+alt+ctrl+l",
+    "command": "editor.action.insertSnippet",
+    "args": {
+      "name": "Console Log"
+    }
+  },
+  {
     "key": "alt+cmd+a",
     "command": "workbench.action.toggleActivityBarVisibility"
   },

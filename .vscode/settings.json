@@ -66,6 +66,7 @@
     "terminal.background": "#000000",
     "welcomePage.background": "#031000",
   },
+  "editor.wordWrap": "on",
   "editor.find.seedSearchStringFromSelection": "never",
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
