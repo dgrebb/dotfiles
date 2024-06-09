@@ -18,6 +18,18 @@ alias kc='kubectl'
 alias gbclean='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
 alias gbc='gbclean'
 alias gbcs='git pull --prune && git rm-merged'
+alias gcn!='f() { 
+    if git diff --cached --quiet && git diff --quiet; then
+        printf "No changes to commit\n"
+    else
+        if git diff --cached --quiet; then
+            printf "No files added to staging! Did you forget to run git add?\n" >&2
+        else
+            git commit --verbose --no-edit --amend --no-verify
+        fi
+    fi
+}; f'
+
 alias yr='yabai --restart-service'
 alias myip='ifconfig | grep inet'
 
