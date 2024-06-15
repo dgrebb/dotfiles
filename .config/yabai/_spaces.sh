@@ -19,10 +19,10 @@ setup_space() {
 
     # NOTE: Home Workspace Configuration
     yabai -m space "$idx" --label "$name"
-    if [[ "$idx" -gt "3" && "$idx" -lt "7" ]]; then
-      yabai -m space "$idx" --display 2
-    elif [ "$idx" -lt "4" ]; then
+    if [ "$idx" -lt "4" ]; then
       yabai -m space "$idx" --display 1
+    elif [ "$idx" -gt "3" && "$idx" -lt "7" ]; then
+      yabai -m space "$idx" --display 2
     else
       yabai -m space "$idx" --display 3
     fi
