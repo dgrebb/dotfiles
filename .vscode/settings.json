@@ -376,4 +376,5 @@
   "versionlens.suggestions.showOnStartup": true,
   "workbench.activityBar.location": "hidden",
   "editor.guides.indentation": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
 }
