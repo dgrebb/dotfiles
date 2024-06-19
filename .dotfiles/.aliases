@@ -46,11 +46,17 @@ alias dgw="cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/_dgrebb.c
 # Github
 alias ghpl='nocorrect ghpl'
 function ghpl() {
-	gh project item-list --owner "@me" $1
-	echo "i pity the fool"
+    gh project item-list --owner "@me" $1
+    echo "i pity the fool"
 }
 function ghpv() {
-	gh project view --owner "@me" $1 -w
+    gh project view --owner "@me" $1 -w
+}
+
+# Perf Testing
+timezsh() {
+    shell=${1-$SHELL}
+    for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
 # pnpm
@@ -156,7 +162,7 @@ alias map="xargs -n1"
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "${method}"="lwp-request -m '${method}'"
+    alias "${method}"="lwp-request -m '${method}'"
 done
 
 # Make Grunt print stack traces by default
