@@ -29,14 +29,14 @@ TITLE=$(osascript -e 'tell application "Music" to get name of current track')
 ARTIST=$(osascript -e 'tell application "Music" to get artist of current track')
 ALBUM=$(osascript -e 'tell application "Music" to get album of current track')
 if [[ "$MACHINE" == 'office' ]]; then
-  loved=$(osascript -l JavaScript -e "Application('Music').currentTrack().loved()")
+  LOVED=$(osascript -l JavaScript -e "Application('Music').currentTrack().loved()")
 else
-  loved=$(osascript -l JavaScript -e "Application('Music').currentTrack().favorited()")
+  LOVED=$(osascript -l JavaScript -e "Application('Music').currentTrack().favorited()")
 fi
 
 COLOR=$WHITE
 
-if [[ "$loved" = 'true' ]]; then
+if [[ "$LOVED" = 'true' ]]; then
   icon=""
   COLOR=$RED
 fi
@@ -45,7 +45,7 @@ if [[ $PLAYER_STATE == "paused" ]]; then
   icon=""
 fi
 
-if [[ $PLAYER_STATE == "playing" ]] && [[ "$loved" = 'false' ]]; then
+if [[ $PLAYER_STATE == "playing" ]] && [[ "$LOVED" = 'false' ]]; then
   icon=""
 fi
 
@@ -81,6 +81,6 @@ sketchybar -m --set music.album \
   label="« ${ALBUM}" \
   drawing=$DRAWING
 
-echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\"}" >$dboard_music_json
-echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\"}" >$dev_dboard_music_json
-echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\"}" >$prev_dboard_music_json
+echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\", \"loved\": \"${LOVED}\"}" >$dboard_music_json
+echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\", \"loved\": \"${LOVED}\"}" >$dev_dboard_music_json
+echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\", \"loved\": \"${LOVED}\"}" >$prev_dboard_music_json
