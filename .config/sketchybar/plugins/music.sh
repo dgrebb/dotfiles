@@ -81,6 +81,6 @@ sketchybar -m --set music.album \
   label="« ${ALBUM}" \
   drawing=$DRAWING
 
-echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\", \"loved\": \"${LOVED}\"}" >$dboard_music_json
-echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\", \"loved\": \"${LOVED}\"}" >$dev_dboard_music_json
-echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\", \"loved\": \"${LOVED}\"}" >$prev_dboard_music_json
+echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\", \"loved\": ${LOVED}}" >$dboard_music_json
+echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\", \"loved\": ${LOVED}}" >$dev_dboard_music_json
+echo "{\"artist\": \"${ARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\", \"loved\": ${LOVED}}" >$prev_dboard_music_json
