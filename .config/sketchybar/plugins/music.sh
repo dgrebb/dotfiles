@@ -25,9 +25,11 @@ if [[ $PLAYER_STATE == "stopped" ]]; then
   exit 0
 fi
 
-TITLE=$(osascript -e 'tell application "Music" to get name of current track')
+OGTITLE=$(osascript -e 'tell application "Music" to get name of current track')
 OGARTIST=$(osascript -e 'tell application "Music" to get artist of current track')
-ALBUM=$(osascript -e 'tell application "Music" to get album of current track')
+echo "Artist: $OGARTIST"
+OGALBUM=$(osascript -e 'tell application "Music" to get album of current track')
+echo "Album: $OGALBUM"
 if [[ "$MACHINE" == 'office' ]]; then
   LOVED=$(osascript -l JavaScript -e "Application('Music').currentTrack().loved()")
 else
@@ -49,16 +51,21 @@ if [[ $PLAYER_STATE == "playing" ]] && [[ "$LOVED" = 'false' ]]; then
   icon=""
 fi
 
-if [[ ${#TITLE} -gt 25 ]]; then
-  TITLE=$(printf "$(echo $TITLE)")
+TITLE=${OGTITLE}
+if [[ ${#OGTITLE} -gt 25 ]]; then
+  TITLE=$(printf "$(echo $OGTITLE)")
 fi
 
+ARTIST=${OGARTIST}
 if [[ ${#OGARTIST} -gt 25 ]]; then
   ARTIST=$(printf "$(echo $OGARTIST | cut -c 1-25)…")
 fi
 
-if [[ ${#ALBUM} -gt 25 ]]; then
-  ALBUM=$(printf "$(echo $ALBUM | cut -c 1-12)…")
+echo "shortist: $ARTIST"
+
+ALBUM=${OGALBUM}
+if [[ ${#OGALBUM} -gt 25 ]]; then
+  ALBUM=$(printf "$(echo $OGALBUM | cut -c 1-12)…")
 fi
 
 if [[ "$main_display" != "$HOME_MACBOOK_UUID" ]] && [[ "$main_display" != "$WORK_MACBOOK_UUID" ]]; then
@@ -81,6 +88,6 @@ sketchybar -m --set music.album \
   label="« ${ALBUM}" \
   drawing=$DRAWING
 
-echo "{\"artist\": \"${OGARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\", \"loved\": ${LOVED}}" >$dboard_music_json
-echo "{\"artist\": \"${OGARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\", \"loved\": ${LOVED}}" >$dev_dboard_music_json
-echo "{\"artist\": \"${OGARTIST}\", \"album\": \"${ALBUM}\", \"title\": \"${TITLE}\", \"loved\": ${LOVED}}" >$prev_dboard_music_json
+echo "{\"artist\": \"${OGARTIST}\", \"album\": \"${OGALBUM}\", \"title\": \"${TITLE}\", \"loved\": ${LOVED}}" >$dboard_music_json
+echo "{\"artist\": \"${OGARTIST}\", \"album\": \"${OGALBUM}\", \"title\": \"${TITLE}\", \"loved\": ${LOVED}}" >$dev_dboard_music_json
+echo "{\"artist\": \"${OGARTIST}\", \"album\": \"${OGALBUM}\", \"title\": \"${TITLE}\", \"loved\": ${LOVED}}" >$prev_dboard_music_json
