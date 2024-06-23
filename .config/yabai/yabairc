@@ -23,8 +23,7 @@ home=$(yabai -m config \
   window_shadow on \
   window_animation_duration 0.00 \
   window_animation_easing ease_out_circ \
-  window_animation_frame_rate 120 \
-  window_opacity_duration 0.2 \
+  window_opacity_duration 0.1 \
   active_window_opacity 0.97 \
   normal_window_opacity 0.65 \
   window_opacity on \
@@ -41,6 +40,9 @@ home=$(yabai -m config \
   mouse_action1 move \
   mouse_action2 resize \
   mouse_drop_action swap)
+
+# Deprecated configuration commands
+# window_animation_frame_rate 120 \
 
 # Set up Office Configuration
 office=$home
@@ -70,5 +72,8 @@ source $HOME/.config/yabai/_spaces.sh
 # add signals and manage applications
 source $HOME/.config/yabai/_signals.sh
 source $HOME/.config/yabai/_app-management.sh
+
+# Apply the various rules that have been queued up
+yabai -m rule --apply
 
 printf "\033[0;32m✓ Yabai configuration loaded!\033[0m\n\n"
