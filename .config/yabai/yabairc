@@ -21,7 +21,6 @@ home=$(yabai -m config \
   window_placement first_child \
   window_zoom_persist on \
   window_shadow on \
-  window_animation_duration 0.00 \
   window_animation_easing ease_out_circ \
   window_opacity_duration 0.1 \
   active_window_opacity 0.97 \
@@ -40,6 +39,7 @@ home=$(yabai -m config \
   mouse_action1 move \
   mouse_action2 resize \
   mouse_drop_action swap)
+# window_animation_duration 0.00 \ commented for office SIP
 
 # Deprecated configuration commands
 # window_animation_frame_rate 120 \
@@ -59,7 +59,7 @@ else
 
   printf "\033[0;32mSkipping yabai scripting addition for work.\033[0m\n\n" # global settings
   yabai -m signal --add event=dock_did_restart action="sudo yabai"
-  sudo yabai
+  yabai
 
   # load office-adjusted config
   $office

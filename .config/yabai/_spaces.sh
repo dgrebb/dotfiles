@@ -15,7 +15,7 @@ setup_space() {
     yabai -m space --create
   fi
 
-  if [ "$main_display" == "$HOME_EX_MAIN_UUID" ]; then
+  if [[ "$main_display" == "$HOME_EX_MAIN_UUID" ]]; then
 
     # NOTE: Home Workspace Configuration
     yabai -m space "$idx" --label "$name"
@@ -72,7 +72,7 @@ if [ "$main_display" == "$HOME_MACBOOK_UUID" ] || [ "$main_display" == "$WORK_MA
   echo "YOU HAVE MACBOOK LID OPEN AND USING DISPLAY MAIN"
 
   yabai -m config layout float
-  yabai -m config focus_follows_mouse off
+  # yabai -m config focus_follows_mouse off
 
 else
   echo "YOU HAVE ALL DISPLAYS OPEN DAWG"
@@ -119,11 +119,12 @@ if [[ "$MACHINE" == 'office' ]]; then
   # TODO: When yabai can manage windows without script-addition and SIP disabled
 
   yabai -m rule --add app="^(Music|Microsoft Outlook$)$" space=1
-  yabai -m rule --add app="^Firefox$" space=^2
+  yabai -m rule --add app="^Firefox$" space=2
+  yabai -m rule --add app="^(Obsidian|Microsoft Excel$)$" space=3
   yabai -m rule --add app="^Code$" space=5
   yabai -m rule --add app="^Microsoft Teams$" space=9
   yabai -m rule --add app="^(OmniFocus|Calendar)$" space=8
-  yabai -m rule --add app="^iTerm2$" space=^7
+  yabai -m rule --add app="^iTerm2$" space=7
 
 else
 
