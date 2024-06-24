@@ -1,7 +1,24 @@
 #!/bin/bash
 
-# Get list of displays
-# yabai -m query --displays
+# Display utilities
+
+## Get list of displays
+getAllDisplays() {
+  yabai -m query --displays
+}
+
+## Return number of displays
+displayCount() {
+  yabai -m query --displays | jq -r '. | length'
+}
+
+## Returns main display's UUID
+getMainDisplayUUID() {
+  yabai -m query --displays | jq -r '.[0].uuid'
+}
+
+# The current "main" display
+MAIN_DISPLAY=$(getMainDisplayUUID)
 
 # A list of displays and their properties
 HOME_EX_MAIN_UUID="B63E3652-FEA6-43EE-8D06-66978CE762DC"
@@ -15,15 +32,3 @@ WORK_MAIN_UUID=""
 WORK_LEFT_UUID=""
 WORK_MACBOOK_UUID="37D8832A-2D66-02CA-B9F7-8F30A301B230"
 WORK_MACBOOK_UUID_17="9CB63E1D-C8F1-608A-73F8-E86AF9C67B0F"
-
-# Display utilities
-
-# Return number of displays
-displayCount() {
-  yabai -m query --displays | jq -r '. | length'
-}
-
-# Returns main display's UUID
-getMainDisplayUUID() {
-  yabai -m query --displays | jq -r '.[0].uuid'
-}

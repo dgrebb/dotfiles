@@ -3,6 +3,9 @@
 source "$HOME/.config/machine.sh"
 source "$HOME/.config/yabai/_displays.sh"
 
+echo "Main Current Display : $MAIN_DISPLAY"
+echo "Workstation Display : $HOME_EX_MAIN_UUID"
+
 # Space Mapper
 setup_space() {
   local idx="$1"
@@ -11,17 +14,20 @@ setup_space() {
   echo "setup space $idx : $name"
 
   space=$(yabai -m query --spaces --space "$idx")
+
   if [ -z "$space" ]; then
     yabai -m space --create
   fi
 
-  if [[ "$main_display" == "$HOME_EX_MAIN_UUID" ]]; then
+  if [ "$MAIN_DISPLAY" == "$HOME_EX_MAIN_UUID" ]; then
+
+    echo "You've got big display plans."
 
     # NOTE: Home Workspace Configuration
     yabai -m space "$idx" --label "$name"
     if [ "$idx" -lt "4" ]; then
       yabai -m space "$idx" --display 1
-    elif [ "$idx" -gt "3" && "$idx" -lt "7" ]; then
+    elif [ "$idx" -gt "3" ] && [ $idx -lt "7" ]; then
       yabai -m space "$idx" --display 2
     else
       yabai -m space "$idx" --display 3
@@ -66,16 +72,12 @@ main_display_padding=(
 )
 
 # If Home Clamshell Open
-main_display=$(getMainDisplayUUID)
-if [ "$main_display" == "$HOME_MACBOOK_UUID" ] || [ "$main_display" == "$WORK_MACBOOK_UUID" ]; then
-
-  echo "YOU HAVE MACBOOK LID OPEN AND USING DISPLAY MAIN"
+if [ "$MAIN_DISPLAY" == "$HOME_MACBOOK_UUID" ] || [ "$MAIN_DISPLAY" == "$WORK_MACBOOK_UUID" ]; then
 
   yabai -m config layout float
   # yabai -m config focus_follows_mouse off
 
 else
-  echo "YOU HAVE ALL DISPLAYS OPEN DAWG"
 
   # Set space padding
   yabai -m config --space 1 "${main_display_padding[@]}"
