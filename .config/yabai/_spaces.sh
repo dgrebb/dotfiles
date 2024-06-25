@@ -122,11 +122,12 @@ if [[ "$MACHINE" == 'office' ]]; then
 
   yabai -m rule --add app="^(Music|Microsoft Outlook$)$" space=1
   yabai -m rule --add app="^Firefox$" space=2
-  yabai -m rule --add app="^(Obsidian|Microsoft Excel$)$" space=3
+  yabai -m rule --add app="^Microsoft Excel$" space=3
   yabai -m rule --add app="^Code$" space=5
-  yabai -m rule --add app="^Microsoft Teams$" space=9
-  yabai -m rule --add app="^(OmniFocus|Calendar)$" space=8
+  yabai -m rule --add app="^Obsidian$" space=6
   yabai -m rule --add app="^iTerm2$" space=7
+  yabai -m rule --add app="^(OmniFocus|Calendar)$" space=8
+  yabai -m rule --add app="^Microsoft Teams$" space=9
 
 else
 
