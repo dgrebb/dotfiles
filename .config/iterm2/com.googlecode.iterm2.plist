@@ -1224,26 +1224,26 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.98006957769393921</real>
+				<real>0.79980188608169556</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73954290151596069</real>
+				<real>0.96168786287307739</real>
 				<key>Red Component</key>
-				<real>0.71760553121566772</real>
+				<real>0.97137528657913208</real>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.024224862456321716</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.16001471877098083</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.13752910494804382</real>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
