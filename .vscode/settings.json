@@ -377,4 +377,5 @@
   "workbench.activityBar.location": "hidden",
   "editor.guides.indentation": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "git.suggestSmartCommit": false,
 }
