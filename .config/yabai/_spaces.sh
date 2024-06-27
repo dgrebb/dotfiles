@@ -137,6 +137,7 @@ else
   yabai -m rule --add app="^(iTerm2|Min)$" space=^6
   yabai -m rule --add app="^(OmniFocus|Mail|eM Client|Calendar)$" space=5
   yabai -m rule --add app="^Code$" space=7
+  yabai -m rule --add app="^Obsidian$" space=8
   yabai -m rule --add app="^dg project$" space=9
 
 fi
