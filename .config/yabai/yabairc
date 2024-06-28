@@ -18,7 +18,7 @@ home=$(yabai -m config \
   mouse_follows_focus off \
   focus_follows_mouse autoraise \
   window_origin_display focused \
-  window_placement first_child \
+  window_placement second_child \
   window_zoom_persist on \
   window_shadow on \
   window_animation_easing ease_out_circ \
