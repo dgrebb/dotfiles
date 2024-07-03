@@ -13,32 +13,37 @@ source "$HOME/.config/machine.sh"
 source "$HOME/.config/yabai/_displays.sh"
 
 # Set up Home Configuration
-home=$(yabai -m config \
-  external_bar all:44:0 \
-  mouse_follows_focus off \
-  focus_follows_mouse autoraise \
-  window_origin_display focused \
-  window_placement second_child \
-  window_zoom_persist on \
-  window_shadow on \
-  window_animation_easing ease_out_circ \
-  window_opacity_duration 0.1 \
-  active_window_opacity 0.97 \
-  normal_window_opacity 0.65 \
-  window_opacity on \
-  insert_feedback_color 0xb00ab704 \
-  split_ratio 0.50 \
-  split_type auto \
-  auto_balance off \
-  top_padding 22 \
-  bottom_padding 33 \
-  left_padding 33 \
-  right_padding 33 \
-  window_gap 33 \
-  mouse_modifier ctrl \
-  mouse_action1 move \
-  mouse_action2 resize \
-  mouse_drop_action swap)
+home=$(
+  yabai -m config \
+    external_bar all:44:0 \
+    mouse_follows_focus off \
+    focus_follows_mouse autoraise \
+    window_origin_display focused \
+    window_placement second_child \
+    window_zoom_persist on \
+    window_shadow on \
+    window_animation_easing ease_out_circ \
+    window_opacity_duration 0.1 \
+    active_window_opacity 0.97 \
+    normal_window_opacity 0.65 \
+    window_opacity on \
+    insert_feedback_color 0xb00ab704 \
+    split_ratio 0.50 \
+    split_type auto \
+    auto_balance off \
+    top_padding 22 \
+    bottom_padding 33 \
+    left_padding 33 \
+    right_padding 33 \
+    window_gap 33 \
+    mouse_modifier ctrl \
+    mouse_action1 move \
+    mouse_action2 resize \
+    mouse_drop_action stack
+)
+# Old, drag to split window action
+# mouse_drop_action swap
+
 # window_animation_duration 0.00 \ commented for office SIP
 
 # Deprecated configuration commands
