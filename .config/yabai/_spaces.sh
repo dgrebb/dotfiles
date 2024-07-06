@@ -135,9 +135,9 @@ else
   yabai -m rule --add app="^(Firefox)$" space=^2
   yabai -m rule --add app="^(Notion|Photoshop|Lightroom|Pym|Slack|Discord|Logic Pro)$" space=3
   yabai -m rule --add app="^(iTerm2|Min)$" space=^6
-  yabai -m rule --add app="^(OmniFocus|Mail|eM Client|Calendar)$" space=5
-  yabai -m rule --add app="^Code$" space=7
-  yabai -m rule --add app="^Obsidian$" space=8
-  yabai -m rule --add app="^dg project$" space=9
+  yabai -m rule --add app="^(OmniFocus|Mail|eM Client|Calendar)$" space=^5
+  yabai -m rule --add app="^Code$" space=^7
+  yabai -m rule --add app="^Obsidian$" space=^8
+  yabai -m rule --add app="^dg project$" space=^9
 
 fi
