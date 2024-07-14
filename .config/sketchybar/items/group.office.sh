@@ -25,13 +25,13 @@ if [[ "$MACHINE" == 'home' ]]; then
   if [[ "$main_display" == "$HOME_MACBOOK_UUID" ]]; then
     # source "$ITEM_DIR/github.sh"
     source "$ITEM_DIR/ghmon.sh"
-    office_items+="github ghmon"
+    office_items+="github ghmon.status"
   else
     source "$ITEM_DIR/omnifocus.sh"
     source "$ITEM_DIR/mail.sh"
     # source "$ITEM_DIR/github.sh"
     source "$ITEM_DIR/ghmon.sh"
-    office_items+="omnifocus mail github ghmon"
+    office_items+="omnifocus mail ghmon.status"
   fi
   DISPLAYS=1,2,3
 else

@@ -27,9 +27,7 @@ fi
 
 OGTITLE=$(osascript -e 'tell application "Music" to get name of current track')
 OGARTIST=$(osascript -e 'tell application "Music" to get artist of current track')
-echo "Artist: $OGARTIST"
 OGALBUM=$(osascript -e 'tell application "Music" to get album of current track')
-echo "Album: $OGALBUM"
 if [[ "$MACHINE" == 'office' ]]; then
   LOVED=$(osascript -l JavaScript -e "Application('Music').currentTrack().loved()")
 else
@@ -60,8 +58,6 @@ ARTIST=${OGARTIST}
 if [[ ${#OGARTIST} -gt 25 ]]; then
   ARTIST=$(printf "$(echo $OGARTIST | cut -c 1-25)…")
 fi
-
-echo "shortist: $ARTIST"
 
 ALBUM=${OGALBUM}
 if [[ ${#OGALBUM} -gt 25 ]]; then
