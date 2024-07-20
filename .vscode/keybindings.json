@@ -175,5 +175,9 @@
   {
     "key": "cmd+k cmd+f",
     "command": "workbench.action.quickTextSearch"
+  },
+  {
+    "key": "alt+cmd+e",
+    "command": "workbench.files.action.collapseExplorerFolders"
   }
 ]
