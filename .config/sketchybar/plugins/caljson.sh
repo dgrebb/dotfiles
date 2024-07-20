@@ -17,18 +17,19 @@ s15s=(
 )
 
 # Capture the output of the command once
-today=$($HOME/.config/sketchybar/plugins/calendumper.sh -n -c "Calendar,Vacation,Dan Grebb,Personal,Business,Appointments,Reminders")
-tomorrow=$($HOME/.config/sketchybar/plugins/calendumper.sh -t -c "Calendar,Vacation,Dan Grebb,Personal,Business,Appointments,Reminders")
+echo 'running multipel requests to calendars'
+# today=$($HOME/.config/sketchybar/plugins/calendumper.sh -n -c "Calendar,Vacation,Dan Grebb,Personal,Business,Appointments,Reminders")
+# tomorrow=$($HOME/.config/sketchybar/plugins/calendumper.sh -t -c "Calendar,Vacation,Dan Grebb,Personal,Business,Appointments,Reminders")
 s15=$($HOME/.config/sketchybar/plugins/calendumper.sh -s15 -c "Calendar,Vacation,Dan Grebb,Personal,Business,Appointments,Reminders")
 
 # Iterate over the files array and write the output to each file
-for file in "${todays[@]}"; do
-  echo "$today" >"$file"
-done
+# for file in "${todays[@]}"; do
+#   echo "$today" >"$file"
+# done
 
-for file in "${tomorrows[@]}"; do
-  echo "$tomorrow" >"$file"
-done
+# for file in "${tomorrows[@]}"; do
+#   echo "$tomorrow" >"$file"
+# done
 
 for file in "${s15s[@]}"; do
   echo "$s15" >"$file"
