@@ -91,6 +91,9 @@ source "$ITEM_DIR/music.sh"
 # Right
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/calendar.sh"
+if [[ "$MACHINE" == 'home' ]]; then
+  source "$ITEM_DIR/caljson.sh"
+fi
 source "$ITEM_DIR/network.sh"
 source "$ITEM_DIR/aliases.sh"
 source "$ITEM_DIR/wallpaper.sh"
