@@ -120,7 +120,7 @@ now() {
 }
 
 end_of_now() {
-  date +'%Y-%m-%d %H:%M:%S %z'
+  date +'%Y-%m-%d 23:59:59 %z'
 }
 
 # Returns tomorrow at midnight
