@@ -287,8 +287,10 @@ parse_events() {
 
       duration="$(minutes_between "$start_at" "$end_at")"
 
-      start_at="$(reformat_date "$start_at:00" "%I:%M%p" "%T" | tr "APM" "apm")"
-      end_at="$(reformat_date "$end_at:00" "%I:%M%p" "%T" | tr "APM" "apm")"
+      start_at="$(reformat_date "$start_at:00" "%H:%M" "%T")"
+      # start_at="$(reformat_date "$start_at:00" "%I:%M%p" "%T" | tr "APM" "apm")"
+      end_at="$(reformat_date "$end_at:00" "%H:%M" "%T")"
+      # end_at="$(reformat_date "$end_at:00" "%I:%M%p" "%T" | tr "APM" "apm")"
     fi
 
     notes="${raw_notes//$ICBNL/$'\n'}"
