@@ -194,6 +194,7 @@ fetch_events() {
     "--separateByDate"
     "--showEmptyDates"
     "--sectionSeparator" "$ICBSS"
+    "--excludeAllDayEvents"
     "--noRelativeDates"
     "--dateFormat" "%Y-%m-%d"
     "--timeFormat" "%H:%M"
@@ -203,7 +204,6 @@ fetch_events() {
     # "--propertyOrder" "title,datetime,notes"
     "--includeEventProps" "title,datetime"
     "--propertyOrder" "title,datetime"
-    "--excludeAllDayEvents"
     "--noPropNames"
     "--notesNewlineReplacement" "$ICBNL"
     "eventsFrom:$start_at"
@@ -403,8 +403,8 @@ main() {
       mode=tomorrow
       shift
       ;;
-    -s15 | --surrounding15)
-      mode=surrounding15
+    -s15 | --rolling15)
+      mode=rolling15
       shift
       ;;
     -r | --raw)
@@ -446,7 +446,7 @@ main() {
     start_at="$(start_of_week "$target_date")"
     end_at="$(end_of_week "$target_date")"
     ;;
-  surrounding15)
+  rolling15)
     start_at="$(minus_n_start 7)"
     end_at="$(plus_n_end 7)"
     ;;
