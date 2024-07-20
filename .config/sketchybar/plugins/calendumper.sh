@@ -134,6 +134,14 @@ end_of_tomorrow() {
   date -v+1d +"%Y-%m-%d 23:59:59 %z"
 }
 
+minus_n_start() {
+  date -v-${1}d +"%Y-%m-%d 00:00:00 %z"
+}
+
+plus_n_end() {
+  date -v+${1}d +"%Y-%m-%d 23:59:59 %z"
+}
+
 # Returns 11:59:59pm for the given day
 #
 # $1 - date in %Y-%m-%d format
@@ -395,6 +403,10 @@ main() {
       mode=tomorrow
       shift
       ;;
+    -s15 | --surrounding15)
+      mode=surrounding15
+      shift
+      ;;
     -r | --raw)
       raw=1
       shift
@@ -433,6 +445,10 @@ main() {
   weekly)
     start_at="$(start_of_week "$target_date")"
     end_at="$(end_of_week "$target_date")"
+    ;;
+  surrounding15)
+    start_at="$(minus_n_start 7)"
+    end_at="$(plus_n_end 7)"
     ;;
   daily)
     start_at="$(start_of_day "$target_date")"
