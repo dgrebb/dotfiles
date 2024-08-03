@@ -12,6 +12,8 @@
 	<integer>33</integer>
 	<key>BadgeTopMargin</key>
 	<integer>33</integer>
+	<key>ClickToSelectCommand</key>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Treehouse</key>
