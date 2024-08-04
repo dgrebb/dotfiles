@@ -290,7 +290,13 @@
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
   "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false,
+    "editor.inlayHints.enabled": "off",
+    "editor.parameterHints.enabled": false
+  },
+  "[github-actions-action]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": false,
     "editor.inlayHints.enabled": "off",
     "editor.parameterHints.enabled": false
