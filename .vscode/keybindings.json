@@ -74,6 +74,11 @@
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
   },
   {
+    "key": "escape",
+    "command": "editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+  },
+  {
     "key": "ctrl+space",
     "command": "-editor.action.triggerSuggest",
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
@@ -85,7 +90,7 @@
   {
     "key": "escape",
     "command": "workbench.action.focusActiveEditorGroup",
-    "when": "!editorFocus"
+    "when": "!editorFocus && !suggestWidgetVisible"
   },
   {
     "key": "alt+cmd+t",
@@ -232,11 +237,6 @@
   {
     "key": "alt+cmd+;",
     "command": "hideSuggestWidget",
-    "when": "suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "escape",
-    "command": "-hideSuggestWidget",
     "when": "suggestWidgetVisible && textInputFocus"
   }
 ]
