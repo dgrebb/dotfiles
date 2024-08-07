@@ -238,5 +238,14 @@
     "key": "alt+cmd+;",
     "command": "hideSuggestWidget",
     "when": "suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "escape",
+    "command": "closeFindWidget"
+  },
+  {
+    "key": "escape",
+    "command": "-closeFindWidget",
+    "when": "editorFocus && findWidgetVisible && !isComposing"
   }
 ]
