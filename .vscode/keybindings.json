@@ -241,7 +241,8 @@
   },
   {
     "key": "escape",
-    "command": "closeFindWidget"
+    "command": "closeFindWidget",
+    "when": "findWidgetVisible"
   },
   {
     "key": "escape",
