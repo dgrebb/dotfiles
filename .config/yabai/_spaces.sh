@@ -138,6 +138,6 @@ else
   yabai -m rule --add app="^Obsidian$" space=6
   yabai -m rule --add app="^iTerm2$" space=7
   yabai -m rule --add app="^(OmniFocus|Calendar)$" space=8
-  yabai -m rule --add app="^Microsoft Teams$" space=9
+  yabai -m rule --add app="^(Microsoft Teams|Teams \(Safari\))$" space=9
 
 fi
