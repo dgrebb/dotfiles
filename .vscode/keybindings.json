@@ -69,16 +69,6 @@
     "when": "notificationToastsVisible"
   },
   {
-    "key": "alt+cmd+;",
-    "command": "editor.action.triggerSuggest",
-    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
-  },
-  {
-    "key": "escape",
-    "command": "editor.action.triggerSuggest",
-    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
-  },
-  {
     "key": "ctrl+space",
     "command": "-editor.action.triggerSuggest",
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
@@ -171,7 +161,8 @@
   },
   {
     "key": "cmd+escape",
-    "command": "terminal.focus"
+    "command": "terminal.focus",
+    "when": "editorFocus || panelFocus"
   },
   {
     "key": "shift+cmd+t",
@@ -231,15 +222,6 @@
     "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
   },
   {
-    "key": "alt+cmd+l",
-    "command": "editor.action.inlineSuggest.trigger"
-  },
-  {
-    "key": "alt+cmd+;",
-    "command": "hideSuggestWidget",
-    "when": "suggestWidgetVisible && textInputFocus"
-  },
-  {
     "key": "escape",
     "command": "closeFindWidget",
     "when": "findWidgetVisible"
@@ -248,5 +230,20 @@
     "key": "escape",
     "command": "-closeFindWidget",
     "when": "editorFocus && findWidgetVisible && !isComposing"
+  },
+  {
+    "key": "escape",
+    "command": "-editor.action.inlineSuggest.hide",
+    "when": "inlineSuggestionVisible"
+  },
+  {
+    "key": "alt+escape",
+    "command": "-editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+  },
+  {
+    "key": "alt+cmd+;",
+    "command": "editor.action.inlineSuggest.trigger",
+    "when": "editorFocus"
   }
 ]

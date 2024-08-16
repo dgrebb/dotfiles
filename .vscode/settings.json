@@ -84,11 +84,11 @@
   "editor.tabSize": 2,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "editor.quickSuggestions": {
-    "other": false,
-    "comments": false,
-    "strings": false
-  },
+  // "editor.quickSuggestions": {
+  //   "other": false,
+  //   "comments": false,
+  //   "strings": false
+  // },
   "editor.acceptSuggestionOnCommitCharacter": true,
   "editor.acceptSuggestionOnEnter": "on",
   // "editor.quickSuggestionsDelay": 120000,
@@ -135,7 +135,7 @@
   "terminal.integrated.defaultProfile.osx": "zsh",
   "cSpell.enabled": false,
   "diffEditor.codeLens": true,
-  "workbench.colorTheme": "Dobri Next -C06- Ayu",
+  "workbench.colorTheme": "NightFallGlow - Ayu Dark",
   "settingsSync.ignoredExtensions": [
     "alexowl.transparent-color-theme",
     "github.copilot"
@@ -381,7 +381,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "versionlens.suggestions.showOnStartup": true,
-  "workbench.activityBar.location": "hidden",
   "editor.guides.indentation": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "git.suggestSmartCommit": false,
@@ -488,4 +487,5 @@
     "*.w": "$(capture).*.w, I$(capture).w",
     "*.xaml": "$(capture).xaml.cs"
   },
+  "workbench.activityBar.location": "hidden",
 }
