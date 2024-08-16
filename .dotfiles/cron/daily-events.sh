@@ -36,7 +36,7 @@ fi
 if [ "$1" == "today" ]; then
 
   # Get Tomorrow's Activities from Apple Calendar
-  TEXT=$(icalBuddy -ic "Calendar,Vacation,Dan Grebb,Personal,Business,Appointments,Reminders" -n -sc -ss "\n" -b "- [ ] " -ab "- [ ] ‼️ " -iep title,datetime -ps "| ➡ |" -po "title,datetime" -tf "%H:%M" -nrd -df "" eventsFrom:"today" to:"today")
+  TEXT=$(icalBuddy -ic "Calendar,Vacation,Dan Grebb,Personal,Business,Appointments,Reminders" -n -sc -ss "\n" -b "- " -ab "- ‼️ " -iep title,datetime -ps "| ➡ |" -po "title,datetime" -tf "%H:%M" -nrd -df "" eventsFrom:"today" to:"today")
 
   OBSIDIAN_DATES="$(echo "$TEXT" | sed -E 's/➡ ([0-9]{2}:[0-9]{2}) - ([0-9]{2}:[0-9]{2})/\[startTime:: \1\]  [endTime:: \2]/g')"
 
@@ -47,7 +47,7 @@ if [ "$1" == "today" ]; then
 else
 
   # Get Tomorrow's Activities from Apple Calendar
-  TEXT=$(icalBuddy -ic "Calendar,Vacation,Dan Grebb,Personal,Business,Appointments,Reminders" -n -sc -ss "\n" -b "- [ ] " -ab "- [ ] ‼️ " -iep title,datetime -ps "| ➡ |" -po "title,datetime" -tf "%H:%M" -nrd -df "" eventsFrom:"tomorrow" to:"tomorrow")
+  TEXT=$(icalBuddy -ic "Calendar,Vacation,Dan Grebb,Personal,Business,Appointments,Reminders" -n -sc -ss "\n" -b "- " -ab "- ‼️ " -iep title,datetime -ps "| ➡ |" -po "title,datetime" -tf "%H:%M" -nrd -df "" eventsFrom:"tomorrow" to:"tomorrow")
 
   OBSIDIAN_DATES="$(echo "$TEXT" | sed -E 's/➡ ([0-9]{2}:[0-9]{2}) - ([0-9]{2}:[0-9]{2})/\[startTime:: \1\]  [endTime:: \2]/g')"
 
