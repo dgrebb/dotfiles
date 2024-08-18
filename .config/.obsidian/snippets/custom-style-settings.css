@@ -1,0 +1,55 @@
+/* @settings
+
+name: dgrebb
+id: dgrebb
+settings:
+  - 
+    id: dg-first-heading-color
+    title: First Heading Accent Color
+    type: variable-color
+    format: hex
+    level: 2
+    default: '#e6fb01'
+    default-light: '#e6fb01'
+    default-dark: '#e6fb01'
+  - 
+    id: dg-first-heading-weight
+    title: First Heading Weight
+    description: Font used for the user interface
+    level: 2
+    type: variable-select
+    default: normal
+    options:
+        - lighter
+        - normal
+        - bold
+        - bolder
+  - 
+    id: dg-first-heading-size
+    title: First Heading Font Size
+    type: variable-text
+    level: 2
+    default: '3em'
+
+*/
+
+.markdown-preview-section h1,
+.cm-content .HyperMD-header-1 {
+  font-size: var(--dg-first-heading-size);
+  color: var(--dg-first-heading-color);
+  font-weight: var(--dg-first-heading-weight);
+  border-bottom: 3px solid var(--hr-color);
+}
+
+.markdown-preview-section div:has(h1) ~ div:has(h1) h1,
+.HyperMD-header-1 ~ .HyperMD-header-1 {
+  font-size: var(--h1-size);
+  color: var(--h1-color);
+  font-weight: var(--h1-weight);
+  border-bottom: none;
+}
+
+.metadata-container.is-collapsed {
+  padding: 0;
+  margin: 0;
+}
