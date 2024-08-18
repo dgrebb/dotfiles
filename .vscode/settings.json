@@ -148,6 +148,7 @@
   "workbench.layoutControl.enabled": false,
   "workbench.startupEditor": "none",
   "scm.defaultViewMode": "tree",
+  "scm.showHistoryGraph": false,
   "terminal.external.osxExec": "iterm 2.app",
   "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
   "terminal.integrated.fontSize": 12,
