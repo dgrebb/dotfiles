@@ -1,5 +1,11 @@
 #!/bin/bash
 
+sketchybar --add item utils_spacer_right right \
+  --set utils_spacer_right \
+  width=5
+
+utils_spacer_right
+
 sketchybar --add item ip_address right \
   --set ip_address script="~/.config/sketchybar/plugins/ip_address.sh" \
   click_script="$PLUGIN_DIR/network_click.sh" \

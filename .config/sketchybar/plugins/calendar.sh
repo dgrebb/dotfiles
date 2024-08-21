@@ -1,3 +1,9 @@
 #!/bin/bash
 
-sketchybar --set $NAME icon="$(date '+%a %d')" label=" | $(date '+%H:%M')"
+datetime=(
+  click_script="$CONFIG_DIR/plugins/datetime_click.sh"
+  icon="$(date '+%a %d')"
+  label=" | $(date '+%H:%M')"
+)
+
+sketchybar --set $NAME "${datetime[@]}"
