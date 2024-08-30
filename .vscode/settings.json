@@ -78,7 +78,7 @@
   "editor.linkedEditing": true,
   "editor.fontFamily": "'Operator Mono Lig', 'Operator Mono Nerd Font', 'FuraCode Nerd Font Mono Light', 'FiraCode Nerd Font', 'Hack Nerd Font', fonFuraCode, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
-  "editor.fontSize": 13,
+  "editor.fontSize": 12,
   "editor.minimap.enabled": false,
   "editor.hover.delay": 1500,
   "editor.tabSize": 2,
@@ -488,5 +488,7 @@
     "*.w": "$(capture).*.w, I$(capture).w",
     "*.xaml": "$(capture).xaml.cs"
   },
-  "workbench.activityBar.location": "hidden",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore",
+  "css.lint.unknownAtRules": "ignore",
 }
