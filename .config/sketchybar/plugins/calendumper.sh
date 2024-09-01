@@ -187,7 +187,7 @@ fetch_events() {
   local start_at="$1" end_at="$2" calendars="${3-}"
 
   if [[ "$calendars" ]]; then
-    opts+=("--includeCals" "Calendar,Vacation,Dan Grebb,Personal,Business,Appointments,Reminders")
+    opts+=("--includeCals" "Vacation,Dan Grebb,Personal,Business,Appointments,Reminders")
   fi
 
   opts+=(
