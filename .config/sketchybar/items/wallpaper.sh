@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ICON=
+ICON=
 
 wallpaper=(
   update_freq=900
