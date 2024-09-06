@@ -91,7 +91,7 @@
   // },
   "editor.acceptSuggestionOnCommitCharacter": true,
   "editor.acceptSuggestionOnEnter": "on",
-  // "editor.quickSuggestionsDelay": 120000,
+  "editor.quickSuggestionsDelay": 120000,
   "editor.suggestOnTriggerCharacters": false,
   "editor.parameterHints.enabled": false,
   "explorer.sortOrder": "filesFirst",
