@@ -45,6 +45,7 @@ sketchybar -m --add item music.title $TITLE_POS \
   --set music.title script="$PLUGIN_DIR/music.sh" \
   click_script="$MUSIC_CLICK_SCRIPT" \
   icon.padding_left=$TITLE_PAD \
+  update_freq=15 \
   scroll_texts=on \
   label.max_chars=20 \
   label.padding_right=$TITLE_PAD \
