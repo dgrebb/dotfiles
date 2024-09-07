@@ -14,8 +14,8 @@ zen_on() {
     --set office drawing=off \
     --set omnifocus drawing=off \
     --set ghmon.status drawing=off \
-    --set "iStat Menus Status,com.bjango.istatmenus.cpu" drawing=off \
-    --set "iStat Menus Status,com.bjango.istatmenus.memory" drawing=off \
+    --set "iStat Menus Menubar,com.bjango.istatmenus.cpu" drawing=off \
+    --set "iStat Menus Menubar,com.bjango.istatmenus.memory" drawing=off \
     --set "SystemUIServer,TimeMachine.TMMenuExtraHost" drawing=off \
     --set nightshift drawing=off \
     --set network.up drawing=off \
@@ -39,8 +39,8 @@ zen_off() {
     --set office drawing=on \
     --set omnifocus drawing=on \
     --set ghmon.status drawing=on \
-    --set "iStat Menus Status,com.bjango.istatmenus.cpu" drawing=on \
-    --set "iStat Menus Status,com.bjango.istatmenus.memory" drawing=on \
+    --set "iStat Menus Menubar,com.bjango.istatmenus.cpu" drawing=on \
+    --set "iStat Menus Menubar,com.bjango.istatmenus.memory" drawing=on \
     --set "SystemUIServer,TimeMachine.TMMenuExtraHost" drawing=on \
     --set nightshift drawing=on \
     --set network.up drawing=off \

@@ -21,8 +21,8 @@ calendar_bracket=(
   background.padding_left=30
 )
 
-sketchybar --add alias "iStat Menus Status,com.bjango.istatmenus.weather" right \
-  --set "iStat Menus Status,com.bjango.istatmenus.weather" \
+sketchybar --add alias "iStat Menus Menubar,com.bjango.istatmenus.weather" right \
+  --set "iStat Menus Menubar,com.bjango.istatmenus.weather" \
   background.padding_left=0 \
   background.padding_right=0 \
   background.drawing=off \
@@ -52,5 +52,5 @@ source "$ITEM_DIR/focus.sh"
 
 source "$ITEM_DIR/nightscout.sh"
 
-sketchybar --add bracket calendarb battery focus "WorkingHours,Item-0" calendar "Glucose Graph,Item-0" "iStat Menus Status,com.bjango.istatmenus.weather" \
+sketchybar --add bracket calendarb battery focus "WorkingHours,Item-0" calendar "Glucose Graph,Item-0" "iStat Menus Menubar,com.bjango.istatmenus.weather" \
   --set calendarb "${calendar_bracket[@]}"

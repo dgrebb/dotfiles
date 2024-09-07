@@ -21,8 +21,8 @@ fi
 sketchybar --add bracket utils \
   volume_icon \
   $utils \
-  "iStat Menus Status,com.bjango.istatmenus.cpu" \
-  "iStat Menus Status,com.bjango.istatmenus.memory" \
+  "iStat Menus Menubar,com.bjango.istatmenus.cpu" \
+  "iStat Menus Menubar,com.bjango.istatmenus.memory" \
   wallpaper \
   "SystemUIServer,TimeMachine.TMMenuExtraHost" \
   ip_address \

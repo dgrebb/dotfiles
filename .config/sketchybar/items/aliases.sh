@@ -9,8 +9,8 @@ alias=(
   associated_display=1
 )
 
-sketchybar --add alias "iStat Menus Status,com.bjango.istatmenus.cpu" right \
-  --set "iStat Menus Status,com.bjango.istatmenus.cpu" "${alias[@]}" \
+sketchybar --add alias "iStat Menus Menubar,com.bjango.istatmenus.cpu" right \
+  --set "iStat Menus Menubar,com.bjango.istatmenus.cpu" "${alias[@]}" \
   alias.color=#RED \
   width=10 \
   label.padding_right=0 \
@@ -18,8 +18,8 @@ sketchybar --add alias "iStat Menus Status,com.bjango.istatmenus.cpu" right \
   alias.scale=0.8 \
   associated_display=1
 
-sketchybar --add alias "iStat Menus Status,com.bjango.istatmenus.memory" right \
-  --set "iStat Menus Status,com.bjango.istatmenus.memory" "${alias[@]}" \
+sketchybar --add alias "iStat Menus Menubar,com.bjango.istatmenus.memory" right \
+  --set "iStat Menus Menubar,com.bjango.istatmenus.memory" "${alias[@]}" \
   alias.color=yellow \
   width=18 \
   alias.scale=0.8 \
