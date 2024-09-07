@@ -125,7 +125,7 @@ if [[ "$MACHINE" == 'home' ]]; then
   yabai -m rule --add app="^(OmniFocus|Mail|eM Client|Calendar)$" space=5
   yabai -m rule --add app="^Code$" space=^7
   yabai -m rule --add app="^Obsidian$" space=9
-  yabai -m rule --add app="^dg project$" space=9
+  yabai -m rule --add app="^dg project$" space=8
 
 else
 
