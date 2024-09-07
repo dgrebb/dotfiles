@@ -80,7 +80,7 @@
   "editor.fontLigatures": true,
   "editor.fontSize": 12,
   "editor.minimap.enabled": false,
-  "editor.hover.delay": 1500,
+  "editor.hover.delay": 5000,
   "editor.tabSize": 2,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
