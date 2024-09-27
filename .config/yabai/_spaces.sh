@@ -88,18 +88,12 @@ else
 
     # Set floating spaces
     yabai -m config --space 1 layout float
-    yabai -m config --space 3 layout float
-
     yabai -m config --space 2 layout bsp
-
+    yabai -m config --space 3 layout float
     yabai -m config --space 4 layout bsp
     yabai -m config --space 5 layout bsp
     yabai -m config --space 6 layout bsp
-
-    # space divisions for tall dispaly
-    yabai -m config --space 7 layout bsp \
-      window_placement first_child \
-      split_ratio .33
+    yabai -m config --space 7 layout bsp
     yabai -m config --space 8 layout bsp
     yabai -m config --space 9 layout bsp
 

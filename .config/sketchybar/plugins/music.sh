@@ -64,11 +64,10 @@ if [[ ${#OGALBUM} -gt 25 ]]; then
   ALBUM=$(printf "$(echo $OGALBUM | cut -c 1-12)…")
 fi
 
-# NOTE: Set to off for NotchNook
 if [[ "$main_display" != "$HOME_MACBOOK_UUID" ]] && [[ "$main_display" != "$WORK_MACBOOK_UUID" ]]; then
-  DRAWING=off
+  DRAWING=on
 else
-  DRAWING=off
+  DRAWING=on
 fi
 
 sketchybar -m --set music.title icon="$icon" \

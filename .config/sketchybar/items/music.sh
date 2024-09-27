@@ -26,8 +26,7 @@ fi
 
 # Add Music Item
 sketchybar -m --add item music.artist $ARTIST_POS \
-  --set music.artist \
-  drawing=off \
+  --set music.artist drawing=off \
   click_script="$PLUGIN_DIR/music.artist_click.sh" \
   script="$PLUGIN_DIR/music.art.sh" \
   icon.y_offset=1 \
@@ -44,7 +43,6 @@ sketchybar -m --add item music.artist $ARTIST_POS \
 # Add Music Item
 sketchybar -m --add item music.title $TITLE_POS \
   --set music.title script="$PLUGIN_DIR/music.sh" \
-  drawing=off \
   click_script="$MUSIC_CLICK_SCRIPT" \
   icon.padding_left=$TITLE_PAD \
   update_freq=15 \
@@ -62,7 +60,6 @@ sketchybar -m --add item music.title $TITLE_POS \
 # Add Music Item
 sketchybar -m --add item music.album center \
   --set music.album drawing=$ALBUM_DRAWING \
-  drawing=off \
   icon.y_offset=1 \
   background.padding_right=0 \
   background.padding_left=0 \
@@ -76,7 +73,6 @@ sketchybar -m --add item music.album center \
 music_bracket=(
   background.color=$BACKGROUND_1
   background.border_color=$BACKGROUND_2
-  drawing=off
 )
 
 if [ "$main_display" == "$HOME_MACBOOK_UUID" ] || [ "$main_display" == "$WORK_MACBOOK_UUID" ]; then

@@ -80,7 +80,7 @@
   "editor.fontLigatures": true,
   "editor.fontSize": 12,
   "editor.minimap.enabled": false,
-  "editor.hover.delay": 2000,
+  "editor.hover.delay": 3000,
   "editor.tabSize": 2,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -491,5 +491,5 @@
   "scss.lint.unknownAtRules": "ignore",
   "less.lint.unknownAtRules": "ignore",
   "css.lint.unknownAtRules": "ignore",
-  "workbench.activityBar.location": "hidden"
+  "workbench.activityBar.location": "hidden",
 }
