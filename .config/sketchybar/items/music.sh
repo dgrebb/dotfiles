@@ -9,16 +9,26 @@ else
 fi
 
 if [ "$main_display" == "$HOME_MACBOOK_UUID" ] || [ "$main_display" == "$WORK_MACBOOK_UUID" ]; then
-  ARTIST_POS=e
+  ARTIST_POS=left
+  TITLE_POS=left
+  ALBUM_POS=left
+  BRACKET_PAD=20
   ARTIST_PAD=9
-  ALBUM_DRAWING=off
-  TITLE_POS=q
+  ALBUM_DRAWING=on
   TITLE_PAD=9
   TITLE_FONT="SF Compact Display:Regular:14"
+
+  sketchybar -m --add item music.note left \
+    --set music.note \
+    label=󰫔 \
+    label.padding_left=3 \
+    label.padding_right=9 \
+    padding_left=0
 else
   ARTIST_POS=center
-  ALBUM_DRAWING=on
   TITLE_POS=center
+  ALBUM_POS=center
+  ALBUM_DRAWING=on
   ARTIST_PAD=9
   TITLE_PAD=0
   TITLE_FONT="SF Compact Display:Bold:14"
@@ -58,7 +68,7 @@ sketchybar -m --add item music.title $TITLE_POS \
   --subscribe music.title song_update
 
 # Add Music Item
-sketchybar -m --add item music.album center \
+sketchybar -m --add item music.album $ALBUM_POS \
   --set music.album drawing=$ALBUM_DRAWING \
   icon.y_offset=1 \
   background.padding_right=0 \
@@ -75,12 +85,12 @@ music_bracket=(
   background.border_color=$BACKGROUND_2
 )
 
+MUSIC_BRACKET_ITEMS=(music.title music.artist music.album)
+
 if [ "$main_display" == "$HOME_MACBOOK_UUID" ] || [ "$main_display" == "$WORK_MACBOOK_UUID" ]; then
-  sketchybar --add bracket music_l music.artist \
-    --set music_l "${music_bracket[@]}"
-  sketchybar --add bracket music_r music.title \
-    --set music_r "${music_bracket[@]}"
-else
-  sketchybar --add bracket music music.title music.artist music.album \
-    --set music "${music_bracket[@]}"
+  MUSIC_BRACKET_ITEMS=("music.note" "${MUSIC_BRACKET_ITEMS[@]}")
 fi
+
+echo "${MUSIC_BRACKET_ITEMS[@]}"
+sketchybar --add bracket music "${MUSIC_BRACKET_ITEMS[@]}" \
+  --set music "${music_bracket[@]}"
