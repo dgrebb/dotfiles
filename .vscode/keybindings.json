@@ -245,5 +245,13 @@
     "key": "alt+cmd+;",
     "command": "editor.action.inlineSuggest.trigger",
     "when": "editorFocus"
+  },
+  {
+    "key": "alt+cmd+o",
+    "command": "-workbench.action.remote.showMenu"
+  },
+  {
+    "key": "alt+cmd+p",
+    "command": "-postman-for-vscode.sidebar-panel.focus"
   }
 ]

@@ -79,7 +79,7 @@
   "editor.fontFamily": "'Operator Mono Lig', 'Operator Mono Nerd Font', 'FuraCode Nerd Font Mono Light', 'FiraCode Nerd Font', 'Hack Nerd Font', fonFuraCode, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 12,
-  "editor.minimap.enabled": true,
+  "editor.minimap.enabled": false,
   "editor.hover.delay": 3000,
   "editor.tabSize": 2,
   "explorer.confirmDelete": false,
@@ -491,5 +491,6 @@
   "scss.lint.unknownAtRules": "ignore",
   "less.lint.unknownAtRules": "ignore",
   "css.lint.unknownAtRules": "ignore",
+  "playwright.reuseBrowser": false,
   "workbench.activityBar.location": "hidden",
 }

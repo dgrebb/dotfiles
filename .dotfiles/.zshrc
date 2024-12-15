@@ -134,3 +134,7 @@ if [[ -z "${ZSH_VERSION-}" ]]; then
 else
     compdef _python_argcomplete cz
 fi
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
