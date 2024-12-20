@@ -1,28 +1,23 @@
 #!/bin/bash
-DOT=$cwd/.dotfiles
+DOT=~/Projects/dotfiles/.dotfiles
 
 # Link them
-ln -sf $DOT/.aliases $HOME/.aliases
-ln -sf $DOT/.functions $HOME/.functions
-ln -sf $DOT/.gitconfig $HOME/.gitconfig
-ln -sf $DOT/.p10k.zsh $HOME/.p10k.zsh
-ln -sf $DOT/.zshrc $HOME/.zshrc
+ln -sf ~/Projects/dotfiles/.dotfiles/.aliases ~/.aliases
+ln -sf ~/Projects/dotfiles/.dotfiles/.functions ~/.functions
+ln -sf ~/Projects/dotfiles/.dotfiles/.gitconfig ~/.gitconfig
+ln -sf ~/Projects/dotfiles/.dotfiles/.p10k.zsh ~/.p10k.zsh
+ln -sf ~/Projects/dotfiles/.dotfiles/.zshrc ~/.zshrc
 
 # Others while we're at it
-ln -sf $cwd/.config/iTerm2 $HOME/.config/iTerm2
-ln -sf $cwd/.config/iTerm2/Scripts $HOME/Library/Application\ Support/iTerm2/Scripts
-ln -sf $cwd/.vscode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
-ln -sf $cwd/.vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
-ln -sf $cwd/.config/sketchybar $HOME/.config/sketchybar
-ln -sf $cwd/.config/yabai $HOME/.config/yabai
-ln -sf $cwd/.config/machine.sh $HOME/.config/machine.sh
-# ln -s $DOT/ $HOME/
-# ln -s $DOT/ $HOME/
-# ln -s $DOT/ $HOME/
-# ln -s $DOT/ $HOME/
-# ln -s $DOT/ $HOME/
+ln -sf ~/Projects/dotfiles/.config/iTerm2 ~/.config/iTerm2
+ln -sf ~/Projects/dotfiles/.config/iTerm2/Scripts ~/Library/Application\ Support/iTerm2/Scripts
+ln -sf ~/Projects/dotfiles/.vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+ln -sf ~/Projects/dotfiles/.vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -sf ~/Projects/dotfiles/.config/sketchybar ~/.config/sketchybar
+ln -sf ~/Projects/dotfiles/.config/yabai ~/.config/yabai
+ln -sf ~/Projects/dotfiles/.config/machine.sh ~/.config/machine.sh
 
-mkdir $HOME/.sketchyrw
+mkdir ~/.sketchyrw
 
 echo "✓ Done linking dotfiles!"
 echo "‼️ Remember to set up the ~/.machine and ~/.secrets files if needed."
