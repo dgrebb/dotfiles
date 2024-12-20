@@ -1,4 +1,5 @@
 {
+  "git.enableCommitSigning": true,
   "apc.activityBar": {
     "size": 77,
     "itemSize": 48,
