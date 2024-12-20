@@ -110,7 +110,8 @@
   "animations.Install-Method": "Apc Customize UI++",
   "animations.Enabled": true,
   "apc.imports": [
-    "file:///Users/dgrebb/.vscode/styles/vscode-opmono-ligatures.css"
+    "file:///Users/dgrebb/.vscode/styles/vscode-opmono-ligatures.css",
+    "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js"
   ],
   "workbench.productIconTheme": "developer-icons",
   "diffEditor.ignoreTrimWhitespace": false,
