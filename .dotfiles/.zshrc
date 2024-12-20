@@ -48,8 +48,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Terraform
 export PATH="$HOME/Projects/terravision:$PATH"
 
-GPG_TTY=$(tty)
-export GPG_TTY
+export GPG_TTY=$(tty)
 
 # npm
 export DISABLE_OPENCOLLECTIVE=1
@@ -134,7 +133,4 @@ if [[ -z "${ZSH_VERSION-}" ]]; then
 else
     compdef _python_argcomplete cz
 fi
-
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
