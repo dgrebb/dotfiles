@@ -1,6 +1,6 @@
-# macos-customs
+# dotfiles
 
-This is a collection simmilar to [`dotfiles`](https://github.com/dgrebb/dotfiles), but aims to specifically install, configure, and customize applications and macos itself.
+Latest dotfiles.
 
 ## Files
 
