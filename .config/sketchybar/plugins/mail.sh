@@ -2,7 +2,7 @@
 
 source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 
-STATUS_LABEL=$(lsappinfo info -only StatusLabel "eM Client")
+STATUS_LABEL=$(lsappinfo info -only StatusLabel "Canary Mail")
 ICON="󰇮"
 DRAWING=off
 LABEL_PADDING=3
