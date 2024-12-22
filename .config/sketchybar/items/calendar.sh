@@ -18,21 +18,21 @@ calendar=(
 calendar_bracket=(
   background.color=0x9c1c1c1c
   background.border_color=$BACKGROUND_2
-  background.padding_left=30
 )
+
+source "$ITEM_DIR/focus.sh"
 
 sketchybar --add alias "iStat Menus Menubar,com.bjango.istatmenus.weather" right \
   --set "iStat Menus Menubar,com.bjango.istatmenus.weather" \
-  background.padding_left=0 \
-  background.padding_right=0 \
   background.drawing=off \
   background.shadow.drawing=off \
   icon.padding_right=0 \
   label.padding_right=0 \
-  position=right \
-  alias.scale=0.88 \
   background.padding_left=0 \
   background.padding_right=0 \
+  position=right \
+  alias.scale=0.88 \
+  alias.width=0 \
   click_script="$PLUGIN_DIR/zen.sh"
 
 sketchybar --add alias "WorkingHours,Item-0" right \
@@ -48,9 +48,7 @@ sketchybar --add item calendar right \
   --set calendar "${calendar[@]}" \
   --subscribe calendar system_woke
 
-source "$ITEM_DIR/focus.sh"
-
 source "$ITEM_DIR/nightscout.sh"
 
-sketchybar --add bracket calendarb battery focus "WorkingHours,Item-0" calendar "Glucose Graph,Item-0" "iStat Menus Menubar,com.bjango.istatmenus.weather" \
+sketchybar --add bracket calendarb "WorkingHours,Item-0" calendar "Glucose Graph,Item-0" "iStat Menus Menubar,com.bjango.istatmenus.weather" "iStat Menus Menubar,com.bjango.istatmenus.battery" focus \
   --set calendarb "${calendar_bracket[@]}"
