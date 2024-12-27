@@ -2,7 +2,7 @@ sketchybar --add item focus right \
   --set focus \
   icon= \
   update_freq=15 \
-  width=24 \
+  width=10 \
   icon.padding_right=0 \
   label.width=0 \
   label.padding_right=0 \

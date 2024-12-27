@@ -20,20 +20,17 @@ calendar_bracket=(
   background.border_color=$BACKGROUND_2
 )
 
-source "$ITEM_DIR/focus.sh"
+# NOTE: Hide focus for now
+# source "$ITEM_DIR/focus.sh"
 
 sketchybar --add alias "iStat Menus Menubar,com.bjango.istatmenus.weather" right \
   --set "iStat Menus Menubar,com.bjango.istatmenus.weather" \
   background.drawing=off \
   background.shadow.drawing=off \
-  icon.padding_right=0 \
-  label.padding_right=0 \
-  background.padding_left=0 \
-  background.padding_right=0 \
   position=right \
   alias.scale=0.88 \
-  alias.width=0 \
-  click_script="$PLUGIN_DIR/zen.sh"
+  click_script="$PLUGIN_DIR/zen.sh" \
+  width=60
 
 sketchybar --add alias "WorkingHours,Item-0" right \
   --set "WorkingHours,Item-0" "${alias[@]}" \
