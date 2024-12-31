@@ -139,7 +139,7 @@ else
   yabai -m rule --add app="^Microsoft Excel$" space=3
   yabai -m rule --add app="^Code$" space=5
   yabai -m rule --add app="^Obsidian$" space=6
-  yabai -m rule --add app="^iTerm2$" space=7
+  yabai -m rule --add app="^(iTerm2|Ghostty)$" space=7
   yabai -m rule --add app="^(OmniFocus|Calendar)$" space=8
   yabai -m rule --add app="^(Microsoft Teams|Teams \(Safari\))$" space=9
 
