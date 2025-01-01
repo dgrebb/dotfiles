@@ -403,7 +403,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 12/28/2024, 8:38:25 PM",
+    "//": "Last update at 1/1/2025, 1:43:32 AM",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
     ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
@@ -497,6 +497,5 @@
   "less.lint.unknownAtRules": "ignore",
   "css.lint.unknownAtRules": "ignore",
   "playwright.reuseBrowser": false,
-  "workbench.activityBar.location": "hidden",
   "makefile.configureOnOpen": true,
 }
