@@ -123,7 +123,7 @@ if [[ "$MACHINE" == 'home' ]]; then
   # Add Home/Controller when done setting up
   #
   yabai -m rule --add app="^(Notion|Photoshop|Lightroom|Adobe Lightroom Classic|Pym|Slack|Discord|Logic Pro|Reason 13|Reason Companion|Home|Controller|Zoom|zoom.us)$" space=^3
-  yabai -m rule --add label="^(TauriApp|tauri-app|launchpad|LaunchPad)$" app="^(iTerm2|Min|TauriApp|tauri-app|launchpad|LaunchPad)$" space=^6
+  yabai -m rule --add label="^(TauriApp|tauri-app|launchpad|LaunchPad)$" app="^(iTerm2|Ghostty|Min|TauriApp|tauri-app|launchpad|LaunchPad)$" space=^6
   yabai -m rule --add app="^(OmniFocus)$" space=5
   yabai -m rule --add app="^(Mail|Canary Mail|eM Client|Calendar)$" space=^4
   yabai -m rule --add app="^Code$" space=^7
