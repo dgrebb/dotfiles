@@ -65,6 +65,9 @@ alias pn=pnpm
 # Obsidian
 alias obs="/Applications/Obsidian.app/Contents/MacOS/Obsidian"
 
+# Airport
+alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
+
 # Utils
 alias server="live-server"
 
