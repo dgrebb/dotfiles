@@ -63,7 +63,7 @@ timezsh() {
 alias pn=pnpm
 
 # Obsidian
-alias obs="/Applications/Obsidian.app/Contents/MacOS/Obsidian"
+alias obs="cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents"
 
 # iCloud Directory
 alias icloud="cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs"
