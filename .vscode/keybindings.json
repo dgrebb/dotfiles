@@ -272,5 +272,13 @@
   {
     "key": "shift+cmd+k",
     "command": "-composer.openAsBar"
+  },
+  {
+    "key": "cmd+l",
+    "command": "-aichat.newchataction"
+  },
+  {
+    "key": "cmd+l",
+    "command": "workbench.panel.composerViewPane2.view.focus"
   }
 ]
