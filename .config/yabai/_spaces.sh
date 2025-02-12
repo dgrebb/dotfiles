@@ -48,11 +48,6 @@ setup_space() {
 
 # -------------------------------------------------------------------------
 
-# Setup or destroy spaces as needed to match 9
-for _ in $(yabai -m query --spaces | jq '.[].index | select(. > 9)'); do
-  yabai -m space --destroy 10
-done
-
 # Set Up Spaces
 setup_space 1 music
 setup_space 2 web
@@ -71,6 +66,11 @@ main_display_padding=(
   right_padding 233
 )
 
+# Set space padding
+yabai -m config --space 1 "${main_display_padding[@]}"
+yabai -m config --space 2 "${main_display_padding[@]}"
+yabai -m config --space 3 "${main_display_padding[@]}"
+
 # If Home Clamshell Open
 if [ "$MAIN_DISPLAY" == "$HOME_MACBOOK_UUID" ] || [ "$MAIN_DISPLAY" == "$WORK_MACBOOK_UUID" ]; then
 
@@ -78,11 +78,6 @@ if [ "$MAIN_DISPLAY" == "$HOME_MACBOOK_UUID" ] || [ "$MAIN_DISPLAY" == "$WORK_MA
   # yabai -m config focus_follows_mouse off
 
 else
-
-  # Set space padding
-  yabai -m config --space 1 "${main_display_padding[@]}"
-  yabai -m config --space 2 "${main_display_padding[@]}"
-  yabai -m config --space 3 "${main_display_padding[@]}"
 
   if [[ "$MACHINE" == 'home' ]]; then
 
@@ -113,32 +108,44 @@ else
 
 fi
 
+# Clean up any extra spaces
+for _ in $(yabai -m query --spaces | jq '.[].index | select(. > 9)'); do
+  yabai -m space --destroy 10
+done
+
+# yabai rule function to immediately add and apply rules
+# https://github.com/koekeishiya/yabai/issues/2199#issuecomment-2527245468
+function yabai_rule {
+  yabai -m rule --add "$@"
+  yabai -m rule --apply "$@"
+}
+
 #####################################################################################
 # Assign apps to spaces -------------------------------------------------------------
 
 if [[ "$MACHINE" == 'home' ]]; then
 
-  yabai -m rule --add app="^Music$" space=1
-  yabai -m rule --add app="^(Firefox|Zen Browser|Google Chrome|Safari)$" space=^2
-  yabai -m rule --add app="^(Notion|Photoshop|Lightroom|Adobe Lightroom Classic|Pym|Slack|Discord|Logic Pro|Reason 13|Reason Companion|Home|Controller|Zoom|zoom.us|ChatGPT)$" space=3
-  yabai -m rule --add app="^(Mail|Canary Mail|eM Client|Calendar)$" space=4
-  yabai -m rule --add app="^(OmniFocus)$" space=5
-  yabai -m rule --add app="^(iTerm2|Ghostty|Min|TauriApp|tauri-app|launchpad|LaunchPad)$" space=6
-  yabai -m rule --add app="^(Code|Cursor)$" space=7
-  yabai -m rule --add app="^dg project$" space=8
-  yabai -m rule --add app="^Obsidian$" space=^9
+  yabai_rule app="^Music$" space=^1
+  yabai_rule app="^(Firefox|Zen Browser|Google Chrome|Safari)$" space=^2
+  yabai_rule app="^(Notion|Photoshop|Lightroom|Adobe Lightroom Classic|Pym|Slack|Discord|Logic Pro|Reason 13|Reason Companion|Home|Controller|Zoom|zoom.us|ChatGPT)$" space=3
+  yabai_rule app="^(Mail|Canary Mail|eM Client|Calendar)$" space=4
+  yabai_rule app="^(OmniFocus)$" space=5
+  yabai_rule app="^(iTerm2|Ghostty|Min|TauriApp|tauri-app|launchpad|LaunchPad)$" space=^6
+  yabai_rule app="^(Code|Cursor)$" space=^7
+  yabai_rule app="^dg project$" space=^8
+  yabai_rule app="^Obsidian$" space=^9
 
 else
 
   # TODO: When yabai can manage windows without script-addition and SIP disabled
 
-  yabai -m rule --add app="^(Music|Microsoft Outlook)$" space=1
-  yabai -m rule --add app="^(Google Chrome|Firefox|Safari)$" space=2
-  yabai -m rule --add app="^Microsoft Excel$" space=3
-  yabai -m rule --add app="^Code$" space=5
-  yabai -m rule --add app="^Obsidian$" space=6
-  yabai -m rule --add app="^(iTerm2|Ghostty)$" space=7
-  yabai -m rule --add app="^(OmniFocus|Calendar)$" space=8
-  yabai -m rule --add app="^(Microsoft Teams|Teams \(Safari\))$" space=9
+  yabai_rule app="^(Music|Microsoft Outlook)$" space=1
+  yabai_rule app="^(Google Chrome|Firefox|Safari)$" space=2
+  yabai_rule app="^Microsoft Excel$" space=3
+  yabai_rule app="^(Code|Cursor)$" space=^5
+  yabai_rule app="^Obsidian$" space=^6
+  yabai_rule app="^(iTerm2|Ghostty)$" space=^7
+  yabai_rule app="^(OmniFocus|Calendar)$" space=8
+  yabai_rule app="^(Microsoft Teams|Teams \(Safari\))$" space=9
 
 fi
