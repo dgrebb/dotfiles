@@ -1,15 +1,9 @@
-# NOTE: Make use of URL Aliases when needed
-# [url "enterprise.github.com:some-user-or-organization"]
-# insteadOf = github.com:some-user-or-organization
-
-[includeIf "gitdir:~/Projects/Comcast/"]
-path = ~/Projects/Comcast/.gitconfig
-[includeIf "gitdir:~/Projects/dgrebb/"]
-path = ~/Projects/dgrebb/.gitconfig
-
 [core]
 editor = nano
 ignorecase = false
+
+[commit]
+gpgsign = true
 
 [diff]
 tool = vscode
