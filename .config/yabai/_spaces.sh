@@ -59,6 +59,11 @@ setup_space 7 plan
 setup_space 8 office
 setup_space 9 terminal
 
+# Clean up any extra spaces
+for _ in $(yabai -m query --spaces | jq '.[].index | select(. > 9)'); do
+  yabai -m space --destroy 10
+done
+
 main_display_padding=(
   top_padding 133
   bottom_padding 133
@@ -66,18 +71,47 @@ main_display_padding=(
   right_padding 233
 )
 
-# Set space padding
-yabai -m config --space 1 "${main_display_padding[@]}"
-yabai -m config --space 2 "${main_display_padding[@]}"
-yabai -m config --space 3 "${main_display_padding[@]}"
+music_space_padding=(
+  top_padding 233
+  bottom_padding 233
+  left_padding 333
+  right_padding 333
+)
 
 # If Home Clamshell Open
 if [ "$MAIN_DISPLAY" == "$HOME_MACBOOK_UUID" ] || [ "$MAIN_DISPLAY" == "$WORK_MACBOOK_UUID" ]; then
 
-  yabai -m config layout float
-  # yabai -m config focus_follows_mouse off
+  main_display_padding=(
+    top_padding 33
+    bottom_padding 33
+    left_padding 67
+    right_padding 67
+  )
+
+  music_space_padding=(
+    top_padding 233
+    bottom_padding 233
+    left_padding 333
+    right_padding 333
+  )
+
+  # Set stacked spaces
+  yabai -m config --space 1 layout bsp "${music_space_padding[@]}"
+  yabai -m config --space 2 layout stack "${main_display_padding[@]}"
+  yabai -m config --space 3 layout bsp "${main_display_padding[@]}"
+  yabai -m config --space 4 layout stack "${main_display_padding[@]}"
+  yabai -m config --space 5 layout stack "${main_display_padding[@]}"
+  yabai -m config --space 6 layout stack "${main_display_padding[@]}"
+  yabai -m config --space 7 layout stack "${main_display_padding[@]}"
+  yabai -m config --space 8 layout stack "${main_display_padding[@]}"
+  yabai -m config --space 9 layout stack "${main_display_padding[@]}"
 
 else
+
+  # Set space padding
+  yabai -m config --space 1 "${music_space_padding[@]}"
+  yabai -m config --space 2 "${main_display_padding[@]}"
+  yabai -m config --space 3 "${main_display_padding[@]}"
 
   if [[ "$MACHINE" == 'home' ]]; then
 
@@ -107,11 +141,6 @@ else
   fi
 
 fi
-
-# Clean up any extra spaces
-for _ in $(yabai -m query --spaces | jq '.[].index | select(. > 9)'); do
-  yabai -m space --destroy 10
-done
 
 # yabai rule function to immediately add and apply rules
 # https://github.com/koekeishiya/yabai/issues/2199#issuecomment-2527245468
