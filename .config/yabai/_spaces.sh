@@ -96,7 +96,7 @@ if [ "$MAIN_DISPLAY" == "$HOME_MACBOOK_UUID" ] || [ "$MAIN_DISPLAY" == "$WORK_MA
   )
 
   # Set stacked spaces
-  yabai -m config --space 1 layout bsp "${music_space_padding[@]}"
+  yabai -m config --space 1 layout bsp
   yabai -m config --space 2 layout stack "${main_display_padding[@]}"
   yabai -m config --space 3 layout bsp "${main_display_padding[@]}"
   yabai -m config --space 4 layout stack "${main_display_padding[@]}"
@@ -154,14 +154,14 @@ function yabai_rule {
 
 if [[ "$MACHINE" == 'home' ]]; then
 
-  yabai_rule app="^Music$" space=^1
+  yabai_rule app="^Music$" space=1
   yabai_rule app="^(Firefox|Zen Browser|Google Chrome|Safari)$" space=^2
   yabai_rule app="^(Notion|Photoshop|Lightroom|Adobe Lightroom Classic|Pym|Slack|Discord|Logic Pro|Reason 13|Reason Companion|Home|Controller|Zoom|zoom.us|ChatGPT)$" space=3
   yabai_rule app="^(Mail|Canary Mail|eM Client|Calendar)$" space=4
   yabai_rule app="^(OmniFocus)$" space=5
-  yabai_rule app="^(iTerm2|Ghostty|Min|TauriApp|tauri-app|launchpad|LaunchPad)$" space=^6
-  yabai_rule app="^(Code|Cursor)$" space=^7
-  yabai_rule app="^dg project$" space=^8
+  yabai_rule app="^(iTerm2|Ghostty|Min|TauriApp|tauri-app|launchpad|LaunchPad)$" space=6
+  yabai_rule app="^(Code|Cursor)$" space=7
+  yabai_rule app="^dg project$" space=8
   yabai_rule app="^Obsidian$" space=^9
 
 else
