@@ -28,8 +28,14 @@ export PATH="$HOMEBREW_PREFIX/bin:$PATH"
 # postgresql tools
 export PATH="$HOMEBREW_PREFIX/Cellar/postgresql@15/*/bin:$PATH"
 
-# Python
-export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
+# Automatically detect latest Homebrew-installed Python version and add to PATH
+PYTHON_PREFIX=$(brew --prefix python 2>/dev/null)
+
+if [ -d "$PYTHON_PREFIX/libexec/bin" ]; then
+    export PATH="$PYTHON_PREFIX/libexec/bin:$PATH"
+fi
+
+# Initialize pyenv if available
 if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
@@ -126,3 +132,9 @@ else
     compdef _python_argcomplete cz
 fi
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+
+# Added by Windsurf
+export PATH="/Users/dgrebb/.codeium/windsurf/bin:$PATH"
+
+# Created by `pipx` on 2025-03-22 21:46:06
+export PATH="$PATH:/Users/dgrebb/.local/bin"
