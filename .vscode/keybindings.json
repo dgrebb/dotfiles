@@ -280,5 +280,10 @@
   {
     "key": "cmd+l",
     "command": "workbench.panel.composerViewPane2.view.focus"
+  },
+  {
+    "key": "shift+cmd+e",
+    "command": "-aichat.fixerrormessage",
+    "when": "(arbitrary function)"
   }
 ]
