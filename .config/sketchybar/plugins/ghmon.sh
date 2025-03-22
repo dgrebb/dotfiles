@@ -1,10 +1,27 @@
 #!/bin/bash
-source "$HOME/.config/machine.sh"
 
-if [[ "$MACHINE" == 'office' ]]; then
-  PATH+=:/usr/local/opt/python/libexec/bin/
-else
-  PATH+=:/opt/homebrew/opt/python@3.11/libexec/bin/
+# Set a safer PATH that includes common locations
+export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
+
+# Dynamically add Homebrew Python to PATH - try multiple possible locations
+BREW_PREFIX=$(brew --prefix 2>/dev/null)
+if [[ -n "$BREW_PREFIX" ]]; then
+  # Try various possible Python paths in Homebrew
+  if [[ -d "$BREW_PREFIX/opt/python/libexec/bin" ]]; then
+    PATH="$BREW_PREFIX/opt/python/libexec/bin:$PATH"
+  elif [[ -d "$BREW_PREFIX/opt/python@3/libexec/bin" ]]; then
+    PATH="$BREW_PREFIX/opt/python@3/libexec/bin:$PATH"
+  elif [[ -d "$BREW_PREFIX/bin" ]]; then
+    PATH="$BREW_PREFIX/bin:$PATH"
+  fi
+fi
+
+# Check if dateutil module is available, if not use a simpler date formatting approach
+PYTHON_CMD=""
+if python3 -c "import dateutil" 2>/dev/null; then
+  PYTHON_CMD="python3"
+elif python -c "import dateutil" 2>/dev/null; then
+  PYTHON_CMD="python"
 fi
 
 # Monitor GitHub Workflow by ID
@@ -15,8 +32,6 @@ update() {
   WORKFLOW_ID=67874244           # The workflow to monitor
   LIST_LIMIT=5                   # How many runs you want in the popup
   TIMEZONE="America/New_York"    # Replace with your desired timezone
-  # More here: https://github.com/FelixKratz/SketchyBar/issues/378
-  # You could also `source ~/.zshrc` or `source ~/.bash_profile`, etc if python is defined in your path
 
   STATUS=$(gh run list --repo $REPOSITORY --workflow $WORKFLOW_ID --limit 1 --json status --jq '.[0].status')
   CONCLUSION=$(gh run list --repo $REPOSITORY --workflow $WORKFLOW_ID --limit 1 --json conclusion --jq '.[0].conclusion')
@@ -100,9 +115,17 @@ update() {
     RUN_ICON=$PROGRESS_ICON
     RUN_COLOR=$YELLOW
 
-    # Convert the workflow run date/time to the desired timezone using Python
-    # The BSD `date` function in macos is garbage — YMMV; here be dragons
-    RUN_END_TIME=$(TZ="$TIMEZONE" python -c "from dateutil import tz, parser; import sys; dt = parser.parse($end); local_dt = dt.astimezone(tz.tzlocal()); sys.stdout.write(local_dt.strftime('%y.%m.%d - %H:%M:%S'))")
+    # Format date based on Python availability
+    if [[ -n "$PYTHON_CMD" ]]; then
+      # Use Python with dateutil if available
+      RUN_END_TIME=$(TZ="$TIMEZONE" $PYTHON_CMD -c "from dateutil import tz, parser; import sys; dt = parser.parse($end); local_dt = dt.astimezone(tz.tzlocal()); sys.stdout.write(local_dt.strftime('%y.%m.%d - %H:%M:%S'))")
+    else
+      # Fallback to a simpler date format using date command
+      # Convert ISO 8601 date to timestamp, then format with date
+      ISO_DATE=$(echo $end | tr -d "'")
+      # Simple formatting with date (may not handle timezone properly)
+      RUN_END_TIME=$(date -j -f "%Y-%m-%dT%H:%M:%SZ" "$(echo $ISO_DATE | sed 's/\.[0-9]*Z$/Z/')" "+%y.%m.%d - %H:%M:%S" 2>/dev/null || echo "Date unavailable")
+    fi
 
     case "${conclusion}" in
     "'success'")
@@ -132,7 +155,6 @@ update() {
       --set ghmon.run.$COUNTER "${run[@]}")
 
   done <<<"$(echo $LIST | jq -r '.[] | [.url, .status, .conclusion, .startedAt, .updatedAt, .headBranch, .displayTitle] | @sh')"
-  # NOTE: the evaluation order of these property values is important - `displayTitle` can have breaking-characters, so it goes last
 
   args+=(--add item gh.spacer_bottom popup.ghmon.status
     --set gh.spacer_bottom "${gh_spacer[@]}" background.height=5)
@@ -141,10 +163,6 @@ update() {
 
   sketchybar --set ghmon.status icon="$ICON" icon.color="$COLOR" label="$LABEL" label.color="$LCOLOR" \
     --set ghmon.status background.color=$BACKGROUND_1 background.border_color=$BACKGROUND_2
-
-  # sketchybar -m --add item gh.spacer_bottom popup.ghmon.status \
-  #   --set gh.spacer_bottom "${gh_spacer[@]}"
-
 }
 
 popup() {
