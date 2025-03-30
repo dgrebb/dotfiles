@@ -1,13 +1,6 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
   {
-    "key": "cmd+alt+ctrl+l",
-    "command": "editor.action.insertSnippet",
-    "args": {
-      "name": "Console Log"
-    }
-  },
-  {
     "key": "alt+cmd+a",
     "command": "workbench.action.toggleActivityBarVisibility"
   },
@@ -278,12 +271,64 @@
     "command": "-aichat.newchataction"
   },
   {
-    "key": "cmd+l",
-    "command": "workbench.panel.composerViewPane2.view.focus"
-  },
-  {
     "key": "shift+cmd+e",
     "command": "-aichat.fixerrormessage",
     "when": "(arbitrary function)"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "-composer.newAgentChat"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-notebook.selectAllFindMatches",
+    "when": "config.notebook.multiCursor.enabled && notebookFindWidgetFocused || config.notebook.multiCursor.enabled && notebookCellEditorFocused && activeEditor == 'workbench.editor.notebook'"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-selectAllSearchEditorMatches",
+    "when": "inSearchEditor"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-editor.action.selectHighlights",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-addCursorsAtSearchResults",
+    "when": "fileMatchOrMatchFocus && searchViewletVisible"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-aichat.insertselectionintochat"
+  },
+  {
+    "key": "cmd+k",
+    "command": "-aipopup.action.modal.generate",
+    "when": "editorFocus && !composerBarIsVisible"
+  },
+  {
+    "key": "ctrl+cmd+i",
+    "command": "-workbench.action.chat.open",
+    "when": "chatPanelParticipantRegistered || chatSetupInstalled"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "composer.openAsPane"
+  },
+  {
+    "key": "shift+cmd+a",
+    "command": "-notification.acceptPrimaryAction",
+    "when": "notificationFocus || notificationToastsVisible"
+  },
+  {
+    "key": "ctrl+alt+cmd+l",
+    "command": "chat.inlineResourceAnchor.addFileToChat"
   }
 ]
