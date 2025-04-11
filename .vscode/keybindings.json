@@ -330,5 +330,13 @@
   {
     "key": "ctrl+alt+cmd+l",
     "command": "chat.inlineResourceAnchor.addFileToChat"
+  },
+  {
+    "key": "cmd+i",
+    "command": "composerMode.agent"
+  },
+  {
+    "key": "cmd+l",
+    "command": "composerMode.chat"
   }
 ]

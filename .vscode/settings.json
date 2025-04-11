@@ -1,139 +1,7 @@
 {
   "files.dialog.defaultPath": "~/Projects",
   "window.titleBarStyle": "native",
-  "window.customTitleBarVisibility": "never",
   "window.commandCenter": false,
-  "custom-ui-style.electron": {
-    "titleBarStyle": "hiddenInset",
-    "frame": false
-  },
-  "custom-ui-style.external.loadStrategy": "refetch",
-  "custom-ui-style.external.imports": [
-    "file:///Users/dgrebb/.vscode/styles/vscode-opmono-ligatures.css"
-  ],
-  "custom-ui-style.stylesheet": {
-    ".monaco-workbench": {
-      "--activitybar-width": "77px",
-      "--titlebar-height": "37px",
-      // Titlebar
-      ".part.sidebar.left .composite.title": {
-        "&, .title-actions, .global-actions, .monaco-toolbar": {
-          "height": "var(--titlebar-height)"
-        },
-        ".title-label": {
-          "line-height": "var(--titlebar-height)"
-        }
-      },
-      // Tabs
-      ".title.tabs": {
-        "--editor-group-tab-height": "var(--titlebar-height) !important"
-      },
-      // Wide activity bar
-      ".split-view-view:has(> .part.activitybar.left)": {
-        "&, .part.activitybar.left, .content": {
-          "min-width": "var(--activitybar-width)"
-        },
-        // Make the split-view after the wide activity bar smaller.
-        // Also handle the situation where the sidebar is hidden,
-        // in which case the editor itself needs to shrink / auto-size.
-        "& + .split-view-view.visible, & + .split-view-view:not(.visible) + .split-view-view.visible": {
-          "--offset": "calc(var(--activitybar-width) - 48px)",
-          "margin-left": "var(--offset)",
-          "> *:first-child": {
-            "width": "auto",
-            "margin-right": "var(--offset)",
-            // Auto-size the editor when the sidebar is hidden.
-            ".content": {
-              "&, .split-view-view": {
-                "&, .monaco-editor": {
-                  "&, .overflow-guard, .overlayWidgets": {
-                    "&, .monaco-scrollable-element, .sticky-widget": {
-                      "width": "unset !important",
-                      "left": "0",
-                      "right": "0"
-                    },
-                    ".sticky-widget": {
-                      "right": "14px !important"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      // Search-Widget
-      ".search-view .search-widget": {
-        ".replace-container": {
-          "width": "calc(100% - 18px)",
-          ".replace-input": {
-            "&, .monaco-findInput": {
-              "width": "100% !important"
-            }
-          }
-        }
-      },
-      ".monaco-sash.vertical.minimum": {
-        // TODO: Improve collapsing of the sidebar.
-        "left": "calc(var(--activitybar-width) - var(--vscode-sash-size) / 2) !important"
-      },
-      ".part.activitybar.left": {
-        ".monaco-action-bar": {
-          ".action-label": {
-            "width": "var(--activitybar-width)"
-          }
-        }
-      },
-      "&:not(.fullscreen)": {
-        // Make room for traffic lights.
-        ".part.activitybar.left > .content": {
-          "padding-top": "var(--titlebar-height)"
-        },
-        // Move editor title when side-bar is hidden, when side-bar is on the
-        // right or when activity-bar is hidden and side-bar is not on the right
-        "&:has(.sidebar.right)": {
-          ".monaco-split-view2.horizontal .split-view-view:not(.visible) + .split-view-view.visible .editor .title .tabs-and-actions-container": {
-            "padding-left": "var(--activitybar-width)"
-          },
-          ".auxiliarybar.left .composite.title": {
-            "padding-left": "var(--activitybar-width)"
-          }
-        },
-        // Allow dragging on the activity-bar, status-bar, tabs-container, side-bar title...
-        ".activitybar, .statusbar, .tabs-container, .sidebar .composite.title": {
-          "-webkit-app-region": "drag",
-          // ...but still allow to click actions and items without dragging.
-          ".content .monaco-action-bar, .statusbar-item, .tab, .title .title-actions .action-label": {
-            "-webkit-app-region": "no-drag"
-          }
-        }
-      },
-      ".statusbar": {
-        // Don't indent the statusbar items.
-        "> .items-container > .statusbar-item.left.first-visible-item": {
-          "padding-left": "0"
-        },
-        // Show the host button again, and make it as wide as the .activitybar.
-        "#status\\.host": {
-          "&": {
-            "display": "block !important",
-            "width": "calc(var(--activitybar-width) - 1px)"
-          },
-          ".codicon": {
-            "margin": "0 auto"
-          }
-        }
-      }
-    },
-    // Make line numbers a bit smaller.
-    ".editor .margin-view-overlays .line-numbers": {
-      "font-size": "85%"
-    },
-    // Show search inputs and results in monospaced font.
-    ".search-widget textarea, .find-widget textarea, .search-view .results .match": {
-      "font-family": "var(--cus-monospace-font) !important"
-    }
-  },
   "workbench.colorCustomizations": {
     "window.activeBorder": "#000000",
     "window.inactiveBorder": "#000000",
@@ -216,7 +84,7 @@
   "terminal.integrated.defaultProfile.osx": "zsh",
   "cSpell.enabled": false,
   "diffEditor.codeLens": true,
-  "workbench.colorTheme": "Cursor Theme",
+  "workbench.colorTheme": "Bluloco Dark",
   "settingsSync.ignoredExtensions": [
     "alexowl.transparent-color-theme",
     "github.copilot"
@@ -233,117 +101,6 @@
   "workbench.settings.editor": "json",
   "workbench.editor.labelFormat": "short",
   "telemetry.telemetryLevel": "off",
-  "editor.tokenColorCustomizations": {
-    "[Dobri Next -C06- Ayu]": {
-      "textMateRules": [
-        {
-          "scope": "emphasis",
-          "settings": {
-            "fontStyle": "italic"
-          }
-        },
-        {
-          "scope": "strong",
-          "settings": {
-            "fontStyle": "bold"
-          }
-        },
-        {
-          "scope": "entity.other.attribute-name",
-          "settings": {
-            "fontStyle": "italic"
-          }
-        },
-        {
-          "scope": "markup.underline",
-          "settings": {
-            "fontStyle": "underline"
-          }
-        },
-        {
-          "scope": "markup.bold",
-          "settings": {
-            "fontStyle": "bold"
-          }
-        },
-        {
-          "scope": "markup.heading",
-          "settings": {
-            "fontStyle": "bold"
-          }
-        },
-        {
-          "scope": "markup.italic",
-          "settings": {
-            "fontStyle": "italic"
-          }
-        },
-        {
-          "scope": "storage.type",
-          "settings": {
-            "fontStyle": "italic"
-          }
-        },
-        {
-          "scope": "storage.modifier",
-          "settings": {
-            "fontStyle": "italic"
-          }
-        },
-        {
-          "name": "String interpolation",
-          "scope": [
-            "punctuation.definition.template-expression.begin",
-            "punctuation.definition.template-expression.end",
-            "punctuation.section.embedded"
-          ],
-          "settings": {
-            "fontStyle": "italic"
-          }
-        },
-        {
-          "scope": "keyword.control",
-          "settings": {
-            "fontStyle": "italic"
-          }
-        },
-        {
-          "scope": [
-            "keyword.operator.new",
-            "keyword.operator.expression",
-            "keyword.operator.cast",
-            "keyword.operator.sizeof",
-            "keyword.operator.logical.python"
-          ],
-          "settings": {
-            "fontStyle": "italic"
-          }
-        },
-        {
-          "name": "this.self",
-          "scope": "variable.language",
-          "settings": {
-            "fontStyle": "italic",
-            "foreground": "#ff5874"
-          }
-        },
-        {
-          "name": "@Decorator",
-          "scope": ["meta.decorator punctuation.decorator"],
-          "settings": {
-            "fontStyle": "italic"
-          }
-        },
-        {
-          "scope": ["punctuation.definition.comment", "comment"],
-          "settings": {
-            // "foreground": "#ff5874",
-            "fontStyle": "italic"
-          }
-        }
-      ]
-    }
-  },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": false,
   "files.associations": {
@@ -468,7 +225,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 3/22/2025, 8:39:21 PM",
+    "//": "Last update at 4/8/2025, 7:56:46 PM",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
     ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .lfsconfig, .mailmap, .git-blame*",
@@ -530,7 +287,7 @@
     "*.component.ts": "$(capture).component.html, $(capture).component.spec.ts, $(capture).component.css, $(capture).component.scss, $(capture).component.sass, $(capture).component.less",
     "*.cpp": "$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh",
     "*.cs": "$(capture).*.cs",
-    "*.cshtml": "$(capture).cshtml.cs",
+    "*.cshtml": "$(capture).cshtml.cs, $(capture).cshtml.css",
     "*.csproj": "*.config, *proj.user, appsettings.*, bundleconfig.json",
     "*.css": "$(capture).css.map, $(capture).*.css",
     "*.cxx": "$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh",
@@ -571,7 +328,8 @@
   ],
   "@azure.argTenant": "",
   "chat.editing.alwaysSaveWithGeneratedChanges": true,
-  "workbench.activityBar.location": "hidden"
+  "workbench.editor.editorActionsLocation": "titleBar",
+  "workbench.sideBar.location": "right"
   // NOTE: APC no longer functions: https://github.com/drcika/apc-extension/issues/230
   // "apc.activityBar": {
   //   "size": 77,
