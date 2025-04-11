@@ -20,7 +20,7 @@ home=$(
   yabai -m config \
     external_bar all:44:0 \
     mouse_follows_focus off \
-    focus_follows_mouse autoraise \
+    focus_follows_mouse autofocus \
     window_origin_display focused \
     window_placement second_child \
     window_zoom_persist on \
