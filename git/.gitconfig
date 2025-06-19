@@ -1,0 +1,138 @@
+[core]
+# Use nano as the default editor for commit messages
+editor = nano
+# Case-sensitive file handling (important for cross-platform development)
+ignorecase = false
+# Global ignore file location (traditional)
+excludesfile = ~/.gitignore_global
+
+# NOTE: This is a workaround to allow the use of a different .gitconfig file
+# for personal/business projects.
+# [includeIf "gitdir:~/code/<work>/"]
+# path = "~/code/<work>/.gitconfig"
+
+[commit]
+# Automatically sign commits with GPG for security
+gpgsign = true
+# Skip status summary before committing (cleaner output)
+status = false
+
+[push]
+# Automatically set up remote tracking when pushing new branches
+autoSetupRemote = true
+# Push to upstream branch by default (safer than 'simple')
+default = upstream
+
+[pull]
+# Use rebase instead of merge when pulling (cleaner history)
+rebase = true
+
+[diff]
+# Use VS Code for diff viewing
+tool = vscode
+algorithm = histogram
+
+[difftool "vscode"]
+# VS Code diff command with wait flag
+cmd = code --wait --diff $LOCAL $REMOTE
+
+[merge]
+# Use VS Code for merge conflict resolution
+tool = vscode
+# Use zdiff3 conflict style for better 3-way merge display
+conflictStyle = zdiff3
+
+[mergetool "vscode"]
+# VS Code merge command with wait flag
+cmd = code --wait $MERGED
+
+[rebase]
+# Automatically squash fixup commits during rebase
+autoSquash = true
+
+[rerere]
+# Enable reuse of recorded resolution for identical conflicts
+enabled = true
+
+[color]
+# Enable colored output for better readability
+ui = auto
+
+[color "branch"]
+# Color coding for different branch types
+current = yellow bold
+local = green bold
+remote = cyan bold
+
+[color "diff"]
+# Color coding for diff output
+meta = yellow bold
+frag = magenta bold
+old = red bold
+new = green bold
+whitespace = red reverse
+
+[color "status"]
+# Color coding for git status output
+added = green bold
+changed = yellow bold
+untracked = red bold
+
+[branch]
+# Always set up rebase when creating new branches
+autoSetupRebase = always
+sort = -committerdate
+
+[sequence]
+# Use interactive-rebase-tool for better rebase experience
+editor = interactive-rebase-tool
+
+[delta]
+# Enhanced diff viewer with line numbers and decorations
+features = line-numbers decorations
+line-numbers = true
+
+[delta "decorations"]
+# Styling for delta diff output
+minus-style = red bold normal
+plus-style = green bold normal
+minus-emph-style = white bold red
+minus-non-emph-style = red bold normal
+plus-emph-style = white bold green
+plus-non-emph-style = green bold normal
+file-style = yellow bold none
+file-decoration-style = yellow box
+hunk-header-style = magenta bold
+hunk-header-decoration-style = magenta box
+minus-empty-line-marker-style = normal normal
+plus-empty-line-marker-style = normal normal
+line-numbers-right-format = "{np:^4}│ "
+
+[init]
+# Use 'main' as the default branch name (modern standard)
+defaultBranch = main
+
+# Git aliases - see ~/.aliases for shell-based Git shortcuts
+[alias]
+# Delete merged branches (excluding master/develop)
+cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 -r git branch -d"
+# Delete branches whose remote tracking branches are gone
+rm-merged = !git branch --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" { print $1 }' | xargs -r git branch -D
+# Rename current branch and update remote tracking
+rename = "!moveit() { git push origin --delete $(git branch --show-current) || true; git branch -m $1; git push --set-upstream origin $1; }; moveit"
+
+[advice]
+# Disable advice about skipped cherry-picks (less noise)
+skippedCherryPicks = false
+
+[help]
+# Auto-correct typos in Git commands (10 = 1 second delay)
+autoCorrect = 10 # one second; 1 = .1 second
+
+# Enable fsck objects to catch corrupted objects
+[transfer]
+transfer.fsckobjects = true
+[fetch]
+fetch.fsckobjects = true
+[receive]
+receive.fsckObjects = true

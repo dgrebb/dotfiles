@@ -33,6 +33,7 @@ cask "vlc"
 cask "zen-browser"
 
 # -- Everything Else ---------------------------------------- #
+brew "spaceship"
 brew "git"
 brew "gh"
 brew "python@3.12"

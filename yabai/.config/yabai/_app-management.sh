@@ -11,5 +11,5 @@ yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
-yabai -m rule --add app="^(ProtonVPN|GeekTool|CopyClip 2|xScope|iStat Menus Status|com.bjango.istatmenus.weather|1Password|Security/Agent)$" manage=off sub-layer=above
+yabai -m rule --add app="^(ProtonVPN|GeekTool|CopyClip 2|xScope|iStat Menus Status|com.bjango.istatmenus.weather|Security/Agent)$" manage=off sub-layer=above
 yabai -m rule --add label="1Password" app="^1Password$" title="^(password|Password|Helper)$" manage=off

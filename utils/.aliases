@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -7,6 +7,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
+alias lsa ="lsd -la"
 
 # Shortcuts
 alias d="cd ~/Documents/Dropbox"
@@ -36,7 +37,6 @@ alias myip='ifconfig | grep inet'
 # Override silly oh-my-zsh git plugin aliases
 alias gca='git commit --amend'
 alias gc='git commit "$@"'
-compdef _git gc=git-commit
 
 # Projects
 alias p="cd ~/Projects || cd ~/Repos"

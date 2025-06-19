@@ -338,5 +338,39 @@
   {
     "key": "cmd+l",
     "command": "composerMode.chat"
+  },
+  {
+    "key": "cmd+/",
+    "command": "-notebook.commentSelectedCells",
+    "when": "notebookEditable && notebookEditorFocused && !inputFocus"
+  },
+  {
+    "key": "cmd+/",
+    "command": "-cmdk.togglePromptBarModel",
+    "when": "editorHasPromptBar && editorPromptBarFocused"
+  },
+  {
+    "key": "cmd+/",
+    "command": "-composer.openModelToggle",
+    "when": "composerFocused && !editorTextFocus"
+  },
+  {
+    "key": "cmd+/",
+    "command": "-toggleExplainMode",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    "key": "cmd+/",
+    "command": "-workbench.action.chat.attachContext",
+    "when": "inChatInput && chatLocation == 'editing-session' || inChatInput && chatLocation == 'editor' || inChatInput && chatLocation == 'notebook' || inChatInput && chatLocation == 'panel' || inChatInput && chatLocation == 'terminal'"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "-workbench.action.chat.openEditSession",
+    "when": "chatEditingParticipantRegistered && chatIsEnabled && view != 'workbench.panel.chat.view.edits'"
+  },
+  {
+    "key": "shift+cmd+u",
+    "command": "workbench.action.chat.addToChatAction"
   }
 ]
