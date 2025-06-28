@@ -25,13 +25,13 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Machine ID
+# Secrets
 .config/.machine
 .config/.sketchyrw/album_art.png
 .config/iterm2/AppSupport
 .config/.sketchyrw/network.out
 .config/.sketchyrw/wallpaper
-.config/.secrets
+*.secrets
 
 # Aliases
 .dotfiles/cron/obsidian
