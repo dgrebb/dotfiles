@@ -22,20 +22,42 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   TIMESTAMP=$(echo '('$(date +"%s.%N") ' * 10)/1' | bc)
   WALLPAPER_PATH="$HOME/Pictures/wallpaper"
 
+  # Ensure wallpaper directory exists
+  mkdir -p "$WALLPAPER_PATH"
+
+  echo "Fetching wallpaper from Unsplash..."
   URL=$(
     curl -G --location https://api.unsplash.com/photos/random \
       --data-urlencode "query=${QUERY}" --data-urlencode "orientation=${ORIENTATION}" \
       --header "Authorization: Client-ID ${ACCESS_KEY}" | jq -r '.urls.full'
   )
 
-  wget -q $URL -O "${WALLPAPER_PATH}/wallpaper_${TIMESTAMP}.jpg"
+  # Check if URL was retrieved successfully
+  if [ -z "$URL" ] || [ "$URL" = "null" ]; then
+    echo "ERROR: Failed to get URL from Unsplash API"
+    echo "Check your ACCESS_KEY in ~/.config/.secrets"
+    exit 1
+  fi
+
+  echo "Downloading from: $URL"
   WALLPAPER="${WALLPAPER_PATH}/wallpaper_${TIMESTAMP}.jpg"
 
-  if [ -f "$WALLPAPER" ]; then
-    echo "Wallpaper file exists"
+  # Download with better error handling
+  if wget -q --show-progress "$URL" -O "$WALLPAPER"; then
+    echo "Download completed"
+  else
+    echo "ERROR: wget failed to download the image"
+    exit 1
+  fi
+
+  # Check if file exists and has content
+  if [ -f "$WALLPAPER" ] && [ -s "$WALLPAPER" ]; then
+    echo "SUCCESS: Wallpaper file exists and has content ($(stat -f%z "$WALLPAPER") bytes)"
+    echo "Setting wallpaper to $WALLPAPER"
     /opt/homebrew/bin/wallpaper set "$WALLPAPER"
   else
-    echo "Wallpaper file does not exist!"
+    echo "FAILED: Wallpaper file is empty or does not exist!"
+    echo "File size: $(stat -f%z "$WALLPAPER" 2>/dev/null || echo 'file not found')"
     exit 1
   fi
 fi
