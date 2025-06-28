@@ -17,7 +17,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   source "$HOME/.config/sketchybar/colors.sh"
   source "$HOME/.config/.secrets"
 
-  QUERY="dark depth of field"
+  QUERY="minimal colorful"
   ORIENTATION="landscape"
   TIMESTAMP=$(echo '('$(date +"%s.%N") ' * 10)/1' | bc)
   WALLPAPER_PATH="$HOME/Pictures/wallpaper"

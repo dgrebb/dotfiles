@@ -25,12 +25,14 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Secrets
-.config/.machine
+# APplication Storage
 .config/.sketchyrw/album_art.png
 .config/iterm2/AppSupport
 .config/.sketchyrw/network.out
 .config/.sketchyrw/wallpaper
+
+# Secrets
+*.machine
 *.secrets
 
 # Aliases
