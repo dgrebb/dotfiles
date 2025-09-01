@@ -154,7 +154,7 @@ function yabai_rule {
 
 if [[ "$MACHINE" == 'home' ]]; then
 
-  yabai_rule app="^Music$" space=1
+  yabai_rule app="^Music$" space=9
   yabai_rule app="^(Firefox|Zen Browser|Google Chrome|Safari)$" space=^2
   yabai_rule app="^(Notion|Photoshop|Lightroom|Adobe Lightroom Classic|Pym|Slack|Discord|Logic Pro|Reason 13|Reason Companion|Home|Controller|Zoom|zoom.us|ChatGPT)$" space=3
   yabai_rule app="^(Mail|Canary Mail|eM Client|Calendar)$" space=4
