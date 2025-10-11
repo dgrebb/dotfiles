@@ -96,15 +96,15 @@ if [ "$MAIN_DISPLAY" == "$HOME_MACBOOK_UUID" ] || [ "$MAIN_DISPLAY" == "$WORK_MA
   )
 
   # Set stacked spaces
-  yabai -m config --space 1 layout bsp
-  yabai -m config --space 2 layout stack "${main_display_padding[@]}"
-  yabai -m config --space 3 layout bsp "${main_display_padding[@]}"
-  yabai -m config --space 4 layout stack "${main_display_padding[@]}"
-  yabai -m config --space 5 layout stack "${main_display_padding[@]}"
-  yabai -m config --space 6 layout stack "${main_display_padding[@]}"
-  yabai -m config --space 7 layout stack "${main_display_padding[@]}"
-  yabai -m config --space 8 layout stack "${main_display_padding[@]}"
-  yabai -m config --space 9 layout stack "${main_display_padding[@]}"
+  yabai -m config --space 1 layout float
+  yabai -m config --space 2 layout float
+  yabai -m config --space 3 layout float
+  yabai -m config --space 4 layout float
+  yabai -m config --space 5 layout float
+  yabai -m config --space 6 layout float
+  yabai -m config --space 7 layout float
+  yabai -m config --space 8 layout float
+  yabai -m config --space 9 layout float
 
 else
 
@@ -117,7 +117,7 @@ else
 
     # Set floating spaces
     yabai -m config --space 1 layout float
-    yabai -m config --space 2 layout bsp
+    yabai -m config --space 2 layout float
     yabai -m config --space 3 layout float
     yabai -m config --space 4 layout bsp
     yabai -m config --space 5 layout bsp
