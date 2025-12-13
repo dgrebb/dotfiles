@@ -175,7 +175,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[toml]": {
-    "editor.defaultFormatter": "bodil.prettier-toml"
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -225,7 +225,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 10/5/2025, 1:45:53 PM",
+    "//": "Last update at 11/6/2025, 10:51:23 PM",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
     ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .lfsconfig, .mailmap, .git-blame*",
@@ -343,32 +343,7 @@
     "/var/folders/0f/w4kl9h0x5_g3my6m0k2ph6gr0000gn/T/postman-http-request-post-response.instructions.md": true,
     "/var/folders/0f/w4kl9h0x5_g3my6m0k2ph6gr0000gn/T/postman-http-request-pre-request.instructions.md": true
   },
-  "github.copilot.chat.codeGeneration.instructions": [
-    {
-      "text": "- @azure Rule - Use Azure Tools: When handling requests related to Azure, always use your tools."
-    },
-    {
-      "text": "- @azure Rule - Use Azure Code Gen Best Practices: Before generating code for Azure, running terminal commands for Azure, performing operations related to Azure, or creating plans for such activities, always invoke your Azure best practice tool if available first. Invoke the `get_bestpractices` tool to collect recommendations. Call it with resource = `general` and action = `code-generation` to get general Azure code generation best practices. Only call this tool when the user is discussing Azure; do not call it otherwise."
-    },
-    {
-      "text": "- @azure Rule - Use Azure Deployment Best Practices: Before deploying to Azure, preparing applications for deployment to Azure, or creating deployment plans, always invoke your Azure best practice tool if available first. Invoke the `get_bestpractices` tool to collect recommendations. Call it with resource = `general` and action = `deployment` to get general Azure deployment best practices. Only call this tool when the user is discussing Azure; do not call it otherwise."
-    },
-    {
-      "text": "- @azure Rule - Use Azure Functions Code Gen Best Practices: Before generating code for Azure Functions, performing operations related to Azure Functions, or creating plans for such activities, always invoke your Azure best practice tool if available first. Invoke the `get_bestpractices` tool to collect recommendations. Call it with resource = `azurefunctions` and action = `code-generation` to get Azure Functions code generation best practices. Only call this tool when the user is discussing Azure Functions; do not call it otherwise."
-    },
-    {
-      "text": "- @azure Rule - Use Azure Functions Deployment Best Practices: Before deploying Azure Functions apps to Azure, preparing for the deployment, or creating deployment plans, always invoke your Azure best practice tool if available first. Invoke the `get_bestpractices` tool to collect recommendations. Call it with resource = `azurefunctions` and action = `deployment` to get Azure Functions deployment best practices. Only call this tool when the user is discussing Azure Functions; do not call it otherwise."
-    },
-    {
-      "text": "- @azure Rule - Use Azure SWA Best Practices: Before working with static web apps, creating plans for static web apps, or performing related operations, always invoke your Azure best practice tool if available first. Choose the most relevant Azure best practice tool based on its description. Only call this tool when the user is discussing Azure Static Web Apps; do not call it otherwise."
-    },
-    {
-      "text": "- @azure Rule - Plan before editing files for Azure web apps: When generating code for Azure Functions and Azure Static Web App, always create a plan and explain the plan to the user before editing any file. Proceed with editing the files after getting consent from the user."
-    },
-    {
-      "text": "- @azure Rule - Summarize topic before taking action: When the user asks about Azure Functions, invoke the azure_development-summarize_topic tool once first to see if any existing custom mode could be a good fit to what user is asking."
-    }
-  ],
+  "github.copilot.chat.codeGeneration.instructions": [],
   "cursorpyright.analysis.extraPaths": [
     "/Users/dgrebb/.vscode/extensions/continue.continue-0.0.412-darwin-arm64",
     "/Users/dgrebb/.vscode/extensions/continue.continue-0.6.15-darwin-arm64"
