@@ -58,4 +58,19 @@ export PATH="$PATH:/Users/dgrebb/.local/bin"
 # Added by Windsurf
 export PATH="/Users/dgrebb/.codeium/windsurf/bin:$PATH"
 
+# n8n configuration
+N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+
 eval "$(starship init zsh)"
+
+# bun completions
+[ -s "/Users/dgrebb/.bun/_bun" ] && source "/Users/dgrebb/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/dgrebb/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
