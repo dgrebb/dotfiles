@@ -4,7 +4,6 @@ wallpaper=(
   icon=󰸉
   icon.color=$BLUE
   label="wall"
-  script="$PLUGIN_DIR/wallpaper.sh"
   click_script="$PLUGIN_DIR/wallpaper.sh"
   background.padding_left=3
   background.padding_right=3

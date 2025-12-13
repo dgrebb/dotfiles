@@ -78,15 +78,16 @@ TEAMS=$(lsappinfo info "Microsoft Teams (work or school)")
 # Left
 # source "$ITEM_DIR/front_app.sh" moved inside of apple.sh
 source "$ITEM_DIR/apple.sh"
+source "$ITEM_DIR/aerospace.sh"
 
 main_display=$(getMainDisplayUUID)
-if [[ "$main_display" != "$HOME_MACBOOK_UUID" ]] && [[ "$MACHINE" != 'office' ]]; then
-  # source "$ITEM_DIR/spaces.sh"
-  source "$ITEM_DIR/yabai.sh"
-fi
+# if [[ "$main_display" != "$HOME_MACBOOK_UUID" ]] && [[ "$MACHINE" != 'office' ]]; then
+#   source "$ITEM_DIR/spaces.sh"
+#   source "$ITEM_DIR/yabai.sh"
+# fi
 
 # Center
-source "$ITEM_DIR/music.sh"
+# source "$ITEM_DIR/music.sh"
 
 # Right
 source "$ITEM_DIR/battery.sh"
