@@ -8,7 +8,6 @@ sketchybar --add item space.focused left \
     background.color=$BACKGROUND_1 \
     background.border_color=$BACKGROUND_2 \
     background.drawing=on \
-    label.padding_right=12 \
+    label.padding_right=10 \
     label="0" \
-    click_script="aerospace workspace \$(aerospace list-workspaces --focused)" \
     script="$PLUGIN_DIR/aerospace.sh"
