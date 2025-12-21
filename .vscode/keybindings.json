@@ -319,10 +319,6 @@
     "when": "chatPanelParticipantRegistered || chatSetupInstalled"
   },
   {
-    "key": "shift+cmd+l",
-    "command": "composer.openAsPane"
-  },
-  {
     "key": "shift+cmd+a",
     "command": "-notification.acceptPrimaryAction",
     "when": "notificationFocus || notificationToastsVisible"
@@ -393,5 +389,33 @@
     "key": "shift+alt+f",
     "command": "-notebook.formatCell",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
+  },
+  {
+    "key": "ctrl+cmd+i",
+    "command": "-workbench.panel.chat",
+    "when": "workbench.panel.chat.view.copilot.active"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-composer.newAgentChat"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "composer.startComposerPrompt"
+  },
+  {
+    "key": "cmd+n",
+    "command": "-composer.createNewWithPrevContext",
+    "when": "agentsPaneFocused && !editorTextFocus || composerFocused && !editorTextFocus || cursor.agentIdeUnification.enabled && !editorTextFocus || !editorTextFocus && focusedView =~ /^workbench.panel.aichat.view/"
+  },
+  {
+    "key": "cmd+n",
+    "command": "-editor.action.inlineDiffs.rejectPartialEdit",
+    "when": "editorTextFocus && inlineDiffs.activeEditorWithDiffs"
+  },
+  {
+    "key": "alt+cmd+s",
+    "command": "-workbench.action.toggleUnifiedSidebar",
+    "when": "cursor.agentIdeUnification.enabled && !isAuxiliaryWindowFocusedContext"
   }
 ]
