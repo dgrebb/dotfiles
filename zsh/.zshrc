@@ -1,11 +1,11 @@
 #!/bin/zsh
 
 # Aliases and functions
-source $HOME/.aliases
-source $HOME/.functions
+source $HOME/.config/utils/.aliases
+source $HOME/.config/utils/.functions
 
 # Plugins
-source $HOME/.zsh-plugins/git/git.plugin.zsh
+source $HOME/.config/zsh/.zsh-plugins/git/git.plugin.zsh
 
 # wakatime project detection
 ZSH_WAKATIME_PROJECT_DETECTION=true
@@ -61,16 +61,18 @@ export PATH="/Users/dgrebb/.codeium/windsurf/bin:$PATH"
 # n8n configuration
 N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
 
-eval "$(starship init zsh)"
-
 # bun completions
 [ -s "/Users/dgrebb/.bun/_bun" ] && source "/Users/dgrebb/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/dgrebb/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+# Starship initialization
+eval "$(starship init zsh)"
