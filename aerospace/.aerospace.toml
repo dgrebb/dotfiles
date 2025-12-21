@@ -74,7 +74,7 @@ on-mode-changed = []
     inner.vertical =   10
     outer.left =       16
     outer.bottom =     16
-    outer.top =        16
+    outer.top =        56
     outer.right =      16
 
 # 'main' binding mode declaration
