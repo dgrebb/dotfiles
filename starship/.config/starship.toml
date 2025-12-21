@@ -103,6 +103,11 @@ vimcmd_replace_one_symbol = "◌"
 vimcmd_replace_symbol = "□"
 vimcmd_visual_symbol = "▼"
 
+# Disable the package module, hiding it from the prompt completely
+[package]
+symbol = "󰏗 "
+disabled = true
+
 [env_var.VIMSHELL]
 format = "[$env_value]($style)"
 style = 'green italic'
@@ -322,9 +327,6 @@ Ubuntu = " "
 Unknown = " "
 Void = " "
 Windows = "󰍲 "
-
-[package]
-symbol = "󰏗 "
 
 [perl]
 symbol = " "
