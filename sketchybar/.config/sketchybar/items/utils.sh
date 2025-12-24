@@ -1,6 +1,6 @@
 #!/bin/bash
 source "$HOME/.config/machine.sh"
-source "$HOME/.config/yabai/_displays.sh"
+# source "$HOME/.config/yabai/_displays.sh"
 
 utils_bracket=(
   background.color=$BACKGROUND_1

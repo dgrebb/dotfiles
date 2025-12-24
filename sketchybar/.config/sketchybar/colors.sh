@@ -16,6 +16,10 @@ export MAGENTA=0xffc6a0f6
 export GREY=0x8ca0a0a0
 export TRANSPARENT=0x00000000
 
+# dark colors
+export DARK_RED=0xff870000
+export DARK_YELLOW=0xff606800
+
 # General bar colors
 export BAR_COLOR=0x00000000
 export BAR_BORDER_COLOR=0xff494d64 #0xa024273a

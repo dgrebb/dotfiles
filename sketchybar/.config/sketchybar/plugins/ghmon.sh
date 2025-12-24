@@ -48,10 +48,6 @@ update() {
   CANCELLED_ICON=⚠
   FAILURE_ICON=󰜺
 
-  # dark colors
-  DARK_RED=0xff870000
-  DARK_YELLOW=0xff606800
-
   # initial loading state
   ICON=$OCTOCAT_ICON
   COLOR=$BLUE

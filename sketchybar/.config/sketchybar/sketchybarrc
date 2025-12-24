@@ -4,8 +4,11 @@
 # tail -f /opt/homebrew/var/log/sketchybar/sketchybar.out.log
 # tail -f /opt/homebrew/var/log/sketchybar/sketchybar.err.log
 
+# Query macos menu items for use with aliasing
+# sketchybar --query default_menu_items
+
 source "$HOME/.config/machine.sh"
-source "$HOME/.config/yabai/_displays.sh"
+# source "$HOME/.config/yabai/_displays.sh"
 source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 source "$CONFIG_DIR/icons.sh"  # Loads all defined icons
 # sh ../../.dotfiles/cron/ss.sh  # Sets screensaver to Drift
@@ -80,7 +83,7 @@ TEAMS=$(lsappinfo info "Microsoft Teams (work or school)")
 source "$ITEM_DIR/apple.sh"
 source "$ITEM_DIR/aerospace.sh"
 
-main_display=$(getMainDisplayUUID)
+# main_display=$(getMainDisplayUUID)
 # if [[ "$main_display" != "$HOME_MACBOOK_UUID" ]] && [[ "$MACHINE" != 'office' ]]; then
 #   source "$ITEM_DIR/spaces.sh"
 #   source "$ITEM_DIR/yabai.sh"
@@ -90,11 +93,12 @@ main_display=$(getMainDisplayUUID)
 # source "$ITEM_DIR/music.sh"
 
 # Right
-source "$ITEM_DIR/battery.sh"
+# source "$ITEM_DIR/battery.sh"
+# if [[ "$MACHINE" == 'home' ]]; then
+#   source "$ITEM_DIR/caljson.sh"
+# fi
 source "$ITEM_DIR/calendar.sh"
-if [[ "$MACHINE" == 'home' ]]; then
-  source "$ITEM_DIR/caljson.sh"
-fi
+
 source "$ITEM_DIR/network.sh"
 source "$ITEM_DIR/aliases.sh"
 source "$ITEM_DIR/wallpaper.sh"
@@ -104,7 +108,6 @@ source "$ITEM_DIR/utils.sh"
 
 source "$ITEM_DIR/group.office.sh"
 
-# source "$ITEM_DIR/nightscout.sh"
 # source "$ITEM_DIR/wifi.sh"
 # source "$ITEM_DIR/brew.sh"
 # source "$ITEM_DIR/github.sh"

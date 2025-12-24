@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source "$HOME/.config/machine.sh"
-source "$HOME/.config/yabai/_displays.sh"
+# source "$HOME/.config/yabai/_displays.sh"
 
 office_items=()
 
@@ -26,12 +26,14 @@ if [[ "$MACHINE" == 'home' ]]; then
     # source "$ITEM_DIR/github.sh"
     # source "$ITEM_DIR/ghmon.sh"
     # office_items+="github ghmon.status"
+    source "$ITEM_DIR/omnifocus.sh"
+    office_items+="omnifocus"
   else
     source "$ITEM_DIR/omnifocus.sh"
+    office_items+="omnifocus mail"
     source "$ITEM_DIR/mail.sh"
     # source "$ITEM_DIR/github.sh"
     # source "$ITEM_DIR/ghmon.sh"
-    office_items+="omnifocus mail"
   fi
   DISPLAYS=1,2,3
 else
@@ -51,5 +53,4 @@ sketchybar --add item spacer20 right \
   --set spacer20 "${office_spacer[@]}"
 
 sketchybar --add bracket office spacer1 $office_items spacer20 \
-  --set office "${office_bracket[@]}" \
-  display=$DISPLAYS
+  --set office "${office_bracket[@]}"

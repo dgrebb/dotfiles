@@ -21,7 +21,7 @@ sketchybar --add alias "iStat Menus Menubar,com.bjango.istatmenus.cpu" right \
 sketchybar --add alias "iStat Menus Menubar,com.bjango.istatmenus.memory" right \
   --set "iStat Menus Menubar,com.bjango.istatmenus.memory" "${alias[@]}" \
   alias.color=yellow \
-  alias.width=2 \
+  width=2 \
   alias.scale=0.8 \
   associated_display=1
 
