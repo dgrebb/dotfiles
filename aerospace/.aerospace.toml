@@ -277,12 +277,17 @@ on-mode-changed = []
     ctrl-alt-left = ['move-node-to-workspace prev --wrap-around', 'workspace prev --wrap-around']
     ctrl-alt-right = ['move-node-to-workspace next --wrap-around', 'workspace next --wrap-around']
 
+    # Navigate to Next/Previous Workspace
+    ctrl-left = 'workspace prev --wrap-around'
+    ctrl-right = 'workspace next --wrap-around'
+
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
     esc = ['reload-config', 'mode main']
     r = ['flatten-workspace-tree', 'mode main'] # reset layout
     f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+    d = "exec-and-forget defaults read com.apple.finder CreateDesktop 2>/dev/null | grep -qiE '^(1|true)$' && defaults write com.apple.finder CreateDesktop -bool false || defaults write com.apple.finder CreateDesktop -bool true; killall Finder" # Toggle Desktopp Icons
     backspace = ['close-all-windows-but-current', 'mode main']
 
     # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
@@ -295,17 +300,21 @@ on-mode-changed = []
 
 # Assign Apps to Workspaces
 [[on-window-detected]]
-if.app-id = 'com.todesktop.230313mzl4w4u92'
+if.app-id = 'Code|Cursor|Windsurf'
 run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
-if.app-id = 'com.openai.chat'
+if.app-name-regex-substring = 'ChatGPT'
 run = "move-node-to-workspace G"
 
 [[on-window-detected]]
-if.app-id = 'com.googlecode.iterm2'
+if.app-name-regex-substring = 'iTerm2'
 run = "move-node-to-workspace S"
 
 [[on-window-detected]]
-if.app-id = 'app.zen-browser.zen'
+if.app-name-regex-substring = 'Controller|Home'
+run = "move-node-to-workspace A"
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Firefox|Chrome|Min|Safari|Brave Browser|Zen Browser'
 run = "move-node-to-workspace Z"
