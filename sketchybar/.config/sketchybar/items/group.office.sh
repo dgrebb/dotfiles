@@ -26,8 +26,8 @@ if [[ "$MACHINE" == 'home' ]]; then
     # source "$ITEM_DIR/github.sh"
     # source "$ITEM_DIR/ghmon.sh"
     # office_items+="github ghmon.status"
-    source "$ITEM_DIR/omnifocus.sh"
-    office_items+="omnifocus"
+    # source "$ITEM_DIR/omnifocus.sh"
+    # office_items+="omnifocus"
   else
     source "$ITEM_DIR/omnifocus.sh"
     office_items+="omnifocus mail"
