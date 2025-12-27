@@ -304,16 +304,20 @@ if.app-id = 'Code|Cursor|Windsurf'
 run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'Controller|Home'
+run = "move-node-to-workspace A"
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Docker'
+run = "move-node-to-workspace D"
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'ChatGPT'
 run = "move-node-to-workspace G"
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'iTerm2'
 run = "move-node-to-workspace S"
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'Controller|Home'
-run = "move-node-to-workspace A"
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Firefox|Chrome|Min|Safari|Brave Browser|Zen Browser'
