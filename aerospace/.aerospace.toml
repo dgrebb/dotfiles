@@ -300,7 +300,7 @@ on-mode-changed = []
 
 # Assign Apps to Workspaces
 [[on-window-detected]]
-if.app-id = 'Code|Cursor|Windsurf'
+if.app-name-regex-substring = 'Code|Cursor|Windsurf'
 run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
@@ -308,12 +308,16 @@ if.app-name-regex-substring = 'Controller|Home'
 run = "move-node-to-workspace A"
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Docker'
+if.app-name-regex-substring = 'Docker|Drizzle Studio'
 run = "move-node-to-workspace D"
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'ChatGPT'
 run = "move-node-to-workspace G"
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Obsidian'
+run = "move-node-to-workspace O"
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'iTerm2'
