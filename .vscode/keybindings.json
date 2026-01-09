@@ -427,5 +427,10 @@
     "key": "shift+alt+f",
     "command": "-search.action.restrictSearchToFolder",
     "when": "folderMatchWithResourceFocus && searchViewletVisible"
+  },
+  {
+    "key": "shift+cmd+;",
+    "command": "-breadcrumbs.focus",
+    "when": "breadcrumbsPossible && breadcrumbsVisible"
   }
 ]
