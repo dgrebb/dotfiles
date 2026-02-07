@@ -5,6 +5,10 @@
   margin-bottom: -69px;
 }
 
+div.Widget div.GitHub a.GitHubCalendar div.position-relative a.hide-sm.hide-md.hide-lg {
+  display: none;
+}
+
 .sr-only {
   display: none;
 }
@@ -52,4 +56,8 @@ td.ContributionCalendar-day[data-level="4"] {
 
 .Weather .details dl {
   padding: 0.5rem;
+}
+
+.Time .Time.Analogue {
+  display: none;
 }
