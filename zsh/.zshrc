@@ -4,8 +4,10 @@
 source $HOME/.config/utils/.aliases
 source $HOME/.config/utils/.functions
 
-# Plugins
-source $HOME/.config/zsh/.zsh-plugins/git/git.plugin.zsh
+# Plugins (path relative to this file so it works with or without OMZ, regardless of symlink layout)
+ZSH_RC_DIR="${${(%):-%x}:A:h}"
+[[ -f "$ZSH_RC_DIR/.config/zsh/.zsh-plugins/git/git.plugin.zsh" ]] && source "$ZSH_RC_DIR/.config/zsh/.zsh-plugins/git/git.plugin.zsh"
+unset ZSH_RC_DIR
 
 # wakatime project detection
 ZSH_WAKATIME_PROJECT_DETECTION=true

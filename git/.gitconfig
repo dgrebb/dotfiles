@@ -121,6 +121,12 @@ rm-merged = !git branch --format '%(refname:short) %(upstream:track)' | awk '$2 
 # Rename current branch and update remote tracking
 rename = "!moveit() { git push origin --delete $(git branch --show-current) || true; git branch -m $1; git push --set-upstream origin $1; }; moveit"
 
+# ------------------------------ Worktrees ------------------------------
+# List worktrees
+worktrees = "worktree list"
+# Prune worktrees
+prunetrees = "worktree prune"
+
 [advice]
 # Disable advice about skipped cherry-picks (less noise)
 skippedCherryPicks = false
