@@ -140,13 +140,17 @@ on-mode-changed = []
     inner.horizontal = 10
     inner.vertical =   10
     outer.left =       67
-    outer.bottom =     67
+    outer.right =      67
+    outer.bottom = [
+        { monitor."built-in" = 33 },
+        { monitor."main" = 56 },
+        16
+    ]
     outer.top = [
         { monitor."built-in" = 33 },
         { monitor."main" = 56 },
         16
     ]
-    outer.right =      67
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
