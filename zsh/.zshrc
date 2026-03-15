@@ -74,5 +74,8 @@ autoload -Uz compinit
 compinit
 # End of Docker CLI completions
 
+# Shut down docker marketing garbage
+export DOCKER_CLI_HINTS=0
+
 # Starship initialization
 eval "$(starship init zsh)"
