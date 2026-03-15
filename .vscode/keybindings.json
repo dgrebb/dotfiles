@@ -432,5 +432,10 @@
     "key": "shift+cmd+;",
     "command": "-breadcrumbs.focus",
     "when": "breadcrumbsPossible && breadcrumbsVisible"
+  },
+  {
+    "key": "alt+cmd+s",
+    "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
+    "when": "cursor.agentIdeUnification.enabled == true && !isAuxiliaryWindowFocusedContext"
   }
 ]
