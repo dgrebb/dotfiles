@@ -23,6 +23,8 @@ sketchybar --add item spacer1 right \
 
 if [[ "$MACHINE" == 'home' ]]; then
   if [[ "$main_display" == "$HOME_MACBOOK_UUID" ]]; then
+    # Laptop only — optional bar items commented out for now
+    :
     # source "$ITEM_DIR/github.sh"
     # source "$ITEM_DIR/ghmon.sh"
     # office_items+="github ghmon.status"
@@ -52,5 +54,13 @@ office_bracket=(
 sketchybar --add item spacer20 right \
   --set spacer20 "${office_spacer[@]}"
 
-sketchybar --add bracket office spacer1 $office_items spacer20 \
-  --set office "${office_bracket[@]}"
+# No bracket (and collapse spacers) when there are no office items — otherwise an
+# empty pill sits left of volume / utils.
+if ((${#office_items[@]})); then
+  # shellcheck disable=SC2086 # intentional word-split (e.g. one += holds "omnifocus mail")
+  sketchybar --add bracket office spacer1 $office_items spacer20 \
+    --set office "${office_bracket[@]}"
+else
+  sketchybar --set spacer1 drawing=off width=0 \
+    --set spacer20 drawing=off width=0
+fi

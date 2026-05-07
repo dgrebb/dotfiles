@@ -2,12 +2,25 @@
 
 source "$HOME/.config/sketchybar/colors.sh"
 
-# Only one run at a time — if `pass` blocks on GPG, sketchybar still fires every
-# update_freq and would otherwise spawn dozens of concurrent `pass` processes.
+# Only one run at a time (macOS has no `flock` by default — use mkdir lock + trap).
+# If `pass` blocks on GPG, sketchybar still fires every update_freq otherwise.
 LOCK_DIR="${SKETCHYBAR_RW_DIR:-$HOME/.config/.sketchyrw}"
 mkdir -p "$LOCK_DIR"
-exec 9>"$LOCK_DIR/nightscout.lock"
-flock -n 9 || exit 0
+NIGHTSCOUT_RUN_LOCK="$LOCK_DIR/nightscout.run"
+if [[ -d "$NIGHTSCOUT_RUN_LOCK" ]]; then
+  _now=$(date +%s)
+  if [[ "$(uname)" == Darwin ]]; then
+    _mt=$(stat -f %m "$NIGHTSCOUT_RUN_LOCK" 2>/dev/null) || _mt=0
+  else
+    _mt=$(stat -c %Y "$NIGHTSCOUT_RUN_LOCK" 2>/dev/null) || _mt=0
+  fi
+  ((_now - _mt > 180)) && rmdir "$NIGHTSCOUT_RUN_LOCK" 2>/dev/null
+fi
+if ! mkdir "$NIGHTSCOUT_RUN_LOCK" 2>/dev/null; then
+  exit 0
+fi
+trap 'rmdir "$NIGHTSCOUT_RUN_LOCK" 2>/dev/null' EXIT INT TERM HUP
+unset _now _mt
 
 # Cache decrypted token on disk (600) so we don't invoke GPG/pass every 60s.
 # Invalidate after rotation: rm this file. TTL: 1 hour.
