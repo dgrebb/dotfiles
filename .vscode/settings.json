@@ -5,7 +5,7 @@
   "workbench.colorCustomizations": {
     "window.activeBorder": "#000000",
     "window.inactiveBorder": "#000000",
-    "welcomePage.background": "#031000"
+    "welcomePage.background": "#031000",
     //   "editorGroupHeader.tabsBackground": "#000000",
     //   "editorGroupHeader.tabsBorder": "#0a0a0a",
     //   "editorGroupHeader.border": "#171717",
@@ -68,7 +68,7 @@
   "formattingToggle.affects": ["editor.formatOnSave"],
   "formattingToggle.statusBarText": {
     "formattingEnabled": "$(heart-filled)",
-    "formattingDisabled": "$(heart)"
+    "formattingDisabled": "$(heart)",
   },
   "extensions.ignoreRecommendations": true,
   "todohighlight.keywords": [
@@ -76,8 +76,8 @@
       "text": "NOTE:",
       "color": "#e2dfff",
       "backgroundColor": "#7357ff",
-      "overviewRulerColor": "#5c4bb2"
-    }
+      "overviewRulerColor": "#5c4bb2",
+    },
   ],
   "shellformat.useEditorConfig": true,
   "editor.accessibilitySupport": "off",
@@ -87,7 +87,7 @@
   "workbench.colorTheme": "Ayu Dark",
   "settingsSync.ignoredExtensions": [
     "alexowl.transparent-color-theme",
-    "github.copilot"
+    "github.copilot",
   ],
   "security.workspace.trust.untrustedFiles": "open",
   "workbench.layoutControl.enabled": false,
@@ -105,30 +105,30 @@
   "files.trimFinalNewlines": false,
   "files.associations": {
     "*.scpt": "bash",
-    "*.pcss": "postcss"
+    "*.pcss": "postcss",
   },
   "[css]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker",
   },
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": false,
     "editor.inlayHints.enabled": "off",
-    "editor.parameterHints.enabled": false
+    "editor.parameterHints.enabled": false,
   },
   "[github-actions-action]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": false,
     "editor.inlayHints.enabled": "off",
-    "editor.parameterHints.enabled": false
+    "editor.parameterHints.enabled": false,
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one",
@@ -136,52 +136,52 @@
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.unicodeHighlight.invisibleCharacters": false,
     "diffEditor.ignoreTrimWhitespace": false,
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
   },
   "markdown.extension.print.theme": "dark",
   "markdown.extension.toc.omittedFromToc": {
-    "README.md": ["## Table of Contents"]
+    "README.md": ["## Table of Contents"],
   },
   "[postcss]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[shellscript]": {
     "files.eol": "\n",
     "editor.defaultFormatter": "foxundermoon.shell-format",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[.scpt]": {
     "files.eol": "\n",
     "editor.defaultFormatter": "foxundermoon.shell-format",
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
   },
   "python.analysis.extraPaths": [
     "/Users/dgrebb/.vscode/extensions/continue.continue-0.0.412-darwin-arm64",
-    "/Users/dgrebb/.vscode/extensions/continue.continue-0.6.15-darwin-arm64"
+    "/Users/dgrebb/.vscode/extensions/continue.continue-0.6.15-darwin-arm64",
   ],
   "python.autoComplete.extraPaths": [
     "/Users/dgrebb/.vscode/extensions/continue.continue-0.0.412-darwin-arm64",
-    "/Users/dgrebb/.vscode/extensions/continue.continue-0.6.15-darwin-arm64"
+    "/Users/dgrebb/.vscode/extensions/continue.continue-0.6.15-darwin-arm64",
   ],
   "[sieve]": {},
   "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml",
   },
   "[tailwindcss]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[toml]": {
-    "editor.defaultFormatter": "tamasfe.even-better-toml"
+    "editor.defaultFormatter": "tamasfe.even-better-toml",
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.preferences.renameMatchingJsxTags": true,
@@ -189,20 +189,20 @@
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
     "editor.maxTokenizationLineLength": 2500,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "svelte.plugin.svelte.compilerWarnings": {
-    "css-unused-selector": "ignore"
+    "css-unused-selector": "ignore",
   },
   "svelte.plugin.css.diagnostics.enable": false,
   "svelte.ask-to-enable-ts-plugin": false,
   "[svelte]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
-    "editor.defaultFormatter": "svelte.svelte-vscode"
+    "editor.defaultFormatter": "svelte.svelte-vscode",
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "versionlens.suggestions.showOnStartup": true,
   "editor.guides.indentation": false,
@@ -220,12 +220,12 @@
     "markdown",
     "json",
     "jsonc",
-    "svelte"
+    "svelte",
   ],
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 3/7/2026, 5:04:31 PM",
+    "//": "Last update at 4/14/2026, 2:47:34 PM",
     ".agent": ".agent, .claude, .cline, .codebuddy, .codex, .commandcode, .continue, .crush, .cursor, .factory, .gemini, .goose, .junie, .kilocode, .kiro, .kode, .mcpjam, .mux, .neovate, .opencode, .openhands, .pi, .pochi, .qoder, .qwen, .roo, .trae, .windsurf, .zencoder",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
@@ -325,7 +325,7 @@
     "*.vue": "$(capture).*.ts, $(capture).*.js, $(capture).story.vue",
     "*.w": "$(capture).*.w, I$(capture).w",
     "*.wat": "$(capture).wasm",
-    "*.xaml": "$(capture).xaml.cs"
+    "*.xaml": "$(capture).xaml.cs",
   },
   "scss.lint.unknownAtRules": "ignore",
   "less.lint.unknownAtRules": "ignore",
@@ -333,7 +333,7 @@
   "playwright.reuseBrowser": false,
   "makefile.configureOnOpen": true,
   "vscode_custom_css.imports": [
-    "file:///Users/dgrebb/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js"
+    "file:///Users/dgrebb/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js",
   ],
   "@azure.argTenant": "",
   "chat.editing.alwaysSaveWithGeneratedChanges": true,
@@ -346,13 +346,14 @@
     "/var/folders/0f/w4kl9h0x5_g3my6m0k2ph6gr0000gn/T/postman-folder-post-response.instructions.md": true,
     "/var/folders/0f/w4kl9h0x5_g3my6m0k2ph6gr0000gn/T/postman-folder-pre-request.instructions.md": true,
     "/var/folders/0f/w4kl9h0x5_g3my6m0k2ph6gr0000gn/T/postman-http-request-post-response.instructions.md": true,
-    "/var/folders/0f/w4kl9h0x5_g3my6m0k2ph6gr0000gn/T/postman-http-request-pre-request.instructions.md": true
+    "/var/folders/0f/w4kl9h0x5_g3my6m0k2ph6gr0000gn/T/postman-http-request-pre-request.instructions.md": true,
   },
   "github.copilot.chat.codeGeneration.instructions": [],
   "cursorpyright.analysis.extraPaths": [
     "/Users/dgrebb/.vscode/extensions/continue.continue-0.0.412-darwin-arm64",
-    "/Users/dgrebb/.vscode/extensions/continue.continue-0.6.15-darwin-arm64"
-  ]
+    "/Users/dgrebb/.vscode/extensions/continue.continue-0.6.15-darwin-arm64",
+  ],
+  "editor.renderWhitespace": "none",
   // NOTE: APC no longer functions: https://github.com/drcika/apc-extension/issues/230
   // "apc.activityBar": {
   //   "size": 77,
