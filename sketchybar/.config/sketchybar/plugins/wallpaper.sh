@@ -1,66 +1,86 @@
 #!/bin/bash
 
 # Requires `curl`, `jq`, and `wget`
-# TODO List
-# 1. Set up a `.secrets` file in `$HOME/.config`.
-#   Use the `.secrets.example` as a template.
-# 2. Set up Unsplash API Access/Account
-#   "Applications" page — https://unsplash.com/oauth/applications
-#   (register one here: https://unsplash.com/oauth/applications/new)
-#   it's free but limited to 50 requests / hour
-# 3. Add `ACCESS_KEY` with the "Access Key" from the Unsplash API
-# 4. Set up writeable directory to store saved images
-# 5. Change `WALLPAPER_PATH` below to Step 4's path
 
-# Only execute if this is a direct call (not when sourced by sketchybar)
-if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  source "$HOME/.config/sketchybar/colors.sh"
-  source "$HOME/.config/.secrets"
+source "$HOME/.config/.secrets"
 
-  QUERY="dark"
-  ORIENTATION="landscape"
-  TIMESTAMP=$(echo '('$(date +"%s.%N") ' * 10)/1' | bc)
-  WALLPAPER_PATH="$HOME/Pictures/wallpaper"
+RW_DIR="${SKETCHYBAR_RW_DIR:-$HOME/.config/.sketchyrw}"
+QUERY_FILE="$RW_DIR/wallpaper_query"
+DEFAULT_QUERY="dark"
+ORIENTATION="landscape"
+WALLPAPER_PATH="$HOME/Pictures/wallpaper"
 
-  # Ensure wallpaper directory exists
-  mkdir -p "$WALLPAPER_PATH"
+mkdir -p "$RW_DIR" "$WALLPAPER_PATH"
 
-  echo "Fetching wallpaper from Unsplash..."
-  URL=$(
-    curl -G --location https://api.unsplash.com/photos/random \
-      --data-urlencode "query=${QUERY}" --data-urlencode "orientation=${ORIENTATION}" \
+load_query() {
+  if [[ -s "$QUERY_FILE" ]]; then
+    QUERY=$(<"$QUERY_FILE")
+  else
+    QUERY="$DEFAULT_QUERY"
+  fi
+}
+
+save_query() {
+  local new_query="$1"
+  [[ -z "$new_query" ]] && return 1
+  printf '%s' "$new_query" >"$QUERY_FILE"
+}
+
+prompt_for_query() {
+  local current_query="$1"
+  /usr/bin/osascript <<EOF
+set response to display dialog "Wallpaper query:" default answer "$current_query" buttons {"Cancel", "Save"} default button "Save" cancel button "Cancel"
+return text returned of response
+EOF
+}
+
+request_wallpaper() {
+  local timestamp wallpaper url
+  timestamp=$(echo '('$(date +"%s.%N") ' * 10)/1' | bc)
+
+  echo "Fetching wallpaper from Unsplash (query: $QUERY)..."
+  url=$(
+    curl -sG --location https://api.unsplash.com/photos/random \
+      --data-urlencode "query=${QUERY}" \
+      --data-urlencode "orientation=${ORIENTATION}" \
       --header "Authorization: Client-ID ${ACCESS_KEY}" | jq -r '.urls.full'
   )
 
-  # Check if URL was retrieved successfully
-  if [ -z "$URL" ] || [ "$URL" = "null" ]; then
+  if [[ -z "$url" || "$url" == "null" ]]; then
     echo "ERROR: Failed to get URL from Unsplash API"
-    echo "Check your ACCESS_KEY in ~/.config/.secrets"
     exit 1
   fi
 
-  echo "Downloading from: $URL"
-  WALLPAPER="${WALLPAPER_PATH}/wallpaper_${TIMESTAMP}.jpg"
-
-  # Download with better error handling
-  if wget -q --show-progress "$URL" -O "$WALLPAPER"; then
-    echo "Download completed"
-  else
+  wallpaper="${WALLPAPER_PATH}/wallpaper_${timestamp}.jpg"
+  if ! wget -q --show-progress "$url" -O "$wallpaper"; then
     echo "ERROR: wget failed to download the image"
     exit 1
   fi
 
-  # Check if file exists and has content
-  if [ -f "$WALLPAPER" ] && [ -s "$WALLPAPER" ]; then
-    echo "SUCCESS: Wallpaper file exists and has content ($(stat -f%z "$WALLPAPER") bytes)"
-    echo "Setting wallpaper to $WALLPAPER"
-    /opt/homebrew/bin/wallpaper set "$WALLPAPER"
+  if [[ -f "$wallpaper" && -s "$wallpaper" ]]; then
+    /opt/homebrew/bin/wallpaper set "$wallpaper"
   else
-    echo "FAILED: Wallpaper file is empty or does not exist!"
-    echo "File size: $(stat -f%z "$WALLPAPER" 2>/dev/null || echo 'file not found')"
+    echo "FAILED: Wallpaper file is empty or missing"
     exit 1
   fi
-fi
+}
+
+load_query
+
+case "$BUTTON" in
+  right)
+    new_query="$(prompt_for_query "$QUERY")" || exit 0
+    save_query "$new_query" || exit 0
+    QUERY="$new_query"
+    request_wallpaper
+    ;;
+  left|"")
+    request_wallpaper
+    ;;
+  *)
+    # Ignore other button events.
+    ;;
+esac
 
 # Remove old methods that don't work on Sequoia
 # osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$WALLPAPER\""
