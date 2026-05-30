@@ -13,6 +13,17 @@ alias lsa="lsd -la"
 alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
+
+# Docker
+alias dc='docker compose'
+alias dcu='docker compose up'
+alias dcd='docker compose down'
+alias dclogs='docker compose logs'
+alias dcpull='docker compose pull'
+alias dcpush='docker compose push'
+alias dcrestart='docker compose restart'
+
+# Grebbops
 alias g="git"
 alias mk='minikube'
 alias kc='kubectl'
