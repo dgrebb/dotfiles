@@ -4,6 +4,23 @@
 source $HOME/.config/utils/.aliases
 source $HOME/.config/utils/.functions
 
+# History — persist commands; up/down search what you've typed so far (not full history cycle)
+HISTFILE="${HOME}/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=50000
+setopt EXTENDED_HISTORY      # write timestamps to history file
+setopt INC_APPEND_HISTORY    # append after each command (multi-terminal friendly)
+setopt HIST_IGNORE_DUPS      # skip consecutive duplicates
+setopt HIST_IGNORE_ALL_DUPS  # drop older duplicate entries
+setopt HIST_FIND_NO_DUPS     # when searching, show each command once
+setopt HIST_REDUCE_BLANKS    # trim extra whitespace before saving
+
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search   # ↑
+bindkey "^[[B" down-line-or-beginning-search # ↓
+
 # Plugins (path relative to this file so it works with or without OMZ, regardless of symlink layout)
 ZSH_RC_DIR="${${(%):-%x}:A:h}"
 [[ -f "$ZSH_RC_DIR/.config/zsh/.zsh-plugins/git/git.plugin.zsh" ]] && source "$ZSH_RC_DIR/.config/zsh/.zsh-plugins/git/git.plugin.zsh"
