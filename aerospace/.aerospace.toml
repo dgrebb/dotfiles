@@ -315,10 +315,6 @@ if.app-name-regex-substring = 'Docker|Drizzle Studio'
 run = "move-node-to-workspace D"
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'eM Client|Outlook'
-run = "move-node-to-workspace E"
-
-[[on-window-detected]]
 if.app-name-regex-substring = 'ChatGPT'
 run = "move-node-to-workspace G"
 
@@ -341,3 +337,7 @@ run = "move-node-to-workspace Z"
 [[on-window-detected]]
 if.app-name-regex-substring = 'Safari|ProtonVPN'
 run = "move-node-to-workspace P"
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'eM Client|Proton Mail|Outlook'
+run = "move-node-to-workspace E"
