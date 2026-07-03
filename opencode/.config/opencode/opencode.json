@@ -1,5 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
+
   "provider": {
     "ollama": {
       "npm": "@ai-sdk/openai-compatible",
@@ -9,26 +10,129 @@
       },
       "models": {
         "qwen3-coder-30b-64k": {
-          "name": "Qwen3-Coder 30B 64k"
+          "name": "Qwen3-Coder 30B 64k",
+          "tool_call": true
         },
         "deepseek-r1-14b-32k": {
-          "name": "DeepSeek R1 14B 32k"
+          "name": "DeepSeek R1 14B 32k",
+          "tool_call": true
         },
         "deepseek-r1-32b-32k": {
-          "name": "DeepSeek R1 32B 32k"
+          "name": "DeepSeek R1 32B 32k",
+          "tool_call": true
         }
       }
     }
   },
   "model": "ollama/qwen3-coder-30b-64k",
+
+  "agent": {
+    "build": {
+      "mode": "primary",
+      "temperature": 0.2,
+      "prompt": "You are the main coding agent. Prefer small, reviewable diffs. Before editing, inspect the relevant files and summarize the intended change. Preserve existing project conventions. Do not introduce new frameworks, routers, state libraries, auth systems, styling systems, databases, or build tools without asking. After edits, summarize files changed, commands run, and remaining risks."
+    },
+    "plan": {
+      "mode": "primary",
+      "temperature": 0.1,
+      "prompt": "You are a planning and analysis agent. Analyze the request, inspect relevant files, identify risks, and propose a step-by-step implementation plan. Do not edit files. Do not run destructive commands. Prefer concise plans with explicit affected files and test strategy."
+    },
+    "explore-code": {
+      "mode": "subagent",
+      "temperature": 0.1,
+      "description": "Read-only codebase exploration. Use this to find files, trace flows, map architecture, locate symbols, and answer where/how questions without modifying files.",
+      "prompt": "You are a read-only code exploration subagent. Your job is to inspect the codebase and return concise findings. Do not edit files. Do not propose broad rewrites. Report relevant files, symbols, relationships, and uncertainties."
+    },
+    "review-diff": {
+      "mode": "subagent",
+      "temperature": 0.1,
+      "description": "Read-only review of the current git diff for correctness, maintainability, regressions, security, and missing tests.",
+      "prompt": "You are a strict read-only code reviewer. Review the current git diff. Do not edit files. Focus on correctness, maintainability, regressions, security, accessibility, performance, and test gaps. Return findings grouped by severity. If the diff is good, say so and explain why."
+    },
+
+    "test-runner": {
+      "mode": "subagent",
+      "temperature": 0.1,
+      "description": "Runs or identifies relevant tests, checks failures, and summarizes likely causes. It should not edit files.",
+      "prompt": "You are a test runner and failure analysis subagent. Identify the relevant test/check/lint commands from the project. Ask before running expensive commands. Do not edit files. Summarize failures with likely root causes and the smallest next fix."
+    },
+
+    "docs-writer": {
+      "mode": "subagent",
+      "temperature": 0.2,
+      "description": "Drafts concise technical documentation, README updates, implementation notes, and usage examples.",
+      "prompt": "You are a documentation subagent. Inspect relevant code and write concise, accurate docs. Prefer examples over long prose. Do not change code. Ask before editing documentation files."
+    },
+
+    "security-audit": {
+      "mode": "subagent",
+      "temperature": 0.1,
+      "description": "Read-only security and risk audit for auth, secrets, unsafe shell usage, injection, permissions, and data exposure.",
+      "prompt": "You are a read-only security audit subagent. Do not edit files. Look for secret leakage, unsafe command execution, auth flaws, authorization gaps, injection risks, insecure defaults, overbroad permissions, and data exposure. Return concrete findings with file references and severity."
+    }
+  },
+
+  "command": {
+    "map": {
+      "description": "Map the repo or feature area without editing files",
+      "agent": "explore-code",
+      "subtask": true,
+      "template": "Map the relevant code for this request. Identify key files, symbols, data flow, conventions, and likely edit points. Do not edit files."
+    },
+
+    "plan": {
+      "description": "Create an implementation plan without editing files",
+      "agent": "plan",
+      "subtask": true,
+      "template": "Create a concise implementation plan for the current request. Include affected files, risks, test strategy, and the smallest safe sequence of changes. Do not edit files."
+    },
+
+    "review": {
+      "description": "Review the current git diff",
+      "agent": "review-diff",
+      "subtask": true,
+      "template": "Review the current git diff for correctness, regressions, maintainability, security, performance, accessibility, and missing tests. Do not edit files."
+    },
+
+    "test": {
+      "description": "Run or identify relevant tests and analyze failures",
+      "agent": "test-runner",
+      "subtask": true,
+      "template": "Identify and run the relevant test/check/lint commands for the current change. Ask before expensive commands. Do not edit files. Summarize failures and likely root causes."
+    },
+
+    "security": {
+      "description": "Run a read-only security audit",
+      "agent": "security-audit",
+      "subtask": true,
+      "template": "Perform a read-only security audit of the current change or requested area. Focus on auth, authorization, secrets, injection, unsafe shell usage, data exposure, and dangerous defaults. Do not edit files."
+    }
+  },
+
+  "watcher": {
+    "ignore": [
+      "node_modules/**",
+      "dist/**",
+      "build/**",
+      ".svelte-kit/**",
+      ".next/**",
+      ".git/**",
+      "coverage/**",
+      ".venv/**",
+      "__pycache__/**",
+      ".pytest_cache/**",
+      ".mypy_cache/**",
+      ".ruff_cache/**"
+    ]
+  },
   "mcp": {
+    "shadcn-svelte": {
+      "type": "remote",
+      "url": "https://shadcn-svelte.mastra.cloud/api/mcp/shadcn/mcp"
+    },
     "svelte": {
       "type": "local",
       "command": ["npx", "-y", "@sveltejs/mcp"]
-    },
-    "shadcn-svelte": {
-      "type": "remote",
-      "url": "https://shadcn-svelte.mastra.cloud/api/mcp/shadcn/sse"
     }
   },
   "plugin": ["@sveltejs/opencode", "svelte"]
