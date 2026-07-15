@@ -201,3 +201,17 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# ClamAV tailing
+clamtail() {
+  local log
+  log="$(ls -t "$HOME"/clamav-*.log 2>/dev/null | head -1)" || return 1
+
+  if [[ -z "$log" ]]; then
+    echo "No clamav logs found in $HOME"
+    return 1
+  fi
+
+  echo "Tailing: $log"
+  tail -f "$log"
+}
