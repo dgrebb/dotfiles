@@ -63,30 +63,22 @@ update() {
   local COLOR=$BLUE
   local LABEL=$HOURGLASS_ICON
   local LCOLOR=$BLUE
-  local BG1=$BACKGROUND_1
-  local BG2=$BACKGROUND_2
 
   case "$STATUS" in
   queued)
     COLOR=$WHITE
     LABEL=$QUEUED_ICON
     LCOLOR=$GREY
-    BG1=$BLUE
-    BG2=$GREY
     ;;
   in_progress)
     COLOR=$WHITE
     LABEL=$ROCKET_ICON
     LCOLOR=$YELLOW
-    BG1=$DARK_YELLOW
-    BG2=$YELLOW
     ;;
   waiting)
     COLOR=$RED
     LABEL=$SKULL_ICON
     LCOLOR=$WHITE
-    BG1=$DARK_RED
-    BG2=$RED
     ;;
   completed) COLOR=$WHITE ;;
   *) COLOR=$BLUE ;;
@@ -152,10 +144,10 @@ update() {
 
   sketchybar -m "${args[@]}" >/dev/null
 
+  # Status color lives on icon/label — the shared ghstack bracket owns the pill.
   sketchybar --set ghmon.status \
     icon="$ICON" icon.color="$COLOR" \
-    label="$LABEL" label.color="$LCOLOR" \
-    background.color="$BG1" background.border_color="$BG2"
+    label="$LABEL" label.color="$LCOLOR"
 }
 
 popup() {
