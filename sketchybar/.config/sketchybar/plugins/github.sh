@@ -1,97 +1,125 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# GitHub notification bell — requires `gh auth login` and `jq`.
+
+export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
 
 update() {
   source "$CONFIG_DIR/colors.sh"
   source "$CONFIG_DIR/icons.sh"
 
-  NOTIFICATIONS="$(gh api notifications)"
-  COUNT="$(echo "$NOTIFICATIONS" | jq 'length')"
-  args=()
-  if [ "$NOTIFICATIONS" = "[]" ]; then
-    args+=(--set $NAME icon=$BELL label="0")
-  else
-    args+=(--set $NAME icon=$BELL_DOT label="$COUNT")
+  if ! command -v gh >/dev/null 2>&1; then
+    sketchybar --set "$NAME" drawing=on icon="$BELL" label="?" icon.color="$GREY"
+    return
   fi
 
-  PREV_COUNT=$(sketchybar --query github.bell | jq -r .label.value)
-  # For sound to play around with:
-  # afplay /System/Library/Sounds/Morse.aiff
+  local NOTIFICATIONS COUNT
+  NOTIFICATIONS="$(gh api notifications 2>/dev/null || echo '[]')"
+  if ! printf '%s' "$NOTIFICATIONS" | jq -e . >/dev/null 2>&1; then
+    NOTIFICATIONS='[]'
+  fi
+  COUNT="$(printf '%s' "$NOTIFICATIONS" | jq 'length')"
+
+  local args=()
+  if [[ "$COUNT" -eq 0 ]]; then
+    args+=(--set "$NAME" drawing=on icon="$BELL" label="0")
+  else
+    args+=(--set "$NAME" drawing=on icon="$BELL_DOT" label="$COUNT")
+  fi
+
+  local PREV_COUNT
+  PREV_COUNT="$(sketchybar --query github.bell 2>/dev/null | jq -r '.label.value // 0')"
 
   args+=(--remove '/github.notification\.*/')
 
-  COUNTER=0
-  COLOR=$BLUE
-  URL="https://www.github.com/notifications"
-  args+=(--set github.bell icon.color=$COLOR)
+  local COUNTER=0
+  local COLOR=$BLUE
+  args+=(--set github.bell icon.color="$COLOR")
 
-  while read -r repo url type title; do
+  while IFS=$'\t' read -r repo url type title; do
     COUNTER=$((COUNTER + 1))
-    IMPORTANT="$(echo "$title" | egrep -i "(deprecat|break|broke)")"
-    COLOR=$BLUE
+    local IMPORTANT COLOR_ITEM ICON PADDING
+    IMPORTANT="$(printf '%s' "$title" | grep -Ei '(deprecat|break|broke)' || true)"
+    COLOR_ITEM=$BLUE
     PADDING=0
+    ICON="$GIT_COMMIT"
+    local LINK="https://github.com/notifications"
 
-    if [ "${repo}" = "" ] && [ "${title}" = "" ]; then
+    if [[ -z "$repo" && -z "$title" ]]; then
       repo="Note"
       title="No new notifications"
     fi
-    case "${type}" in
-    "'Issue'")
-      COLOR=$GREEN
+
+    case "$type" in
+    Issue)
+      COLOR_ITEM=$GREEN
       ICON=$GIT_ISSUE
-      URL="$(gh api "$(echo "${url}" | sed -e "s/^'//" -e "s/'$//")" | jq .html_url)"
+      if [[ -n "$url" && "$url" != "null" ]]; then
+        LINK="$(gh api "$url" --jq .html_url 2>/dev/null || echo "$LINK")"
+      fi
       ;;
-    "'Discussion'")
-      COLOR=$WHITE
+    Discussion)
+      COLOR_ITEM=$WHITE
       ICON=$GIT_DISCUSSION
-      URL="https://www.github.com/notifications"
       ;;
-    "'PullRequest'")
-      COLOR=$MAGENTA
+    PullRequest)
+      COLOR_ITEM=$MAGENTA
       ICON=$GIT_PULL_REQUEST
-      URL="$(gh api "$(echo "${url}" | sed -e "s/^'//" -e "s/'$//")" | jq .html_url)"
+      if [[ -n "$url" && "$url" != "null" ]]; then
+        LINK="$(gh api "$url" --jq .html_url 2>/dev/null || echo "$LINK")"
+      fi
       ;;
-    "'Commit'")
-      COLOR=$WHITE
+    Commit)
+      COLOR_ITEM=$WHITE
       ICON=$GIT_COMMIT
-      URL="$(gh api "$(echo "${url}" | sed -e "s/^'//" -e "s/'$//")" | jq .html_url)"
+      if [[ -n "$url" && "$url" != "null" ]]; then
+        LINK="$(gh api "$url" --jq .html_url 2>/dev/null || echo "$LINK")"
+      fi
       ;;
     esac
 
-    if [ "$IMPORTANT" != "" ]; then
-      COLOR=$RED
-      ICON=􀁞
-      args+=(--set github.bell icon.color=$COLOR)
+    if [[ -n "$IMPORTANT" ]]; then
+      COLOR_ITEM=$RED
+      ICON=$GIT_ALERT
+      args+=(--set github.bell icon.color="$COLOR_ITEM")
     fi
 
-    notification=(
-      label="$(echo "$title" | sed -e "s/^'//" -e "s/'$//")"
-      icon="$ICON $(echo "$repo" | sed -e "s/^'//" -e "s/'$//"):"
+    local notification=(
+      label="$title"
+      icon="$ICON ${repo}:"
       icon.padding_left="$PADDING"
       label.padding_right="$PADDING"
-      icon.color=$COLOR
+      icon.color="$COLOR_ITEM"
       position=popup.github.bell
-      icon.background.color=$COLOR
+      icon.background.color="$COLOR_ITEM"
       drawing=on
-      click_script="open \"$URL\"; sketchybar --set github.bell popup.drawing=off; sleep 5; sketchybar --trigger github.update"
+      click_script="open \"$LINK\"; sketchybar --set github.bell popup.drawing=off; sleep 5; sketchybar --trigger github.update"
     )
 
-    args+=(--clone github.notification.$COUNTER github.template
-      --set github.notification.$COUNTER "${notification[@]}")
-  done <<<"$(echo "$NOTIFICATIONS" | jq -r '.[] | [.repository.name, .subject.latest_comment_url, .subject.type, .subject.title] | @sh')"
+    args+=(--clone "github.notification.$COUNTER" github.template
+      --set "github.notification.$COUNTER" "${notification[@]}")
+  done < <(printf '%s' "$NOTIFICATIONS" | jq -r '.[] | [.repository.name, (.subject.latest_comment_url // .subject.url // ""), .subject.type, .subject.title] | @tsv')
+
+  # Empty-state row so the popup isn't blank
+  if [[ "$COUNT" -eq 0 ]]; then
+    args+=(--clone github.notification.0 github.template
+      --set github.notification.0 \
+      label="You're all caught up" \
+      icon="$BELL Clear:" \
+      icon.color="$BLUE" \
+      position=popup.github.bell \
+      drawing=on \
+      click_script="open https://github.com/notifications; sketchybar --set github.bell popup.drawing=off")
+  fi
 
   sketchybar -m "${args[@]}" >/dev/null
 
-  if [ $COUNT -gt $PREV_COUNT ] 2>/dev/null || [ "$SENDER" = "forced" ]; then
+  if { [[ "$COUNT" -gt "$PREV_COUNT" ]] 2>/dev/null; } || [[ "$SENDER" == "forced" ]]; then
     sketchybar --animate tanh 15 --set github.bell label.y_offset=5 label.y_offset=0
-  fi
-
-  if [ $COUNT -lt '1' ]; then
-    sketchybar --set github.bell drawing=off
   fi
 }
 
 popup() {
-  sketchybar --set $NAME popup.drawing=$1
+  sketchybar --set "$NAME" popup.drawing="$1"
 }
 
 case "$SENDER" in
@@ -99,7 +127,7 @@ case "$SENDER" in
   update
   ;;
 "system_woke")
-  sleep 10 && update # Wait for network to connect
+  sleep 10 && update
   ;;
 "mouse.entered")
   popup on

@@ -1,4 +1,8 @@
 #!/bin/bash
+# Apple logo + system popup. Intentionally NOT sourced from sketchybarrc —
+# workspace + front_app live in items/aerospace.sh instead.
+# Re-enable with: source "$ITEM_DIR/apple.sh" in sketchybarrc (and remove the
+# duplicate front_app from aerospace.sh if you do).
 
 POPUP_OFF='sketchybar --set apple.logo popup.drawing=off'
 POPUP_CLICK_SCRIPT='sketchybar --set $NAME popup.drawing=toggle'
