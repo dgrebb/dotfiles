@@ -2,11 +2,13 @@
 # Signal layout — Aerospace + app left; meeting pill near notch; GitHub right.
 
 source "$ITEM_DIR/aerospace.sh"
-sketchybar --set front_app icon.color=$BLUE   --set space.focused icon=􀌳 icon.color=$ORANGE
+sketchybar --set front_app icon.color=$BLUE \
+  --set space.focused icon=󰌳 icon.color=$ORANGE
 
 source "$ITEM_DIR/meeting.sh"
 source "$ITEM_DIR/music.sh"
-sketchybar --set music.title label.max_chars=16   --set music.note icon.color=$BLUE
+sketchybar --set music.title label.max_chars=16 \
+  --set music.note icon.color=$BLUE
 
 source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/github.sh"

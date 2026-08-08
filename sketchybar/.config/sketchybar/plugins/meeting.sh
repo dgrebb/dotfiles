@@ -18,7 +18,7 @@ front="$(osascript -e 'tell application "System Events" to get name of first app
 in_call=false
 label="idle"
 color="$GREY"
-icon="􀍉"
+icon="󰍡"
 
 for app in "${running[@]}"; do
   short="${app%% *}"
@@ -26,15 +26,11 @@ for app in "${running[@]}"; do
   [[ "$app" == "Microsoft Teams (work or school)" ]] && short="Teams"
   label="$short"
   color="$ORANGE"
-  icon="􀝦"
+  icon="󰕂"
   if [[ "$front" == "$app" ]]; then
     in_call=true
     color="$RED"
-    icon="�="􀝦"
-  if [[ "$front" == "$app" ]]; then
-    in_call=true
-    color="$RED"
-    icon="􀕺"
+    icon="󰕥"
     label="$short · live"
     break
   fi
