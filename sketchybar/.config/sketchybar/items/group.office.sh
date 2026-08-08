@@ -1,13 +1,11 @@
 #!/bin/bash
 
-source "$HOME/.config/machine.sh"
-# source "$HOME/.config/yabai/_displays.sh"
+[[ -f "$HOME/.config/machine.sh" ]] && source "$HOME/.config/machine.sh"
 
 office_items=()
 
 office_spacer=(
   background.drawing=off
-  # width=0
   icon.padding_left=0
   icon.padding_right=0
   label.padding_left=0
@@ -21,21 +19,14 @@ office_spacer=(
 sketchybar --add item spacer1 right \
   --set spacer1 "${office_spacer[@]}"
 
-if [[ "$MACHINE" == 'home' ]]; then
-  if [[ "$main_display" == "$HOME_MACBOOK_UUID" ]]; then
-    # Laptop only — optional bar items commented out for now
+if [[ "${MACHINE:-}" == 'home' ]]; then
+  if [[ "${main_display:-}" == "${HOME_MACBOOK_UUID:-}" ]]; then
+    # Laptop — github/ghmon are sourced by the theme items.sh already
     :
-    # source "$ITEM_DIR/github.sh"
-    # source "$ITEM_DIR/ghmon.sh"
-    # office_items+="github ghmon.status"
-    # source "$ITEM_DIR/omnifocus.sh"
-    # office_items+="omnifocus"
   else
     source "$ITEM_DIR/omnifocus.sh"
     office_items+="omnifocus mail"
     source "$ITEM_DIR/mail.sh"
-    # source "$ITEM_DIR/github.sh"
-    # source "$ITEM_DIR/ghmon.sh"
   fi
   DISPLAYS=1,2,3
 else

@@ -5,7 +5,7 @@ POPUP_CLICK_SCRIPT="sketchybar --set \$NAME popup.drawing=toggle"
 ghmon_status=(
   script="$PLUGIN_DIR/ghmon.sh"
   click_script="$POPUP_CLICK_SCRIPT"
-  update_freq=15
+  update_freq=30
   padding_right=6
   padding_left=6
   background.height=18
@@ -23,7 +23,6 @@ ghmon_status=(
   popup.align=right
   popup.height=5
   label.y_offset=1
-  # associated_display=1
 )
 
 gh_spacer=(
@@ -49,11 +48,13 @@ ghmon_template=(
 
 sketchybar --add item ghmon.status right \
   --set ghmon.status "${ghmon_status[@]}" \
-  --subscribe ghmon.status mouse.exited.global \
+  --subscribe ghmon.status \
+  mouse.entered \
+  mouse.exited \
+  mouse.exited.global \
+  system_woke \
   \
   --add item gh.spacer popup.ghmon.status \
   --set gh.spacer "${gh_spacer[@]}" background.height=5 \
   --add item ghmon.template popup.ghmon.status \
   --set ghmon.template "${ghmon_template[@]}"
-# --subscribe ghmon.status mouse.entered \
-# mouse.exited \
