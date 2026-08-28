@@ -12,5 +12,11 @@ if [[ -z "$FOCUSED" ]]; then
   FOCUSED="—"
 fi
 
-sketchybar --set "$NAME" label="$FOCUSED" \
-  --animate tanh 12 --set "$NAME" label.y_offset=4 label.y_offset=0
+# Animate only on real workspace changes from Aerospace (see aerospace/.aerospace.toml).
+# Other triggers (front_app_switched, update_freq, sketchybar reload) just refresh the label.
+if [[ "$SENDER" == "aerospace_workspace_change" && -n "${FOCUSED_WORKSPACE:-}" ]]; then
+  sketchybar --set "$NAME" label="$FOCUSED" \
+    --animate tanh 12 --set "$NAME" label.y_offset=4 label.y_offset=0
+else
+  sketchybar --set "$NAME" label="$FOCUSED"
+fi

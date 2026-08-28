@@ -8,8 +8,8 @@ source "$ITEM_DIR/music.sh"
 sketchybar --set music.note icon.color=$GREEN   --set music.title label.font="$FONT:Semibold:12.0"   --set music background.border_color=$BACKGROUND_2
 
 source "$ITEM_DIR/calendar.sh"
-source "$ITEM_DIR/github.sh"
-source "$ITEM_DIR/ghmon.sh"
+# source "$ITEM_DIR/github.sh"
+# source "$ITEM_DIR/ghmon.sh"
 sketchybar --set github.bell icon.color=$GREEN   --set ghmon.status icon.color=$BLUE
 
 source "$ITEM_DIR/network.sh"
