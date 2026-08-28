@@ -3,22 +3,50 @@
 source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 
 IP_ADDRESS=$(scutil --nwi | grep address | sed 's/.*://' | tr -d ' ' | head -1)
-IS_VPN="false" # $(ifconfig ipsec0 | grep -q 'inet ' && echo "VPN is connected" || echo "VPN is not connected")
 
-if [[ $IS_VPN == "VPN is connected" ]]; then
-  COLOR=$CYAN
+# ProtonVPN (and other modern macOS VPNs) use Network Extension services,
+# not the legacy ipsec0 interface the old check relied on.
+is_vpn_connected() {
+  # System VPN / Network Extension services: ProtonVPN, etc.
+  if scutil --nc list 2>/dev/null | grep -qiE '\(Connected\).*VPN:'; then
+    return 0
+  fi
+
+  # Named ProtonVPN service (registered as "ProtonVPN" / ch.protonvpn.mac)
+  local proton_status
+  proton_status="$(scutil --nc status "ProtonVPN" 2>/dev/null | head -1)"
+  if [[ "$proton_status" == "Connected" ]]; then
+    return 0
+  fi
+
+  # Legacy IPsec
+  if ifconfig ipsec0 2>/dev/null | grep -q 'inet '; then
+    return 0
+  fi
+
+  # WireGuard / tunnel with an assigned IPv4 (Apple's idle utuns are IPv6-only)
+  if ifconfig 2>/dev/null | awk '
+    /^[a-z]/ { iface=$1; sub(/:$/, "", iface) }
+    iface ~ /^(utun|ipsec|ppp|tun)/ && $1 == "inet" { found=1; exit }
+    END { exit !found }
+  '; then
+    return 0
+  fi
+
+  return 1
+}
+
+if is_vpn_connected; then
+  COLOR=$LIGHT_BLUE
   ICON=
-  LABEL="VPN"
-elif [[ $IP_ADDRESS != "" ]]; then
+elif [[ -n $IP_ADDRESS ]]; then
   COLOR=$BLUE
   ICON=
-  # LABEL=$IP_ADDRESS
 else
   COLOR=$WHITE
   ICON=
-  LABEL="Not Connected"
 fi
 
-sketchybar --set $NAME \
-  icon=$ICON
-# label="$LABEL"
+sketchybar --set "$NAME" \
+  icon="$ICON" \
+  icon.color="$COLOR"

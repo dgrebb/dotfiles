@@ -30,7 +30,7 @@ launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist >/d
 # Notch-aware bar geometry (overridable per theme via colors.sh exports)
 bar=(
   height="${THEME_BAR_HEIGHT:-36}"
-  color=$BAR_COLOR
+  color=$TRANSPARENT
   border_width=0
   border_color=$BAR_BORDER_COLOR
   corner_radius="${THEME_CORNER_RADIUS:-10}"

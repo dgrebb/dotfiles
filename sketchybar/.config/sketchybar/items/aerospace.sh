@@ -37,7 +37,7 @@ system_bracket=(
 )
 
 sketchybar --add item space.focused left \
-  --subscribe space.focused aerospace_workspace_change front_app_switched \
+  --subscribe space.focused aerospace_workspace_change \
   --set space.focused "${space_focused[@]}"
 
 sketchybar --add item front_app left \
