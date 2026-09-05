@@ -3,7 +3,7 @@
 #
 # LEFT ………… aerospace workspace + front app (icon + name)
 # CENTER …… music (sits in the notch gap on external displays; left-of-notch on laptops)
-# RIGHT ……… calendar · github · ghmon · office · volume/utils
+# RIGHT ……… calendar · github · office (omnifocus + ghmon) · volume/utils
 
 # Left: aerospace consolidates workspace + front_app (+ optional apple popup stays in apple.sh)
 source "$ITEM_DIR/aerospace.sh"
@@ -14,7 +14,6 @@ source "$ITEM_DIR/music.sh"
 # Right stack
 source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/github.sh"
-source "$ITEM_DIR/ghmon.sh"
 source "$ITEM_DIR/network.sh"
 source "$ITEM_DIR/aliases.sh"
 source "$ITEM_DIR/wallpaper.sh"
