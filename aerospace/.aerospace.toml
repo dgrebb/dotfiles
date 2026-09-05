@@ -280,6 +280,9 @@ on-mode-changed = []
     ctrl-left = 'workspace prev --wrap-around'
     ctrl-right = 'workspace next --wrap-around'
 
+    # Screensaver
+    ctrl-alt-cmd-s='exec-and-forget open -b com.apple.ScreenSaver.Engine'
+
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
@@ -336,8 +339,8 @@ run = "move-node-to-workspace S"
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'LibreWolf|Firefox|Chrome|Min|Brave Browser|Zen'
-run = "move-node-to-workspace Z"
+run = "move-node-to-workspace W"
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Safari|ProtonVPN'
+if.app-name-regex-substring = 'Safari|Proton VPN'
 run = "move-node-to-workspace P"
