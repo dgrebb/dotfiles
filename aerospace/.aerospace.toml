@@ -294,6 +294,7 @@ on-mode-changed = []
     r = ['flatten-workspace-tree', 'mode main'] # reset layout
     f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
     d = "exec-and-forget defaults read com.apple.finder CreateDesktop 2>/dev/null | grep -qiE '^(1|true)$' && defaults write com.apple.finder CreateDesktop -bool false || defaults write com.apple.finder CreateDesktop -bool true; killall Finder" # Toggle Desktopp Icons
+    s = "exec-and-forget sketchybar --reload"
     backspace = ['close-all-windows-but-current', 'mode main']
 
     # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
