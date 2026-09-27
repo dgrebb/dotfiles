@@ -24,9 +24,9 @@ office_bracket=(
 )
 
 source "$ITEM_DIR/omnifocus.sh"
-source "$ITEM_DIR/ghmon.sh"
+# source "$ITEM_DIR/ghmon.sh"
 # source "$ITEM_DIR/mail.sh"
-office_items+=(omnifocus ghmon.status)
+office_items+=(omnifocus)
 
 sketchybar --add item spacer1 right \
   --set spacer1 "${office_spacer[@]}"

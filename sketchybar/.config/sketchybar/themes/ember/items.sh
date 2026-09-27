@@ -13,11 +13,11 @@ source "$ITEM_DIR/music.sh"
 
 # Right stack
 source "$ITEM_DIR/calendar.sh"
-source "$ITEM_DIR/github.sh"
+# source "$ITEM_DIR/github.sh"
 source "$ITEM_DIR/network.sh"
 source "$ITEM_DIR/aliases.sh"
 source "$ITEM_DIR/wallpaper.sh"
 source "$ITEM_DIR/nightshift.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/utils.sh"
-source "$ITEM_DIR/group.office.sh"
+# source "$ITEM_DIR/group.office.sh"
