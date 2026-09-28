@@ -1,0 +1,928 @@
+{
+  "schema": 6,
+  "addons": [
+    {
+      "id": "uBlock0@raymondhill.net",
+      "icons": {
+        "32": "https://addons.mozilla.org/user-media/addon_icons/607/607454-32.png?modified=mcrushed",
+        "64": "https://addons.mozilla.org/user-media/addon_icons/607/607454-64.png?modified=mcrushed",
+        "128": "https://addons.mozilla.org/user-media/addon_icons/607/607454-128.png?modified=mcrushed"
+      },
+      "name": "uBlock Origin",
+      "version": "1.55.0",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/4216633/ublock_origin-1.55.0.xpi",
+      "homepageURL": "https://github.com/gorhill/uBlock#ublock-origin",
+      "supportURL": "https://old.reddit.com/r/uBlockOrigin/",
+      "amoListingURL": "https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/",
+      "description": "Finally, an efficient wide-spectrum content blocker. Easy on CPU and memory.",
+      "fullDescription": "uBlock Origin is not an \"ad blocker\", it's a wide-spectrum content blocker with CPU and memory efficiency as a primary feature.\n\n***\n\nOut of the box, uBO blocks ads, trackers, coin miners, popups, etc. through the following lists of filters, enabled by default:\n\n- EasyList (ads)\n- EasyPrivacy (tracking)\n- Peter Lowe’s Ad server list (ads and tracking)\n- Online Malicious URL Blocklist\n- uBO's own lists\n\nMore lists are available for you to select if you wish:\n\n- EasyList Cookie\n- Fanboy Annoyances\n- AdGuard Annoyances\n- Dan Pollock’s hosts file\n- And many others\n\nAdditionally, you can point-and-click to block JavaScript locally or globally, create your own global or local rules to override entries from filter lists, and many more advanced features.\n\n***\n\nFree.\nOpen source with public license (GPLv3)\nFor users by users.\n\nIf ever you really do want to contribute something, think about the people working hard to maintain the filter lists you are using, which were made available to use by all for free.\n\n***\n\n    Documentation\n    Release notes\n    Community support @ Reddit\n    Contributors @ GitHub\n    Contributors @ Crowdin",
+      "weeklyDownloads": 172585,
+      "type": "extension",
+      "creator": {
+        "name": "Raymond Hill",
+        "url": "https://addons.mozilla.org/en-US/firefox/user/11423598/"
+      },
+      "developers": [],
+      "screenshots": [
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/238/238546.png?modified=1622132421",
+          "width": 1011,
+          "height": 758,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/238/238546.jpg?modified=1622132421",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 400,
+          "caption": "The popup panel: default mode"
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/238/238548.png?modified=1622132423",
+          "width": 1011,
+          "height": 758,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/238/238548.jpg?modified=1622132423",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 400,
+          "caption": "The dashboard: stock filter lists"
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/238/238547.png?modified=1622132425",
+          "width": 1011,
+          "height": 758,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/238/238547.jpg?modified=1622132425",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 400,
+          "caption": "The popup panel: default-deny mode"
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/238/238549.png?modified=1622132426",
+          "width": 1011,
+          "height": 758,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/238/238549.jpg?modified=1622132426",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 400,
+          "caption": "The dashboard: settings"
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/238/238552.png?modified=1622132430",
+          "width": 970,
+          "height": 1800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/238/238552.jpg?modified=1622132430",
+          "thumbnailWidth": 216,
+          "thumbnailHeight": 400,
+          "caption": "The popup panel in Firefox Preview: default mode with more blocking options revealed"
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/230/230370.png?modified=1622132432",
+          "width": 800,
+          "height": 600,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/230/230370.jpg?modified=1622132432",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 400,
+          "caption": "The unified logger tells you all that uBO is seeing and doing"
+        }
+      ],
+      "contributionURL": "",
+      "averageRating": 4.7875,
+      "reviewCount": 4478,
+      "reviewURL": "https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/reviews/",
+      "updateDate": 1706667015000
+    },
+    {
+      "id": "addon@darkreader.org",
+      "icons": {
+        "32": "https://addons.mozilla.org/user-media/addon_icons/855/855413-32.png?modified=3f34e276",
+        "64": "https://addons.mozilla.org/user-media/addon_icons/855/855413-64.png?modified=3f34e276",
+        "128": "https://addons.mozilla.org/user-media/addon_icons/855/855413-128.png?modified=3f34e276"
+      },
+      "name": "Dark Reader",
+      "version": "4.9.76",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/4223104/darkreader-4.9.76.xpi",
+      "homepageURL": "https://darkreader.org/",
+      "supportURL": "https://github.com/darkreader/darkreader",
+      "amoListingURL": "https://addons.mozilla.org/en-US/firefox/addon/darkreader/",
+      "description": "Dark mode for every website. Take care of your eyes, use dark theme for night and daily browsing.",
+      "fullDescription": "This eye-care extension enables night mode creating dark themes for websites on the fly. Dark Reader inverts bright colors making them high contrast and easy to read at night.\n\nYou can adjust brightness, contrast, sepia filter, dark mode, font settings and ignore-list.\n\nDark Reader doesn't show ads and doesn't send user's data anywhere. It is fully open-source https://github.com/darkreader/darkreader\n\nBefore you install disable similar extensions. Enjoy watching!",
+      "weeklyDownloads": 24979,
+      "type": "extension",
+      "creator": {
+        "name": "Alexander Shutau",
+        "url": "https://addons.mozilla.org/en-US/firefox/user/13299734/"
+      },
+      "developers": [],
+      "screenshots": [
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/201/201069.png?modified=1638883247",
+          "width": 2400,
+          "height": 1500,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/201/201069.jpg?modified=1638883247",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333,
+          "caption": "Dark Reader night theme mode"
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/201/201070.png?modified=1638883247",
+          "width": 2400,
+          "height": 1500,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/201/201070.jpg?modified=1638883247",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333,
+          "caption": "Dark Reader filter settings"
+        }
+      ],
+      "contributionURL": "https://opencollective.com/darkreader?utm_content=product-page-contribute&utm_medium=referral&utm_source=addons.mozilla.org",
+      "averageRating": 4.5445,
+      "reviewCount": 1699,
+      "reviewURL": "https://addons.mozilla.org/en-US/firefox/addon/darkreader/reviews/",
+      "updateDate": 1705922294000
+    },
+    {
+      "id": "extension@tabliss.io",
+      "icons": {
+        "32": "https://addons.mozilla.org/user-media/addon_icons/850/850407-32.png?modified=1650892013",
+        "64": "https://addons.mozilla.org/user-media/addon_icons/850/850407-64.png?modified=1650892013",
+        "128": "https://addons.mozilla.org/user-media/addon_icons/850/850407-128.png?modified=1650892013"
+      },
+      "name": "Tabliss - New Tab",
+      "version": "2.6.0",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/3940751/tabliss-2.6.0.xpi",
+      "homepageURL": "https://tabliss.io",
+      "supportURL": "https://tabliss.io/support.html",
+      "amoListingURL": "https://addons.mozilla.org/en-US/firefox/addon/tabliss/",
+      "description": "A beautiful New Tab page with many customisable backgrounds and widgets that does not require any permissions.",
+      "fullDescription": "Transform your new tab page to something beautiful and yours. Tabliss offers hundreds of customisation options to create a new tab page that unique to you. Choose from many background providers, and be rewarded with stunning, new pictures every time you open a new tab. Add your favourite widgets to stay productive throughout your day. Create your own new tab experience.\n\nWe care about your privacy and your experience. Tabliss is private, fast, and free. Completely free alternative to extensions like Momentum.\n\nFeatures\n- Hundreds of customisation options\n- Millions of backgrounds\n- Useful widgets that keep you productive\n- Translations for over 40 languages\n- Private, secure, and requires no permissions\n- Settings sync between your devices\n- 100% free and open source\n\nBackgrounds\n- Millions of photos with Unsplash\n- Millions of animated gifs with GIPHY\n- Solid colours and colour gradients\n- Upload images from your own device\n\nWidgets\n- Current time in: analogue, digital, or quotes from literature\n- Personal greetings that change over the course of the day\n- Real-time weather conditions\n- Inspiring daily quotes (or not inspiring, there are categories)\n- Todo list to keep track for tasks\n- Quick notes to jot things down\n- Quick links/speed dial for your favourite websites\n- Search box with support for Google, DuckDuckGo, and more\n- Work hours to count down the day\n- Live NBA scores for live games\n- GitHub contributions calendar\n- IP information about your connection\n- Custom CSS for advanced styling\n\nContact\nsupport@tabliss.io",
+      "weeklyDownloads": 1917,
+      "type": "extension",
+      "creator": {
+        "name": "tabliss.io",
+        "url": "https://addons.mozilla.org/en-US/firefox/user/13265936/"
+      },
+      "developers": [],
+      "screenshots": [
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/235/235871.png?modified=1622132774",
+          "width": 1280,
+          "height": 800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/235/235871.jpg?modified=1622132774",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333,
+          "caption": "Replace your new tab page."
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/235/235872.png?modified=1622132788",
+          "width": 1280,
+          "height": 800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/235/235872.jpg?modified=1622132788",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333,
+          "caption": "Customise it till your heart is content."
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/235/235873.png?modified=1622132795",
+          "width": 1280,
+          "height": 800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/235/235873.jpg?modified=1622132795",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333,
+          "caption": "Read the time with books and literature!"
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/235/235874.png?modified=1622132806",
+          "width": 1280,
+          "height": 800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/235/235874.jpg?modified=1622132806",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333,
+          "caption": "Support for over 25 languages!"
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/235/235875.png?modified=1622132808",
+          "width": 1280,
+          "height": 800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/235/235875.jpg?modified=1622132808",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333,
+          "caption": "Deep customisation options."
+        }
+      ],
+      "contributionURL": "https://www.paypal.com/donate/?hosted_button_id=FK7VRWS9A2EW4&utm_content=product-page-contribute&utm_medium=referral&utm_source=addons.mozilla.org",
+      "averageRating": 4.6399,
+      "reviewCount": 713,
+      "reviewURL": "https://addons.mozilla.org/en-US/firefox/addon/tabliss/reviews/",
+      "updateDate": 1650964047000
+    },
+    {
+      "id": "clearcache@michel.de.almeida",
+      "icons": {
+        "32": "https://addons.mozilla.org/user-media/addon_icons/10/10822-32.png?modified=1696276999",
+        "64": "https://addons.mozilla.org/user-media/addon_icons/10/10822-64.png?modified=1696276999",
+        "128": "https://addons.mozilla.org/user-media/addon_icons/10/10822-128.png?modified=1696276999"
+      },
+      "name": "Clear Cache",
+      "version": "3.2",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/3339391/clearcache-3.2.xpi",
+      "homepageURL": "https://github.com/TenSoja/clear-cache",
+      "supportURL": "https://github.com/TenSoja/clear-cache",
+      "amoListingURL": "https://addons.mozilla.org/en-US/firefox/addon/clearcache/",
+      "description": "Clear browser cache with a single click or via the F9 key.\n\nF9 Fever! ;)",
+      "fullDescription": "Clear the browser cache (DISK AND RAM) by pressing a single button or easy shortcuts (F9 on Windows and Linux and fn + F9 on OSX).",
+      "weeklyDownloads": 1136,
+      "type": "extension",
+      "creator": {
+        "name": "TenSoja",
+        "url": "https://addons.mozilla.org/en-US/firefox/user/4202863/"
+      },
+      "developers": [],
+      "screenshots": [
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/143/143476.png?modified=1622132517",
+          "width": 299,
+          "height": 185,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/143/143476.jpg?modified=1622132517",
+          "thumbnailWidth": 299,
+          "thumbnailHeight": 185,
+          "caption": "New button added automatically, press to clear the cache."
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/188/188154.png?modified=1622132517",
+          "width": 700,
+          "height": 434,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/188/188154.jpg?modified=1622132517",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 330,
+          "caption": "Preferences panel with option to display notification and reload the page after clearing the cache."
+        }
+      ],
+      "contributionURL": "https://www.buymeacoffee.com/tensoja?utm_content=product-page-contribute&utm_medium=referral&utm_source=addons.mozilla.org",
+      "averageRating": 4.4646,
+      "reviewCount": 95,
+      "reviewURL": "https://addons.mozilla.org/en-US/firefox/addon/clearcache/reviews/",
+      "updateDate": 1562684330000
+    },
+    {
+      "id": "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}",
+      "icons": {
+        "32": "https://addons.mozilla.org/user-media/addon_icons/1/1865-32.png?modified=mcrushed",
+        "64": "https://addons.mozilla.org/user-media/addon_icons/1/1865-64.png?modified=mcrushed",
+        "128": "https://addons.mozilla.org/user-media/addon_icons/1/1865-128.png?modified=mcrushed"
+      },
+      "name": "Adblock Plus",
+      "version": "3.23",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/4225699/adblock_plus-3.23.xpi",
+      "homepageURL": "https://adblockplus.org/",
+      "supportURL": "https://help.eyeo.com",
+      "amoListingURL": "https://addons.mozilla.org/en-US/firefox/addon/adblock-plus/",
+      "description": "One of the most popular free ad blockers for Firefox. Block annoying ads on sites like Facebook, YouTube and all other websites.\n\nAdblock Plus blocks all annoying ads, and supports websites by not blocking unobtrusive ads by default (configurable).",
+      "fullDescription": "Get the free ad blocker for Firefox. With almost 500 million downloads to date!\n\n✓ Block annoying ads and popups\n✓ Block video ads on sites like YouTube\n✓ Speed-up loading time on pages\n✓ Reduce risk of \"malvertising\" infections\n✓ Protect your privacy by stopping trackers from following your online activity\n✓ Block social media icons tracking\n\nThe ad blocker's additional features enable you to easily support your favorite websites by whitelisting them, to add or create your own filters, and to block social media icons tracking.\n\nAdblock Plus supports the Acceptable Ads initiative. Acceptable Ads are shown by default, which helps support websites that rely on advertising revenue but choose to only display nonintrusive ads. This can be disabled at any time for users who wish to block all ads. The initiative allows content producers to receive monetization for their work and helps create an environment of fairness and sustainability for user, advertiser, and creator alike. Learn more\n\nBy downloading and installing this extension, you agree to our Terms of Use and our Privacy Policy.",
+      "weeklyDownloads": 54183,
+      "type": "extension",
+      "creator": {
+        "name": "Adblock Plus",
+        "url": "https://addons.mozilla.org/en-US/firefox/user/13462625/"
+      },
+      "developers": [],
+      "screenshots": [
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/137/137084.png?modified=1622132263",
+          "width": 700,
+          "height": 521,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/137/137084.jpg?modified=1622132263",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 397,
+          "caption": "Easily remove all annoying ads from Firefox."
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/137/137086.png?modified=1622132263",
+          "width": 700,
+          "height": 521,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/137/137086.jpg?modified=1622132263",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 397,
+          "caption": "Adblock Plus can do more than adblocking. Enable powerful features in one click."
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/137/137088.png?modified=1622132263",
+          "width": 700,
+          "height": 521,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/137/137088.jpg?modified=1622132263",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 397,
+          "caption": "Clean up your Facebook experience with Adblock Plus."
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/137/137090.png?modified=1622132263",
+          "width": 700,
+          "height": 521,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/137/137090.jpg?modified=1622132263",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 397,
+          "caption": "Adblock Plus even removes those annoying 30-second video ads on YouTube."
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/137/137092.png?modified=1622132264",
+          "width": 700,
+          "height": 521,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/137/137092.jpg?modified=1622132264",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 397,
+          "caption": "Remove all annoying blinking banners!"
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/137/137094.png?modified=1622132264",
+          "width": 700,
+          "height": 521,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/137/137094.jpg?modified=1622132264",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 397,
+          "caption": "Browse the web as it once used to be."
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/137/137096.png?modified=1622132264",
+          "width": 700,
+          "height": 521,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/137/137096.jpg?modified=1622132264",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 397,
+          "caption": "Please help us by reporting bugs."
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/137/137098.png?modified=1622132264",
+          "width": 700,
+          "height": 521,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/137/137098.jpg?modified=1622132264",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 397,
+          "caption": "You can even create your own blocking lists to customize the web to your exact needs."
+        }
+      ],
+      "contributionURL": "",
+      "averageRating": 4.4429,
+      "reviewCount": 2842,
+      "reviewURL": "https://addons.mozilla.org/en-US/firefox/addon/adblock-plus/reviews/",
+      "updateDate": 1706288999000
+    },
+    {
+      "id": "{d634138d-c276-4fc8-924b-40a0ea21d284}",
+      "icons": {
+        "32": "https://addons.mozilla.org/user-media/addon_icons/950/950528-32.png?modified=bd35add9",
+        "64": "https://addons.mozilla.org/user-media/addon_icons/950/950528-64.png?modified=bd35add9",
+        "128": "https://addons.mozilla.org/user-media/addon_icons/950/950528-128.png?modified=bd35add9"
+      },
+      "name": "1Password: Password Manager",
+      "version": "2.15.1",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/4168788/1password_x_password_manager-2.15.1.xpi",
+      "homepageURL": "https://1password.com",
+      "supportURL": "https://support.1password.com",
+      "amoListingURL": "https://addons.mozilla.org/en-US/firefox/addon/1password-x-password-manager/",
+      "description": "The best way to experience 1Password in your browser. Easily sign in to sites, generate passwords, and store secure information, including logins, credit cards, notes, and more.",
+      "fullDescription": "This extension requires a 1Password membership. If you don't have one yet, you can sign up when you install the extension and try one free.\n\n1Password is a password manager that keeps you safe online. You want to use different passwords for every website, but it can be hard to keep track of them all. With 1Password you only ever need to memorize…one password. All your other passwords and important information are protected behind the one password only you know.\n\n1Password manages everything for you: generating, saving, and filling your passwords. Get to know 1Password in your browser:\n\nhttps://support.1password.com/getting-started-browser/\n\nAbout your privacy\n\n1Password was designed with a deep respect for your privacy. The data you save is encrypted and inaccessible to us, including so called metadata like titles, website URLs, tags, and custom icons.\n\nAt 1Password, we believe that the less information we know about you, the better. After all, it is impossible to lose, misuse, or abuse information we don’t have.\n\nWe collect only the information necessary to provide our services and assist you in troubleshooting, such what kind of 1Password account you signed up for (including email address), usage information (such as when you log in), and details about your connected devices.\n\nThis personally identifiable information is never shared with third parties. It is only ever used to provide you with service and support. You can see our privacy policy for full details.\n\nWe believe strongly that your data is yours and we don’t want to know anything about it. This is one of the fundamental beliefs 1Password was built upon.\n\nYour data is your data. We don’t use it, we don’t share it, and we don’t sell it. You’re our customer, not our product.",
+      "weeklyDownloads": 8088,
+      "type": "extension",
+      "creator": {
+        "name": "1Password",
+        "url": "https://addons.mozilla.org/en-US/firefox/user/13862630/"
+      },
+      "developers": [],
+      "screenshots": [
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/294/294551.png?modified=1705699647",
+          "width": 1280,
+          "height": 800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/294/294551.jpg?modified=1705699647",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333,
+          "caption": "Passwords, credit cards, and logins directly at your fingertips."
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/294/294552.png?modified=1705699645",
+          "width": 1280,
+          "height": 800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/294/294552.jpg?modified=1705699645",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333,
+          "caption": "Fill in usernames and passkeys to log in to sites with a single click."
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/294/294553.png?modified=1705699645",
+          "width": 1280,
+          "height": 800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/294/294553.jpg?modified=1705699645",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333,
+          "caption": "Easily generate strong, random passwords."
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/294/294554.png?modified=1705699645",
+          "width": 1280,
+          "height": 800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/294/294554.jpg?modified=1705699645",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333,
+          "caption": "Share passwords and sensitive information easily."
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/294/294555.png?modified=1705699646",
+          "width": 1280,
+          "height": 800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/294/294555.jpg?modified=1705699646",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333,
+          "caption": "Try 1Password free for 14-days."
+        }
+      ],
+      "contributionURL": "",
+      "averageRating": 3.8325,
+      "reviewCount": 474,
+      "reviewURL": "https://addons.mozilla.org/en-US/firefox/addon/1password-x-password-manager/reviews/",
+      "updateDate": 1695305231000
+    },
+    {
+      "id": "extension@redux.devtools",
+      "icons": {
+        "32": "https://addons.mozilla.org/user-media/addon_icons/715/715938-32.png?modified=mcrushed",
+        "64": "https://addons.mozilla.org/user-media/addon_icons/715/715938-64.png?modified=mcrushed",
+        "128": "https://addons.mozilla.org/user-media/addon_icons/715/715938-128.png?modified=mcrushed"
+      },
+      "name": "Redux DevTools",
+      "version": "3.1.6",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/4209147/reduxdevtools-3.1.6.xpi",
+      "homepageURL": "https://github.com/reduxjs/redux-devtools",
+      "supportURL": "https://github.com/reduxjs/redux-devtools",
+      "amoListingURL": "https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/",
+      "description": "DevTools for Redux with actions history, undo and replay.",
+      "fullDescription": "Redux DevTools is a development time package that provides power-ups for your Redux development workflow.\n\n    Lets you inspect every state and action payload.\n    Lets you go back in time by “cancelling” actions.\n    If you change the reducer code, each “staged” action will be re-evaluated.\n    If the reducers throw, you will see during which action this happened, and what the error was.\n\n\nIt's an opensource project. See the official repository for more details.",
+      "weeklyDownloads": 954,
+      "type": "extension",
+      "creator": {
+        "name": "timdorr",
+        "url": "https://addons.mozilla.org/en-US/firefox/user/5668942/"
+      },
+      "developers": [
+        {
+          "name": "Methuselah96",
+          "url": "https://addons.mozilla.org/en-US/firefox/user/17022967/"
+        }
+      ],
+      "screenshots": [
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/176/176150.png?modified=1622132431",
+          "width": 700,
+          "height": 409,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/176/176150.jpg?modified=1622132431",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 311
+        }
+      ],
+      "contributionURL": "",
+      "averageRating": 4.688,
+      "reviewCount": 28,
+      "reviewURL": "https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/reviews/",
+      "updateDate": 1702904918000
+    },
+    {
+      "id": "{f7619bc3-ed22-44a3-83ad-e79a78416737}",
+      "icons": {
+        "32": "https://addons.mozilla.org/user-media/addon_icons/994/994850-32.png?modified=dc6e67b0",
+        "64": "https://addons.mozilla.org/user-media/addon_icons/994/994850-64.png?modified=dc6e67b0",
+        "128": "https://addons.mozilla.org/user-media/addon_icons/994/994850-128.png?modified=dc6e67b0"
+      },
+      "name": "Readwise",
+      "version": "2.8.0",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/3732256/readwise-2.8.0.xpi",
+      "homepageURL": "https://readwise.io",
+      "supportURL": "https://readwise.io/faq",
+      "amoListingURL": "https://addons.mozilla.org/en-US/firefox/addon/readwise/",
+      "description": "Don't let your kindle highlights disappear. Sync them with Readwise and then review them daily.",
+      "fullDescription": "Readwise makes it easy to revisit the best parts of what you read 🤓\n\nHere's how it works:\n\n- Sync your highlights from Kindle to Readwise using this Chrome Extension\n- Review the best parts easily through a daily email, web, or mobile\n- Retain more from your ebooks/articles\n\nYou'll actually use your highlights, and get the most out of your reading 🚀\n\nTo get started, sign up at https://readwise.io\n\nAny questions or concerns? Reach out to us at hello@readwise.io -- we'd love to chat!",
+      "weeklyDownloads": 43,
+      "type": "extension",
+      "creator": {
+        "name": "Readwise",
+        "url": "https://addons.mozilla.org/en-US/firefox/user/14248581/"
+      },
+      "developers": [],
+      "screenshots": [
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/223/223356.png?modified=1622133472",
+          "width": 1280,
+          "height": 800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/223/223356.jpg?modified=1622133472",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333,
+          "caption": "An overview of all of your books inside of Readwise, after syncing them."
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/223/223357.png?modified=1622133476",
+          "width": 1280,
+          "height": 800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/223/223357.jpg?modified=1622133476",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333,
+          "caption": "What the Readwise extension looks like as it's syncing your highlights."
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/223/223358.png?modified=1622133478",
+          "width": 1280,
+          "height": 800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/223/223358.jpg?modified=1622133478",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333,
+          "caption": "The sync overview page before syncing your highlights."
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/223/223359.png?modified=1622133483",
+          "width": 1280,
+          "height": 800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/223/223359.jpg?modified=1622133483",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333,
+          "caption": "Reviewing your highlights inside of the Readwise web app."
+        }
+      ],
+      "contributionURL": "",
+      "averageRating": 5,
+      "reviewCount": 3,
+      "reviewURL": "https://addons.mozilla.org/en-US/firefox/addon/readwise/reviews/",
+      "updateDate": 1614150018000
+    },
+    {
+      "id": "{52c2fc44-27f2-40a0-a8fb-fd01690f81fe}",
+      "icons": {
+        "32": "https://addons.mozilla.org/user-media/addon_icons/855/855203-32.png?modified=69299267",
+        "64": "https://addons.mozilla.org/user-media/addon_icons/855/855203-64.png?modified=69299267",
+        "128": "https://addons.mozilla.org/user-media/addon_icons/855/855203-128.png?modified=69299267"
+      },
+      "name": "Window Resizer",
+      "version": "0.1.3",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/3755798/window_resizer_webextension-0.1.3.xpi",
+      "homepageURL": "https://mybrowseraddon.com/window-resizer.html",
+      "supportURL": "https://mybrowseraddon.com/window-resizer.html",
+      "amoListingURL": "https://addons.mozilla.org/en-US/firefox/addon/window-resizer-webextension/",
+      "description": "Easily set the layout (size & position) of your browser window",
+      "fullDescription": "Window Resizer is an addon that let you easily re-size and re-position current window to your desired values.\n\nSimply open toolbar popup UI and click on the desired layout set (size & position). Once you click a layout, the window will be positioned and resized to the chosen layout. There are 20 predefined layouts available to choose from in toolbar popup.\n\nIf you need a custom layout, please click on the - Add a new layout - button at top left corner in popup UI. A new tab will be open with custom design layout UI. Simply drag your desired size within the orange area, then click on the save button to store the custom layout. The new layout will be added to the popup UI.\n\nNote 1: icons within toolbar popup UI are draggable and the new order will be auto-saved to the memory.\n\nNote 2: to report bugs, please fill the bug report form in the addon homepage.",
+      "weeklyDownloads": 124,
+      "type": "extension",
+      "creator": {
+        "name": "Kelvin",
+        "url": "https://addons.mozilla.org/en-US/firefox/user/15708966/"
+      },
+      "developers": [],
+      "screenshots": [
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/247/247366.png?modified=1622132785",
+          "width": 920,
+          "height": 680,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/247/247366.jpg?modified=1622132785",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 394
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/247/247367.png?modified=1622132787",
+          "width": 1280,
+          "height": 800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/247/247367.jpg?modified=1622132787",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/247/247368.png?modified=1622132789",
+          "width": 1280,
+          "height": 800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/247/247368.jpg?modified=1622132789",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333
+        }
+      ],
+      "contributionURL": "https://paypal.me/supportdevelopment/10usd?utm_content=product-page-contribute&utm_medium=referral&utm_source=addons.mozilla.org",
+      "averageRating": 3.1071,
+      "reviewCount": 14,
+      "reviewURL": "https://addons.mozilla.org/en-US/firefox/addon/window-resizer-webextension/reviews/",
+      "updateDate": 1617697817000
+    },
+    {
+      "id": "{7d1f7c5e-0f6f-4bba-82a3-04d859512523}",
+      "icons": {
+        "32": "https://addons.mozilla.org/user-media/addon_icons/2628/2628308-32.png?modified=b0b123ec",
+        "64": "https://addons.mozilla.org/user-media/addon_icons/2628/2628308-64.png?modified=b0b123ec",
+        "128": "https://addons.mozilla.org/user-media/addon_icons/2628/2628308-128.png?modified=b0b123ec"
+      },
+      "name": "Detailed SEO Extension",
+      "version": "1.3.6",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/4208267/detailed_seo_extension-1.3.6.xpi",
+      "homepageURL": "https://detailed.com/extension",
+      "supportURL": "https://detailed.com",
+      "amoListingURL": "https://addons.mozilla.org/en-US/firefox/addon/detailed-seo-extension/",
+      "description": "Get SEO insights at the click of a button to any website you're currently on. Built by full-time SEO's for daily analysis.",
+      "fullDescription": "Get SEO insights at the click of a button to any website you're currently on. Built by full-time SEO's for daily analysis.\nGet SEO-related insights at the click of a button to any website you're currently on.\n\nPull back their title tag, meta description, meta robots tag and much more.\n\nSave hours of time looking through the source code of this page with our SEO analysis extension.",
+      "weeklyDownloads": 156,
+      "type": "extension",
+      "creator": {
+        "name": "Detailed.com",
+        "url": "https://addons.mozilla.org/en-US/firefox/user/15413444/"
+      },
+      "developers": [],
+      "screenshots": [
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/233/233297.png?modified=1622135295",
+          "width": 640,
+          "height": 400,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/233/233297.jpg?modified=1622135295",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333
+        }
+      ],
+      "contributionURL": "",
+      "averageRating": 4.2,
+      "reviewCount": 14,
+      "reviewURL": "https://addons.mozilla.org/en-US/firefox/addon/detailed-seo-extension/reviews/",
+      "updateDate": 1702380337000
+    },
+    {
+      "id": "{a0370179-acc3-452f-9530-246b6adb2768}",
+      "icons": {
+        "32": "https://addons.mozilla.org/user-media/addon_icons/2250/2250921-32.png?modified=0d831fc5",
+        "64": "https://addons.mozilla.org/user-media/addon_icons/2250/2250921-64.png?modified=0d831fc5",
+        "128": "https://addons.mozilla.org/user-media/addon_icons/2250/2250921-128.png?modified=0d831fc5"
+      },
+      "name": "Svelte Devtools",
+      "version": "1.3.0",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/3702386/svelte_devtools-1.3.0.xpi",
+      "homepageURL": "https://github.com/RedHatter/svelte-devtools",
+      "supportURL": "https://github.com/RedHatter/svelte-devtools/issues",
+      "amoListingURL": "https://addons.mozilla.org/en-US/firefox/addon/svelte-devtools/",
+      "description": "Browser devtools extension for debugging Svelte applications.",
+      "fullDescription": "Svelte Devtools is a Firefox extension for the Svelte javascript framework. It allows you to inspect the Svelte state and component hierarchies in the Firefox Developer Tools.\n\nAfter installing you will see new tab in Firefox DevTools. This tab displays a tree of Svelte components, HTMLx blocks, and DOM elements that were rendered on the page. By selecting one of the nodes in the tree, you can inspect and edit its current state in the panel to the right.",
+      "weeklyDownloads": 40,
+      "type": "extension",
+      "creator": {
+        "name": "RedHatter271",
+        "url": "https://addons.mozilla.org/en-US/firefox/user/13159469/"
+      },
+      "developers": [],
+      "screenshots": [
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/225/225994.png?modified=1622134498",
+          "width": 2400,
+          "height": 1800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/225/225994.jpg?modified=1622134498",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 400
+        }
+      ],
+      "contributionURL": "",
+      "averageRating": 4.7778,
+      "reviewCount": 4,
+      "reviewURL": "https://addons.mozilla.org/en-US/firefox/addon/svelte-devtools/reviews/",
+      "updateDate": 1609576828000
+    },
+    {
+      "id": "{6e262423-d612-4f29-be6e-e83aa641645d}",
+      "icons": {
+        "32": "https://addons.mozilla.org/user-media/addon_icons/1006/1006492-32.png?modified=c161b0b2",
+        "64": "https://addons.mozilla.org/user-media/addon_icons/1006/1006492-64.png?modified=c161b0b2",
+        "128": "https://addons.mozilla.org/user-media/addon_icons/1006/1006492-128.png?modified=c161b0b2"
+      },
+      "name": "Open Graph Preview",
+      "version": "1.0.4",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/4049194/open_graph_preview_and_debug-1.0.4.xpi",
+      "homepageURL": null,
+      "supportURL": null,
+      "amoListingURL": "https://addons.mozilla.org/en-US/firefox/addon/open-graph-preview-and-debug/",
+      "description": "Shows approximately what users will see if this webpage is shared on websites that uses OG tags to display a preview.\nLet you detect if no Open Graph Tags are set on your webpage !\nThe shown preview is inspired from the Facebook one.",
+      "fullDescription": "Shows approximately what users will see if this webpage is shared on websites that uses Open Graph Tags to display a preview.\nIf no Open Graph Tags are presents or if they are not correct, you will be able to detect it easily with this extension.\nOf course, depending on where your webpage is shared, the preview may not reflect the exact result. The shown preview is inspired from the Facebook one.",
+      "weeklyDownloads": 31,
+      "type": "extension",
+      "creator": {
+        "name": "apiaget",
+        "url": "https://addons.mozilla.org/en-US/firefox/user/14386126/"
+      },
+      "developers": [],
+      "screenshots": [
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/210/210259.png?modified=1622134193",
+          "width": 1280,
+          "height": 800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/210/210259.jpg?modified=1622134193",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 333,
+          "caption": "Open Graph Preview of mozilla.org/en"
+        }
+      ],
+      "contributionURL": "",
+      "averageRating": 4,
+      "reviewCount": 6,
+      "reviewURL": "https://addons.mozilla.org/en-US/firefox/addon/open-graph-preview-and-debug/reviews/",
+      "updateDate": 1672188621000
+    },
+    {
+      "id": "{fd12b446-5555-428a-9a2f-a07573b53748}",
+      "icons": {
+        "32": "https://addons.mozilla.org/user-media/addon_icons/871/871944-32.png?modified=4bfab47d",
+        "64": "https://addons.mozilla.org/user-media/addon_icons/871/871944-64.png?modified=4bfab47d",
+        "128": "https://addons.mozilla.org/user-media/addon_icons/871/871944-128.png?modified=4bfab47d"
+      },
+      "name": "Search Filter",
+      "version": "2.1.15",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/4163369/g_search_filter-2.1.15.xpi",
+      "homepageURL": null,
+      "supportURL": "https://alexsalle.com",
+      "amoListingURL": "https://addons.mozilla.org/en-US/firefox/addon/g-search-filter/",
+      "description": "Allows you to make specified domains STAND OUT or DISAPPEAR from Google, DuckDuckGo, Bing, and StartPage search results.",
+      "fullDescription": "Search Filter - improving your search results since 2012!\n\nChangelog\n2.1.15 fixes filtering on Google\n2.1.14 fixes filtering on DDG\n2.1.13 renamed extension to Search Filter\n2.1.12 fixes dark mode on Google\n2.1.11 fixes bug where extension would freeze if highlight/hide clicked before setup\n2.1.9 fixes filtering on Google\n2.1.8 fixes filtering on Google image search\n2.1.7 fixes filtering on Google\n2.1.6 added support for StartPage\n2.1.5 fixes filtering on Google News\n2.1.0 easily create filters directly from search results.\n2.0.0 reduced permissions, improved syncing, external filters, support for all searches (images, videos, news included), and support for DuckDuckGo and Bing.\n1.0.10 improved performance\n1.0.9 far more efficient and now compatible with Firefox\n1.0.6 syncing is working again (SSL'd connection to sync server)\n1.0.5 updated to support new version of Google Search\n1.0.4 added support for https://encrypted.google.com/\n1.0.3 significant performance improvements\n1.0.2 added support for Google Instant\n\nAbout Search Filter\n\nThis extension is mainly targeted at developers who run API or problem focused searches over and over again. There are usually a handful of sites whose results we prefer, and a handful of sites whose results are poor or worthless.\n\nSearch Filter allows you to specify (in developer-friendly fashion) sites whose results you would like see highlighted and sites whose results you never want to see.\n\nIn case you use multiple installations of Firefox, this extension allows you to sync your configuration across all installations.\n\nHere is a sample configuration:\n\n# Make these domains stand out in results\n+en.wikipedia.org\n+stackoverflow.com\n+github.com\n+api.rubyonrails.org\n# SPAM - never show these results\nexperts-exchange.com\n# Pull filters from external source\n@https://clobapi.herokuapp.com/default-filters.txt\n\n\nTo avoid littering the GUI with buttons, the Search Filter button only appears when running searches on Google.",
+      "weeklyDownloads": 15,
+      "type": "extension",
+      "creator": {
+        "name": "Alex Salle",
+        "url": "https://addons.mozilla.org/en-US/firefox/user/13417399/"
+      },
+      "developers": [],
+      "screenshots": [
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/195/195527.png?modified=1622132809",
+          "width": 570,
+          "height": 525,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/195/195527.jpg?modified=1622132809",
+          "thumbnailWidth": 434,
+          "thumbnailHeight": 400,
+          "caption": "Example usage."
+        }
+      ],
+      "contributionURL": "",
+      "averageRating": 3.3585,
+      "reviewCount": 39,
+      "reviewURL": "https://addons.mozilla.org/en-US/firefox/addon/g-search-filter/reviews/",
+      "updateDate": 1693936532000
+    },
+    {
+      "id": "pinboard-webextension@helloworld.ro",
+      "icons": {
+        "32": "https://addons.mozilla.org/user-media/addon_icons/854/854969-32.png?modified=1657044103",
+        "64": "https://addons.mozilla.org/user-media/addon_icons/854/854969-64.png?modified=1657044103",
+        "128": "https://addons.mozilla.org/user-media/addon_icons/854/854969-128.png?modified=1657044103"
+      },
+      "name": "Pinboard WebExtension",
+      "version": "1.64",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/3974819/pinboard_webextension-1.64.xpi",
+      "homepageURL": "https://github.com/gapop/pinboard-webextension",
+      "supportURL": "https://github.com/gapop/pinboard-webextension/issues",
+      "amoListingURL": "https://addons.mozilla.org/en-US/firefox/addon/pinboard-webextension/",
+      "description": "Easily add links to Pinboard. A remake of the old official Pinboard extension.",
+      "fullDescription": "This is an extension for easily adding links to Pinboard. It is a remake of the old official Pinboard extension, developed on the WebExtensions platform to ensure compatibility with newer versions of Firefox (version 60 or newer). I have tried to make it true to the original, which has worked well for me, not so much to add new features.\n\nThe add-on has the “Save to Pinboard”, “Read later”, and “Save tab set” features. It provides a versatile toolbar button (compatible with both light and dark themes), context menu items, and allows keyboard shortcuts to be assigned to the main operations.\n\nJust like with the official extension, you must be logged-in to Pinboard to be able to save links. If necessary, the extension will show you the Pinboard login form. This is the actual form from Pinboard. The extension does not see your e-mail address or password at any time.\n\n\nKNOWN ISSUES, QUIRKS AND LIMITATIONS\n\nIn Private Browsing mode, the Read Later command will pop up a window and immediately close it. This is necessary because of limitations in Firefox’s add-on platform. It’s not pretty, but it works.\n\nThe “Save tab set” feature does not work in Private Browsing mode.\n\nDue to a limitation in Firefox, when bookmarking a page in Reader view, any selected text from that page will be ignored. In normal view, the selected text will be used to pre-fill the bookmark description.\n\n\nTHIS EXTENSION IS COMPLETELY FREE\n\nDespite the note from Mozilla that “Some features may require payment”, this extension is completely free of charge. The note is there because the extension is meant to be used with a service – Pinboard – which does charge money.",
+      "weeklyDownloads": 13,
+      "type": "extension",
+      "creator": {
+        "name": "George Pop",
+        "url": "https://addons.mozilla.org/en-US/firefox/user/13285345/"
+      },
+      "developers": [],
+      "screenshots": [
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/271/271108.png?modified=1657044111",
+          "width": 1378,
+          "height": 1032,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/271/271108.jpg?modified=1657044111",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 399,
+          "caption": "Toolbar button with menu"
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/271/271109.png?modified=1657044111",
+          "width": 1379,
+          "height": 1032,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/271/271109.jpg?modified=1657044111",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 399,
+          "caption": "Toolbar button with menu (dark theme)"
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/271/271110.png?modified=1657044109",
+          "width": 1376,
+          "height": 1031,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/271/271110.jpg?modified=1657044109",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 399,
+          "caption": "Context menu"
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/271/271111.png?modified=1657044108",
+          "width": 1379,
+          "height": 1036,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/271/271111.jpg?modified=1657044108",
+          "thumbnailWidth": 532,
+          "thumbnailHeight": 400,
+          "caption": "Preferences"
+        }
+      ],
+      "contributionURL": "https://paypal.me/gapop?utm_content=product-page-contribute&utm_medium=referral&utm_source=addons.mozilla.org",
+      "averageRating": 4.8636,
+      "reviewCount": 13,
+      "reviewURL": "https://addons.mozilla.org/en-US/firefox/addon/pinboard-webextension/reviews/",
+      "updateDate": 1657630515000
+    },
+    {
+      "id": "{02afee51-0b1b-4f57-a260-ab9ad0b61045}",
+      "icons": {
+        "32": "https://addons.mozilla.org/user-media/addon_icons/2280/2280884-32.png?modified=55cc5388",
+        "64": "https://addons.mozilla.org/user-media/addon_icons/2280/2280884-64.png?modified=55cc5388",
+        "128": "https://addons.mozilla.org/user-media/addon_icons/2280/2280884-128.png?modified=55cc5388"
+      },
+      "name": "Social Share Preview",
+      "version": "0.0.0.9",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/3484755/social_share_preview-0.0.0.9.xpi",
+      "homepageURL": "https://placid.app",
+      "supportURL": null,
+      "amoListingURL": "https://addons.mozilla.org/en-US/firefox/addon/social-share-preview/",
+      "description": "Check any website's social share previews while you browse!",
+      "fullDescription": "With the Social Share Preview plugin, you can check how the link previews of a website look like on Facebook, Twitter, LinkedIn and Pinterest. Just activate the plugin to see the preview snippets of every page you browse.\n\nThis is a free and simple little plugin that helps you as a blog owner, developer or social media guy or girl 💙\n\nIf you’re interested in optimizing your preview images check out Placid (https://placid.app) – a tool to automatically create beautiful images for all your pages.\nFor support, feedback & info reach out to us at placid@nifty.at!\nRead our privacy policy: https://placid.app/privacy",
+      "weeklyDownloads": 17,
+      "type": "extension",
+      "creator": {
+        "name": "Nifty Software",
+        "url": "https://addons.mozilla.org/en-US/firefox/user/15065093/"
+      },
+      "developers": [],
+      "screenshots": [
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/230/230865.png?modified=1622134559",
+          "width": 2400,
+          "height": 1800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/230/230865.jpg?modified=1622134559",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 400
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/230/230866.png?modified=1622134613",
+          "width": 2400,
+          "height": 1800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/230/230866.jpg?modified=1622134613",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 400
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/230/230867.png?modified=1622134673",
+          "width": 2400,
+          "height": 1800,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/230/230867.jpg?modified=1622134673",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 400
+        }
+      ],
+      "contributionURL": "",
+      "averageRating": 5,
+      "reviewCount": 0,
+      "reviewURL": "https://addons.mozilla.org/en-US/firefox/addon/social-share-preview/reviews/",
+      "updateDate": 1578945609000
+    },
+    {
+      "id": "{981c6263-af64-47c6-8c6d-c3289444fdf9}",
+      "icons": {
+        "32": "https://addons.mozilla.org/user-media/addon_icons/763/763806-32.png?modified=1598557044",
+        "64": "https://addons.mozilla.org/user-media/addon_icons/763/763806-64.png?modified=1598557044",
+        "128": "https://addons.mozilla.org/user-media/addon_icons/763/763806-128.png?modified=1598557044"
+      },
+      "name": "Pinboard Pin",
+      "version": "0.4.2",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/4079504/pinboard_pin-0.4.2.xpi",
+      "homepageURL": "https://github.com/Cito/Pinboard-Pin",
+      "supportURL": "https://github.com/Cito/Pinboard-Pin",
+      "amoListingURL": "https://addons.mozilla.org/en-US/firefox/addon/pinboard-pin/",
+      "description": "A modern web extension for pinning pages on Pinboard (pinboard.in) with Firefox.",
+      "fullDescription": "Pinboard Pin is a modern web extension for pinning pages on Pinboard with Firefox.\n\nPinboard is a fast, no-nonsense bookmarking site for people who value privacy and speed. Note that while the Pinboard Pin extension is provided by its author as free and open source software, Pinboard is a separate, paid service and you need to sign up for an account in order to use it. The author of Pinboard Pin is not affiliated with the provider of the Pinboard service. For any questions regarding the Pinboard service itself, please contact the Pinboard support.\n\nThis extension pretty much replicates the functionality of the Pinboard Plus extension that has been created for the Chrome browser, but it has been rewritten from scratch to support Firefox using the modern Angular framework instead of a mix of the older AngularJS, jQuery and Underscore libraries used by Pinboard Plus. This rewrite was also intended as a proof-of-concept that modern Angular is a viable platform for building web extensions.",
+      "weeklyDownloads": 0,
+      "type": "extension",
+      "creator": {
+        "name": "Citole",
+        "url": "https://addons.mozilla.org/en-US/firefox/user/4343621/"
+      },
+      "developers": [],
+      "screenshots": [
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/243/243781.png?modified=1622132647",
+          "width": 1192,
+          "height": 560,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/243/243781.jpg?modified=1622132647",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 250
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/243/243782.png?modified=1622132649",
+          "width": 804,
+          "height": 431,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/243/243782.jpg?modified=1622132649",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 286
+        },
+        {
+          "url": "https://addons.mozilla.org/user-media/previews/full/243/243783.png?modified=1622132651",
+          "width": 1200,
+          "height": 560,
+          "thumbnailURL": "https://addons.mozilla.org/user-media/previews/thumbs/243/243783.jpg?modified=1622132651",
+          "thumbnailWidth": 533,
+          "thumbnailHeight": 249
+        }
+      ],
+      "contributionURL": "",
+      "averageRating": 4.7143,
+      "reviewCount": 8,
+      "reviewURL": "https://addons.mozilla.org/en-US/firefox/addon/pinboard-pin/reviews/",
+      "updateDate": 1678036854000
+    }
+  ]
+}
