@@ -1,0 +1,24 @@
+{
+  "$schema": "https://svelte.dev/opencode/schema.json",
+  "mcp": {
+    "type": "local",
+    "enabled": true
+  },
+  "subagent": {
+    "enabled": true,
+    "agents": {
+      "svelte-file-editor": {
+        "model": "qwen3-coder-30b-64k",
+        "temperature": 1,
+        "top_p": 0.7,
+        "maxSteps": 20
+      }
+    }
+  },
+  "skills": {
+    "enabled": true
+  },
+  "instructions": {
+    "enabled": true
+  }
+}

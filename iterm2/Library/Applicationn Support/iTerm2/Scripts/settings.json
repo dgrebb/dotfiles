@@ -1,0 +1,8 @@
+{
+  "pane_transparency": {
+    "active": 0.8,
+    "inactive": 0.1,
+    "blur": false,
+    "blur_radius": 0
+  }
+}
