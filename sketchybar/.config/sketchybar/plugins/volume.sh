@@ -1,44 +1,57 @@
 #!/bin/bash
 
-WIDTH=100
+# shellcheck disable=SC1091
+source "$CONFIG_DIR/plugins/volume_common.sh"
 
-volume_change() {
-  source "$CONFIG_DIR/icons.sh"
-  case $INFO in
-    [6-9][0-9]|100) ICON=$VOLUME_100
-    ;;
-    [3-5][0-9]) ICON=$VOLUME_66
-    ;;
-    [1-2][0-9]) ICON=$VOLUME_33
-    ;;
-    [1-9]) ICON=$VOLUME_10
-    ;;
-    0) ICON=$VOLUME_0
-    ;;
-    *) ICON=$VOLUME_100
-  esac
+apply_level() {
+  local vol="$1" glyph
+  glyph=$(volume_glyph "$vol")
+  sketchybar --set volume_icon label="$glyph" \
+             --set volume slider.percentage="$vol"
+}
 
-  sketchybar --set volume_icon label=$ICON
+# Briefly reveal the slider, then collapse it if nothing newer happened
+# and the user has not pinned it open with a click.
+peek_slider() {
+  local gen
+  gen=$(volume_bump_generation)
 
-  sketchybar --set $NAME slider.percentage=$INFO \
-             --animate tanh 30 --set $NAME slider.width=$WIDTH 
+  if [[ ! -f "$VOLUME_OPEN_FILE" ]]; then
+    echo 1 > "$VOLUME_OPEN_FILE"
+    volume_slider_width "$VOLUME_SLIDER_WIDTH"
+  fi
 
-  sleep 2
+  sleep 1.4
 
-  # Check wether the volume was changed another time while sleeping
-  FINAL_PERCENTAGE=$(sketchybar --query $NAME | jq -r ".slider.percentage")
-  if [ "$FINAL_PERCENTAGE" -eq "$INFO" ]; then
-    sketchybar --animate tanh 30 --set $NAME slider.width=0
+  if [[ "$(volume_generation)" == "$gen" && ! -f "$VOLUME_PIN_FILE" ]]; then
+    rm -f "$VOLUME_OPEN_FILE"
+    volume_slider_width 0
   fi
 }
 
+volume_change() {
+  local vol="${INFO%%.*}"
+  [[ "$vol" =~ ^[0-9]+$ ]] || return 0
+  if (( vol > 100 )); then
+    vol=100
+  fi
+
+  apply_level "$vol"
+
+  # Startup sync should match the icon without playing the reveal.
+  [[ "${VOLUME_QUIET:-0}" == "1" ]] && return 0
+  # A click pins the slider open; later volume changes only move the level.
+  [[ -f "$VOLUME_PIN_FILE" ]] && return 0
+
+  peek_slider
+}
+
 mouse_clicked() {
+  [[ "${PERCENTAGE:-}" =~ ^[0-9]+$ ]] || return 0
   osascript -e "set volume output volume $PERCENTAGE"
 }
 
 case "$SENDER" in
-  "volume_change") volume_change
-  ;;
-  "mouse.clicked") mouse_clicked
-  ;;
+  volume_sync|volume_change) volume_change ;;
+  mouse.clicked) mouse_clicked ;;
 esac
