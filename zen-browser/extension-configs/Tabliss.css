@@ -1,0 +1,63 @@
+.GitHub {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -69px;
+}
+
+div.Widget div.GitHub a.GitHubCalendar div.position-relative a.hide-sm.hide-md.hide-lg {
+  display: none;
+}
+
+.sr-only {
+  display: none;
+}
+
+td:first-child {
+  display: none;
+}
+
+div.js-calendar-graph div:last-child {
+  display: none;
+}
+
+table.ContributionCalendar-grid thead {
+  display: none;
+}
+
+td.ContributionCalendar-day {
+  border-radius: 3px;
+}
+
+td.ContributionCalendar-day[data-level="0"] {
+  background-color: var(--color-calendar-graph-day-bg);
+}
+
+td.ContributionCalendar-day[data-level="1"] {
+  background-color: var(--color-calendar-graph-day-L1-bg);
+}
+
+td.ContributionCalendar-day[data-level="2"] {
+  background-color: var(--color-calendar-graph-day-L2-bg);
+}
+
+td.ContributionCalendar-day[data-level="3"] {
+  background-color: var(--color-calendar-graph-day-L3-bg);
+}
+
+td.ContributionCalendar-day[data-level="4"] {
+  background-color: var(--color-calendar-graph-day-L4-bg);
+}
+
+.Weather .details {
+  display: flex;
+  justify-content: center;
+}
+
+.Weather .details dl {
+  padding: 0.5rem;
+}
+
+.Time .Time.Analogue {
+  display: none;
+}

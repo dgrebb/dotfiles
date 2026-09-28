@@ -24,3 +24,17 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# APplication Storage
+.config/.sketchyrw/album_art.png
+.config/iterm2/AppSupport
+.config/.sketchyrw/network.out
+.config/.sketchyrw/wallpaper
+
+# Secrets
+*.machine
+*.secrets
+
+# Aliases
+.dotfiles/cron/obsidian
+.dotfiles/cron/templates
