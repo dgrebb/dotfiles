@@ -1,26 +1,32 @@
 #!/bin/bash
 
-WIDTH=100
+# shellcheck disable=SC1091
+source "$CONFIG_DIR/plugins/volume_common.sh"
 
 detail_on() {
-  sketchybar --animate tanh 30 --set volume slider.width=$WIDTH
+  echo 1 > "$VOLUME_OPEN_FILE"
+  echo 1 > "$VOLUME_PIN_FILE"
+  volume_bump_generation >/dev/null
+  volume_slider_width "$VOLUME_SLIDER_WIDTH"
 }
 
 detail_off() {
-  sketchybar --animate tanh 30 --set volume slider.width=0
+  rm -f "$VOLUME_OPEN_FILE" "$VOLUME_PIN_FILE"
+  volume_bump_generation >/dev/null
+  volume_slider_width 0
 }
 
 toggle_detail() {
-  INITIAL_WIDTH=$(sketchybar --query volume | jq -r ".slider.width")
-  if [ "$INITIAL_WIDTH" -eq "0" ]; then
-    detail_on
-  else
+  if [[ -f "$VOLUME_OPEN_FILE" ]]; then
     detail_off
+  else
+    detail_on
   fi
 }
 
 toggle_devices() {
   which SwitchAudioSource >/dev/null || exit 0
+  # shellcheck disable=SC1091
   source "$CONFIG_DIR/colors.sh"
 
   args=(--remove '/volume.device\.*/' --set "$NAME" popup.drawing=toggle)
