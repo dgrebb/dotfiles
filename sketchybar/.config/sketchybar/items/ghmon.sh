@@ -5,7 +5,7 @@ POPUP_CLICK_SCRIPT="sketchybar --set \$NAME popup.drawing=toggle"
 ghmon_status=(
   script="$PLUGIN_DIR/ghmon.sh"
   click_script="$POPUP_CLICK_SCRIPT"
-  update_freq=30
+  update_freq=90
   padding_right=6
   padding_left=4
   # Outer pill comes from items/group.github.sh — keep this item chrome-free

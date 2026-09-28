@@ -13,7 +13,7 @@ Icons next to the frontmost app name come from
 | Known app | `sketchybar-app-font` ligature | e.g. `:cursor:` |
 | Unknown app | `sketchybar-app-font` | `:default:` |
 
-## Icons we rely on (daily driver)
+## Icons we rely on (daily driver)s
 
 | App | Mapping key(s) | Ligature |
 |---|---|---|
