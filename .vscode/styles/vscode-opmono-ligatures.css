@@ -1,0 +1,44 @@
+/* https://github.com/dgrebb/vscode-fonts */
+
+.mtk7,
+.mtk3,
+.mtk4,
+.mtk13,
+.mtk16 {
+  /* margin-left: 1px; */
+  font-family: "Operator Mono Lig", "OperatorMono Nerd Font",
+    "FiraCode Nerd Font Mono", "FiraCode Nerd Font", "Hack Nerd Font",
+    fonFiraCode, Menlo, Monaco, "Courier New", monospace;
+  /* font-size: 1.2em; */
+  /* font-weight: 200; */
+}
+
+.mtk1,
+.mtk6,
+.mtk7,
+.mtk8,
+.mtk9,
+.mtk10,
+.mtk12,
+.mtk4 {
+  font-family: "Operator Mono Lig", "OperatorMono Nerd Font",
+    "FiraCode Nerd Font Mono", "FiraCode Nerd Font", "Hack Nerd Font",
+    fonFiraCode, Menlo, Monaco, "Courier New", monospace;
+  /* font-size: 1.2em; */
+  /* font-weight: 200; */
+}
+
+.monaco-icon-label-description-container .label-name {
+  font-family: "Operator Mono Lig", "OperatorMono Nerd Font",
+    "FiraCode Nerd Font Mono", "FiraCode Nerd Font", "Hack Nerd Font",
+    fonFiraCode, Menlo, Monaco, "Courier New", monospace;
+  /* font-size: 1.3em; */
+}
+
+.tabs-container .monaco-icon-label-description-container .label-name,
+.sidebar .monaco-icon-label-description-container .label-name,
+.quick-open-row .monaco-icon-label-description-container .label-name {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI,
+    HelveticaNeue-Light, Ubuntu, Droid Sans, sans-serif;
+  /* font-size: 1em; */
+}
