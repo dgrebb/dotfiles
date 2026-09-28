@@ -68,7 +68,7 @@ dotfiles/
 
 ### macOS Tools
 - **`yabai`** - Window management and tiling
-- **`sketchybar`** - Status bar replacement
+- **`sketchybar`** - Status bar replacement with swappable themes — see [`sketchybar/README.md`](sketchybar/README.md)
 - **`spaceship`** - Shell prompt (Starship)
 - **`ghostty`** - Terminal emulator configuration
 
