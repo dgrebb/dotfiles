@@ -1,0 +1,96 @@
+#!/bin/bash
+
+# Log location
+# tail -f /opt/homebrew/var/log/sketchybar/sketchybar.out.log
+# tail -f /opt/homebrew/var/log/sketchybar/sketchybar.err.log
+
+# Query macos menu items for use with aliasing
+# sketchybar --query default_menu_items
+
+[[ -f "$HOME/.config/machine.sh" ]] && source "$HOME/.config/machine.sh"
+
+source "$CONFIG_DIR/colors.sh" # Loads active theme colors (themes/active)
+source "$CONFIG_DIR/icons.sh"  # Loads all defined icons
+
+ITEM_DIR="$CONFIG_DIR/items"
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+FONT="${SKETCHYBAR_FONT:-Hack Nerd Font}"
+PADDINGS="${THEME_PADDINGS:-3}"
+
+# Setting up and starting the helper process
+HELPER=git.felix.helper
+killall helper 2>/dev/null
+(cd "$CONFIG_DIR/helper" && make) 2>/dev/null
+"$CONFIG_DIR/helper/helper" $HELPER >/dev/null 2>&1 &
+
+# Unload the macOS on screen indicator overlay for volume change
+launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist >/dev/null 2>&1 &
+
+# Notch-aware bar geometry (overridable per theme via colors.sh exports)
+bar=(
+  height="${THEME_BAR_HEIGHT:-36}"
+  color=$TRANSPARENT
+  border_width=0
+  border_color=$BAR_BORDER_COLOR
+  corner_radius="${THEME_CORNER_RADIUS:-10}"
+  shadow=off
+  position=top
+  sticky=on
+  padding_right=10
+  padding_left=10
+  y_offset="${THEME_BAR_Y_OFFSET:-4}"
+  margin="${THEME_BAR_MARGIN:-8}"
+  topmost=off
+  notch_width="${THEME_NOTCH_WIDTH:-220}"
+  blur_radius="${THEME_BLUR_RADIUS:-0}"
+)
+
+sketchybar --bar "${bar[@]}"
+
+defaults=(
+  updates=when_shown
+  icon.font="$FONT:Bold:14.0"
+  icon.color=$ICON_COLOR
+  icon.padding_left=$PADDINGS
+  icon.padding_right=$PADDINGS
+  label.font="$FONT:Semibold:13.0"
+  label.color=$LABEL_COLOR
+  label.padding_left=$PADDINGS
+  label.padding_right=$PADDINGS
+  padding_right=$PADDINGS
+  padding_left=$PADDINGS
+  background.height=26
+  background.corner_radius=9
+  background.border_width=1
+  popup.y_offset=0
+  popup.background.border_width=1
+  popup.background.corner_radius=9
+  popup.background.border_color=$BACKGROUND_2
+  popup.background.color=$POPUP_BACKGROUND_COLOR
+  popup.blur_radius=20
+  popup.background.shadow.drawing=on
+)
+
+sketchybar --default "${defaults[@]}"
+
+# -----------------------------------------------------------------------------
+# Left system menu (Apple logo popup) — kept for reference / future use.
+# Front app + workspace now live in items/aerospace.sh instead.
+# -----------------------------------------------------------------------------
+# source "$ITEM_DIR/apple.sh"
+
+# Theme-defined item layout (left / center / right)
+THEME_ITEMS="$CONFIG_DIR/themes/${SKETCHYBAR_THEME:-ember}/items.sh"
+if [[ -f "$THEME_ITEMS" ]]; then
+  # shellcheck disable=SC1090
+  source "$THEME_ITEMS"
+else
+  source "$ITEM_DIR/aerospace.sh"
+  source "$ITEM_DIR/calendar.sh"
+fi
+
+sketchybar --hotload on
+sketchybar --update
+
+echo "sketchybar configuration loaded (theme=${SKETCHYBAR_THEME:-ember})"
