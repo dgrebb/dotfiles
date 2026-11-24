@@ -25,7 +25,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# APplication Storage
+# Application Storage
 .config/.sketchyrw/album_art.png
 .config/iterm2/AppSupport
 .config/.sketchyrw/network.out
@@ -38,3 +38,6 @@ Temporary Items
 # Aliases
 .dotfiles/cron/obsidian
 .dotfiles/cron/templates
+
+# Wakapi Configuration
+wakatime/.wakatime.cfg
