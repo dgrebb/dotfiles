@@ -1,0 +1,8 @@
+[settings]
+debug = false
+
+# self-hosted wakapi configuration
+api_url = https://code.7ub3s.net
+
+# use a programmatic api-key lookup
+api_key_vault_cmd = pass show wakatime/api-key

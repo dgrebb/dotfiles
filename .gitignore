@@ -38,3 +38,6 @@ Temporary Items
 # Aliases
 .dotfiles/cron/obsidian
 .dotfiles/cron/templates
+
+# Wakapi
+wakatime/.wakatime.cfg
