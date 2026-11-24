@@ -4,6 +4,7 @@ timemachine=(
   script="$PLUGIN_DIR/timemachine.sh"
   updates=on
   update_freq=120
+  alias.update_freq=0
   width=30
   label.padding_right=0
   icon.padding_right=0

@@ -2,11 +2,16 @@
 
 # Find aliases by running
 # sketchybar --query default_menu_items
-
+#
+# Alias recapture is alias.update_freq (item update_freq does not control it).
+# Default is 1, counted on the animator clock. Each capture copies pixels via
+# CGDataProviderCopyData; on macOS 26 those copies are not released, so live
+# iStat graphs grow RSS by ~2–3GB/day. 0 disables recapture (SketchyBar source).
 alias=(
   background.padding_left=0
   background.padding_right=0
   associated_display=1
+  alias.update_freq=0
 )
 
 sketchybar --add alias "iStat Menus Menubar,com.bjango.istatmenus.cpu" right \

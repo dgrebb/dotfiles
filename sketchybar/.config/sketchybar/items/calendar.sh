@@ -45,6 +45,7 @@ sketchybar --add alias "Control Center,com.bjango.istatmenus.weather" right \
   label.padding_right=0 \
   position=right \
   alias.scale=0.88 \
+  alias.update_freq=0 \
   click_script="$PLUGIN_DIR/zen.sh"
 
 source "$ITEM_DIR/nightscout.sh"

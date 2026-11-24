@@ -6,6 +6,7 @@ battery=(
   width=33
   alias.scale=0.9
   associated_display=1
+  alias.update_freq=0
 )
 
 sketchybar --add alias "Control Center,com.bjango.istatmenus.battery" right \
