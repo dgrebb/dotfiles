@@ -801,3 +801,15 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 
 # Disable continuous spell checking
 # defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
+
+###############################################################################
+# macos 27 Golden Gate Rouded Corners Fixes                                   #
+###############################################################################
+
+# Rounded Corner Adjustments --------------------------------------------------
+defaults write -g NSConvolutionOverride1 -float 0.01
+defaults write -g NSConvolutionOverride2 -float 0.01
+
+# Then Restart
+defaults delete -g NSConvolutionOverride1
+defaults delete -g NSConvolutionOverride2
