@@ -456,5 +456,23 @@
     "key": "shift+cmd+e",
     "command": "-workbench.view.explorer",
     "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "cmd+k cmd+s",
+    "command": "workbench.action.openGlobalKeybindings"
+  },
+  {
+    "key": "cmd+r cmd+s",
+    "command": "-workbench.action.openGlobalKeybindings"
+  },
+  {
+    "key": "cmd+d",
+    "command": "-composer.toggleChatAsEditor",
+    "when": "composerFocused && !editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+k",
+    "command": "-cursor.cmdK.redirectToChat",
+    "when": "editorFocus && !isGlass"
   }
 ]
