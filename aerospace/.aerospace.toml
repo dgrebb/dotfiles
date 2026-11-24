@@ -319,7 +319,7 @@ if.app-name-regex-substring = 'Slack|Microsoft Teams'
 run = "move-node-to-workspace C"
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Docker|Drizzle Studio'
+if.app-name-regex-substring = 'Docker|Drizzle Studio|ExcalidrawZ'
 run = "move-node-to-workspace D"
 
 [[on-window-detected]]
@@ -331,7 +331,7 @@ if.app-name-regex-substring = 'ChatGPT'
 run = "move-node-to-workspace G"
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'ExcalidrawZ'
+if.app-name-regex-substring = 'Music'
 run = "move-node-to-workspace M"
 
 [[on-window-detected]]
